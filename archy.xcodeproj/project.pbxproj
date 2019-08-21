@@ -69,6 +69,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DED98DC230D1EE200FAF418 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				2DED98DE230D201600FAF418 /* Support Files */,
+				2DED98DD230D1FF600FAF418 /* Model */,
+				2DED98DF230D206900FAF418 /* Start Practice */,
+				2DED98E0230D20BB00FAF418 /* Target Distance */,
+				2DED98E1230D20CA00FAF418 /* Body User Direction */,
+				F782FA51230D033000E4C1B4 /* Practice */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		2DED98DD230D1FF600FAF418 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F782FA50230D033000E4C1B4 /* model_cpm.mlmodel */,
+				F782FA4F230D033000E4C1B4 /* model_hourglass.mlmodel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2DED98DE230D201600FAF418 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F782FA4E230D033000E4C1B4 /* Measure.swift */,
+				F782FA5C230D033B00E4C1B4 /* VideoCapture.swift */,
+				F782FA3E230D031400E4C1B4 /* Common */,
+				F782FA47230D032500E4C1B4 /* Heatmap View Controller */,
+				F782FA53230D033000E4C1B4 /* Joint View Controller */,
+				F782FA5F230D033C00E4C1B4 /* Still Image Heatmap View Controller */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		2DED98DF230D206900FAF418 /* Start Practice */ = {
+			isa = PBXGroup;
+			children = (
+				F782FA4A230D032500E4C1B4 /* HomeViewController.swift */,
+			);
+			path = "Start Practice";
+			sourceTree = "<group>";
+		};
+		2DED98E0230D20BB00FAF418 /* Target Distance */ = {
+			isa = PBXGroup;
+			children = (
+				F782FA5E230D033C00E4C1B4 /* SetDistanceViewController.swift */,
+			);
+			path = "Target Distance";
+			sourceTree = "<group>";
+		};
+		2DED98E1230D20CA00FAF418 /* Body User Direction */ = {
+			isa = PBXGroup;
+			children = (
+				F782FA5D230D033B00E4C1B4 /* TipsViewController.swift */,
+			);
+			path = "Body User Direction";
+			sourceTree = "<group>";
+		};
+		2DED98E2230D213C00FAF418 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2DED98E6230D218400FAF418 /* Albums */,
+				2DED98E5230D217B00FAF418 /* Preview */,
+				2DED98E4230D217600FAF418 /* Videos */,
+				2DED98E3230D216C00FAF418 /* Full Screen */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		2DED98E3230D216C00FAF418 /* Full Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Full Screen";
+			sourceTree = "<group>";
+		};
+		2DED98E4230D217600FAF418 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		2DED98E5230D217B00FAF418 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		2DED98E6230D218400FAF418 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
 		F782FA14230D025900E4C1B4 = {
 			isa = PBXGroup;
 			children = (
@@ -88,24 +186,14 @@
 		F782FA1F230D025900E4C1B4 /* archy */ = {
 			isa = PBXGroup;
 			children = (
-				F782FA50230D033000E4C1B4 /* model_cpm.mlmodel */,
-				F782FA4F230D033000E4C1B4 /* model_hourglass.mlmodel */,
 				F782FA2F230D025A00E4C1B4 /* Info.plist */,
 				F782FA3A230D030600E4C1B4 /* LaunchScreen.storyboard */,
 				F782FA3B230D030600E4C1B4 /* Main.storyboard */,
 				F782FA38230D02D200E4C1B4 /* AppDelegate.swift */,
-				F782FA4A230D032500E4C1B4 /* HomeViewController.swift */,
-				F782FA4E230D033000E4C1B4 /* Measure.swift */,
-				F782FA5E230D033C00E4C1B4 /* SetDistanceViewController.swift */,
-				F782FA5D230D033B00E4C1B4 /* TipsViewController.swift */,
-				F782FA5C230D033B00E4C1B4 /* VideoCapture.swift */,
 				F782FA35230D02B100E4C1B4 /* Assets.xcassets */,
 				F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */,
-				F782FA3E230D031400E4C1B4 /* Common */,
-				F782FA47230D032500E4C1B4 /* Heatmap View Controller */,
-				F782FA53230D033000E4C1B4 /* Joint View Controller */,
-				F782FA51230D033000E4C1B4 /* Pose Matching View Controller */,
-				F782FA5F230D033C00E4C1B4 /* Still Image Heatmap View Controller */,
+				2DED98DC230D1EE200FAF418 /* Practice */,
+				2DED98E2230D213C00FAF418 /* Library */,
 			);
 			path = archy;
 			sourceTree = "<group>";
@@ -130,12 +218,12 @@
 			path = "Heatmap View Controller";
 			sourceTree = "<group>";
 		};
-		F782FA51230D033000E4C1B4 /* Pose Matching View Controller */ = {
+		F782FA51230D033000E4C1B4 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
 				F782FA52230D033000E4C1B4 /* PoseMatchingViewController.swift */,
 			);
-			path = "Pose Matching View Controller";
+			path = Practice;
 			sourceTree = "<group>";
 		};
 		F782FA53230D033000E4C1B4 /* Joint View Controller */ = {
@@ -374,7 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,7 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

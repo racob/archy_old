@@ -9,7 +9,7 @@
 import Foundation
 import WatchKit
 
-class Distance: WKInterfaceController{
+class DistanceController: WKInterfaceController{
     
     let arraydistanceTarget = [5,10,15,20]
     var distanceSelect: Int?
@@ -41,9 +41,12 @@ class Distance: WKInterfaceController{
     @IBAction func pickerSelected(_ value: Int) {
         distanceSelect = arraydistanceTarget[value]
     }
+    
     @IBAction func okButton() {
         print(distanceSelect!)
         
+        pushController(withName: "AdjustmentController", context: nil)
+//        popToRootController()
     }
     
     

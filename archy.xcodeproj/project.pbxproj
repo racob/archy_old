@@ -15,7 +15,11 @@
 		0E3B4BCF230D34F4001A8CA3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B4BCE230D34F4001A8CA3 /* NotificationController.swift */; };
 		0E3B4BD1230D34F4001A8CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B4BD0230D34F4001A8CA3 /* Assets.xcassets */; };
 		0E3B4BD6230D34F4001A8CA3 /* archy Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0E3B4BB9230D34F2001A8CA3 /* archy Watch.app */; };
-		0EAFB464230D654B006B9232 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFB463230D654B006B9232 /* Distance.swift */; };
+		0E5E16F0230E6A38006A33DA /* AdjustmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E16EF230E6A38006A33DA /* AdjustmentController.swift */; };
+		0E5E16F2230E6AF6006A33DA /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E16F1230E6AF6006A33DA /* PracticeController.swift */; };
+		0E5E16F4230E6BD3006A33DA /* StopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E16F3230E6BD3006A33DA /* StopController.swift */; };
+		0E5E16F6230E6C4F006A33DA /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E16F5230E6C4F006A33DA /* FinishController.swift */; };
+		0EAFB464230D654B006B9232 /* DistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFB463230D654B006B9232 /* DistanceController.swift */; };
 		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
 		F782FA29230D025900E4C1B4 /* archeryTracking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */; };
 		F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F782FA35230D02B100E4C1B4 /* Assets.xcassets */; };
@@ -98,7 +102,11 @@
 		0E3B4BD3230D34F4001A8CA3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "archy Watch Extension.entitlements"; sourceTree = "<group>"; };
 		0E3B4BE0230D3516001A8CA3 /* archy Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "archy Watch.entitlements"; sourceTree = "<group>"; };
-		0EAFB463230D654B006B9232 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
+		0E5E16EF230E6A38006A33DA /* AdjustmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentController.swift; sourceTree = "<group>"; };
+		0E5E16F1230E6AF6006A33DA /* PracticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeController.swift; sourceTree = "<group>"; };
+		0E5E16F3230E6BD3006A33DA /* StopController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopController.swift; sourceTree = "<group>"; };
+		0E5E16F5230E6C4F006A33DA /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
+		0EAFB463230D654B006B9232 /* DistanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceController.swift; sourceTree = "<group>"; };
 		0EAFB465230E30F9006B9232 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F782FA1D230D025900E4C1B4 /* archy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = archy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F782FA28230D025900E4C1B4 /* archeryTracking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = archeryTracking.xcdatamodel; sourceTree = "<group>"; };
@@ -162,16 +170,28 @@
 		0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0E5E16F7230E6D6A006A33DA /* Controller */,
 				0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */,
-				0E3B4BCA230D34F4001A8CA3 /* InterfaceController.swift */,
 				0E3B4BCC230D34F4001A8CA3 /* ExtensionDelegate.swift */,
 				0E3B4BCE230D34F4001A8CA3 /* NotificationController.swift */,
 				0E3B4BD0230D34F4001A8CA3 /* Assets.xcassets */,
 				0E3B4BD2230D34F4001A8CA3 /* Info.plist */,
 				0E3B4BD3230D34F4001A8CA3 /* PushNotificationPayload.apns */,
-				0EAFB463230D654B006B9232 /* Distance.swift */,
 			);
 			path = "archy Watch Extension";
+			sourceTree = "<group>";
+		};
+		0E5E16F7230E6D6A006A33DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E3B4BCA230D34F4001A8CA3 /* InterfaceController.swift */,
+				0EAFB463230D654B006B9232 /* DistanceController.swift */,
+				0E5E16EF230E6A38006A33DA /* AdjustmentController.swift */,
+				0E5E16F1230E6AF6006A33DA /* PracticeController.swift */,
+				0E5E16F3230E6BD3006A33DA /* StopController.swift */,
+				0E5E16F5230E6C4F006A33DA /* FinishController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		2DED98DC230D1EE200FAF418 /* Practice */ = {
@@ -514,9 +534,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EAFB464230D654B006B9232 /* Distance.swift in Sources */,
+				0E5E16F0230E6A38006A33DA /* AdjustmentController.swift in Sources */,
+				0EAFB464230D654B006B9232 /* DistanceController.swift in Sources */,
+				0E5E16F2230E6AF6006A33DA /* PracticeController.swift in Sources */,
 				0E3B4BCF230D34F4001A8CA3 /* NotificationController.swift in Sources */,
+				0E5E16F6230E6C4F006A33DA /* FinishController.swift in Sources */,
 				0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */,
+				0E5E16F4230E6BD3006A33DA /* StopController.swift in Sources */,
 				0E3B4BCB230D34F4001A8CA3 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,18 +7,32 @@ class PreviewVC: UIViewController {
 
     var playerController = AVPlayerViewController()
     var player: AVPlayer?
- 
+    var totalScore = ""
+    var totalArrow = 40
     
     @IBAction func playVideoButton(_ sender: Any) {
         playVideo()
     }
     
+    @IBOutlet var totalScoreLabel: UILabel!
+    
+    @IBOutlet var averageScoreLabel: UILabel!
+    
+    @IBOutlet var totalArrowLabel: UILabel!
+    
+    @IBOutlet var dateOfVideoLabel: UILabel!
+    
+    @IBOutlet var timeOfVideoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        alertInputScore()
         urlVideo()
+        alertInputScore()
+        
+        
+        
     }
 
 
@@ -57,6 +71,7 @@ class PreviewVC: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             print("Text field: \(textField!.text)")
+            self.totalScore = textField?.text ?? ""
         }))
 
         
@@ -68,6 +83,8 @@ class PreviewVC: UIViewController {
         
         alertWindow.rootViewController?.present(alert, animated:true, completion: nil)
     }
+    
+    
     
     
 //    func generateThumbnailVideo() {

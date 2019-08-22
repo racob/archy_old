@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E60F92E230E49BB00198B2F /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F92C230E49BB00198B2F /* AlbumCell.swift */; };
+		4E60F92F230E49BB00198B2F /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E60F92D230E49BB00198B2F /* AlbumCell.xib */; };
+		4E60F934230E4FA900198B2F /* VideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F932230E4FA900198B2F /* VideosCell.swift */; };
+		4E60F935230E4FA900198B2F /* VideosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E60F933230E4FA900198B2F /* VideosCell.xib */; };
+		4E60F938230E69EA00198B2F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F937230E69EA00198B2F /* UIImageView+Extension.swift */; };
 		F72DE6FB230E3C9500EA0D2E /* FullscreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE6F9230E3C9500EA0D2E /* FullscreenVC.swift */; };
 		F72DE6FC230E3C9500EA0D2E /* FullscreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE6FA230E3C9500EA0D2E /* FullscreenVC.xib */; };
 		F72DE6FF230E3CC400EA0D2E /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */; };
@@ -41,6 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E60F92C230E49BB00198B2F /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		4E60F92D230E49BB00198B2F /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
+		4E60F932230E4FA900198B2F /* VideosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCell.swift; sourceTree = "<group>"; };
+		4E60F933230E4FA900198B2F /* VideosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosCell.xib; sourceTree = "<group>"; };
+		4E60F937230E69EA00198B2F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F72DE6F9230E3C9500EA0D2E /* FullscreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenVC.swift; sourceTree = "<group>"; };
 		F72DE6FA230E3C9500EA0D2E /* FullscreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullscreenVC.xib; sourceTree = "<group>"; };
 		F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
@@ -148,13 +158,39 @@
 			path = "Body User Direction";
 			sourceTree = "<group>";
 		};
+		4E60F930230E49BF00198B2F /* AlbumCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E60F92C230E49BB00198B2F /* AlbumCell.swift */,
+				4E60F92D230E49BB00198B2F /* AlbumCell.xib */,
+			);
+			path = AlbumCell;
+			sourceTree = "<group>";
+		};
+		4E60F931230E4F4600198B2F /* VideosCell */ = {
+			isa = PBXGroup;
+			children = (
+				4E60F932230E4FA900198B2F /* VideosCell.swift */,
+				4E60F933230E4FA900198B2F /* VideosCell.xib */,
+			);
+			path = VideosCell;
+			sourceTree = "<group>";
+		};
+		4E60F936230E69B200198B2F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4E60F937230E69EA00198B2F /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		F72DE6F4230E3C4300EA0D2E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				F72DE6F5230E3C4B00EA0D2E /* Albums */,
 				F72DE6F8230E3C6700EA0D2E /* Fullscreen */,
 				F72DE6F7230E3C5B00EA0D2E /* Videos */,
 				F72DE6F6230E3C5400EA0D2E /* Preview */,
-				F72DE6F5230E3C4B00EA0D2E /* Albums */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -162,6 +198,7 @@
 		F72DE6F5230E3C4B00EA0D2E /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				4E60F930230E49BF00198B2F /* AlbumCell */,
 				F72DE706230E3D0A00EA0D2E /* AlbumsVC.swift */,
 				F72DE707230E3D0A00EA0D2E /* AlbumsVC.xib */,
 			);
@@ -180,6 +217,7 @@
 		F72DE6F7230E3C5B00EA0D2E /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				4E60F931230E4F4600198B2F /* VideosCell */,
 				F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */,
 				F72DE6FE230E3CC400EA0D2E /* VideosVC.xib */,
 			);
@@ -215,6 +253,7 @@
 		F782FA1F230D025900E4C1B4 /* archy */ = {
 			isa = PBXGroup;
 			children = (
+				4E60F936230E69B200198B2F /* Extension */,
 				F72DE6F4230E3C4300EA0D2E /* Library */,
 				F782FA6A230D33D000E4C1B4 /* archy.entitlements */,
 				F782FA2F230D025A00E4C1B4 /* Info.plist */,
@@ -350,11 +389,13 @@
 			files = (
 				F782FA3D230D030600E4C1B4 /* Main.storyboard in Resources */,
 				F72DE704230E3CE200EA0D2E /* PreviewVC.xib in Resources */,
+				4E60F935230E4FA900198B2F /* VideosCell.xib in Resources */,
 				F72DE700230E3CC400EA0D2E /* VideosVC.xib in Resources */,
 				F72DE6FC230E3C9500EA0D2E /* FullscreenVC.xib in Resources */,
 				F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */,
 				F782FA3C230D030600E4C1B4 /* LaunchScreen.storyboard in Resources */,
 				F72DE709230E3D0A00EA0D2E /* AlbumsVC.xib in Resources */,
+				4E60F92F230E49BB00198B2F /* AlbumCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +408,7 @@
 			files = (
 				F782FA39230D02D200E4C1B4 /* AppDelegate.swift in Sources */,
 				F782FA5B230D033000E4C1B4 /* JointViewController.swift in Sources */,
+				4E60F938230E69EA00198B2F /* UIImageView+Extension.swift in Sources */,
 				F782FA44230D031400E4C1B4 /* PredictedPoint.swift in Sources */,
 				F782FA59230D033000E4C1B4 /* PoseMatchingViewController.swift in Sources */,
 				F72DE708230E3D0A00EA0D2E /* AlbumsVC.swift in Sources */,
@@ -376,6 +418,8 @@
 				F782FA62230D033C00E4C1B4 /* TipsViewController.swift in Sources */,
 				F782FA56230D033000E4C1B4 /* Measure.swift in Sources */,
 				F782FA45230D031400E4C1B4 /* MovingAverageFilter.swift in Sources */,
+				4E60F92E230E49BB00198B2F /* AlbumCell.swift in Sources */,
+				4E60F934230E4FA900198B2F /* VideosCell.swift in Sources */,
 				F782FA4B230D032500E4C1B4 /* DrawingHeatmapView.swift in Sources */,
 				F782FA61230D033C00E4C1B4 /* VideoCapture.swift in Sources */,
 				F782FA46230D031400E4C1B4 /* HeatmapPostProcessor.swift in Sources */,

@@ -485,13 +485,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = racob.archy;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -506,13 +506,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = racob.archy;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -16,7 +16,9 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        
     }
+    
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user

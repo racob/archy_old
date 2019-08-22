@@ -15,6 +15,8 @@
 		0E3B4BCF230D34F4001A8CA3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B4BCE230D34F4001A8CA3 /* NotificationController.swift */; };
 		0E3B4BD1230D34F4001A8CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B4BD0230D34F4001A8CA3 /* Assets.xcassets */; };
 		0E3B4BD6230D34F4001A8CA3 /* archy Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0E3B4BB9230D34F2001A8CA3 /* archy Watch.app */; };
+		0EAFB464230D654B006B9232 /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAFB463230D654B006B9232 /* Distance.swift */; };
+		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
 		F782FA29230D025900E4C1B4 /* archeryTracking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */; };
 		F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F782FA35230D02B100E4C1B4 /* Assets.xcassets */; };
 		F782FA39230D02D200E4C1B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA38230D02D200E4C1B4 /* AppDelegate.swift */; };
@@ -96,6 +98,8 @@
 		0E3B4BD3230D34F4001A8CA3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "archy Watch Extension.entitlements"; sourceTree = "<group>"; };
 		0E3B4BE0230D3516001A8CA3 /* archy Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "archy Watch.entitlements"; sourceTree = "<group>"; };
+		0EAFB463230D654B006B9232 /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
+		0EAFB465230E30F9006B9232 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F782FA1D230D025900E4C1B4 /* archy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = archy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F782FA28230D025900E4C1B4 /* archeryTracking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = archeryTracking.xcdatamodel; sourceTree = "<group>"; };
 		F782FA2F230D025A00E4C1B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				0E3B4BBB230D34F3001A8CA3 /* Interface.storyboard */,
 				0E3B4BBE230D34F3001A8CA3 /* Assets.xcassets */,
 				0E3B4BC0230D34F3001A8CA3 /* Info.plist */,
+				0EAFB465230E30F9006B9232 /* Storyboard.storyboard */,
 			);
 			path = "archy Watch";
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				0E3B4BD0230D34F4001A8CA3 /* Assets.xcassets */,
 				0E3B4BD2230D34F4001A8CA3 /* Info.plist */,
 				0E3B4BD3230D34F4001A8CA3 /* PushNotificationPayload.apns */,
+				0EAFB463230D654B006B9232 /* Distance.swift */,
 			);
 			path = "archy Watch Extension";
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 			files = (
 				0E3B4BBF230D34F3001A8CA3 /* Assets.xcassets in Resources */,
 				0E3B4BBD230D34F3001A8CA3 /* Interface.storyboard in Resources */,
+				0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EAFB464230D654B006B9232 /* Distance.swift in Sources */,
 				0E3B4BCF230D34F4001A8CA3 /* NotificationController.swift in Sources */,
 				0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */,
 				0E3B4BCB230D34F4001A8CA3 /* InterfaceController.swift in Sources */,

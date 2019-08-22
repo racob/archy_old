@@ -12,7 +12,7 @@
         <!--Pose Matching View Controller-->
         <scene sceneID="uRp-Ku-kas">
             <objects>
-                <viewController id="BD9-1k-qdr" customClass="PoseMatchingViewController" customModule="PoseEstimation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BD9-1k-qdr" customClass="PoseMatchingViewController" customModule="archy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fVM-GF-2fZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,13 +22,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.90588235289999997" blue="0.10980392160000001" alpha="0.66521297089999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" id="B1i-aw-rU0" customClass="DrawingJointView" customModule="PoseEstimation_CoreML" customModuleProvider="target">
+                            <view contentMode="scaleToFill" id="B1i-aw-rU0" customClass="DrawingJointView" customModule="archy" customModuleProvider="target">
                                 <rect key="frame" x="-1" y="240" width="415" height="415"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" id="mh5-gE-hl2">
-                                <rect key="frame" x="19" y="704" width="375" height="107"/>
+                                <rect key="frame" x="20" y="655" width="375" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="nhA-Z3-8F3">
@@ -36,7 +36,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pose 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cg4-YB-cKm">
-                                                <rect key="frame" x="29.333333333333329" y="2" width="35" height="13"/>
+                                                <rect key="frame" x="29" y="2" width="52" height="13"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <nil key="textColor"/>
@@ -52,7 +52,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="nmX-0R-ylu" customClass="DrawingJointView" customModule="PoseEstimation_CoreML" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" id="nmX-0R-ylu" customClass="DrawingJointView" customModule="archy" customModuleProvider="target">
                                         <rect key="frame" x="4" y="8" width="89" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +78,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="zqC-WD-m3H" customClass="DrawingJointView" customModule="PoseEstimation_CoreML" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" id="zqC-WD-m3H" customClass="DrawingJointView" customModule="archy" customModuleProvider="target">
                                         <rect key="frame" x="97" y="8" width="89" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,7 +104,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="B0b-kV-Nw7" customClass="DrawingJointView" customModule="PoseEstimation_CoreML" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" id="B0b-kV-Nw7" customClass="DrawingJointView" customModule="archy" customModuleProvider="target">
                                         <rect key="frame" x="190" y="8" width="88" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,8 +130,34 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="lFq-3u-WKh" customClass="DrawingJointView" customModule="PoseEstimation_CoreML" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" id="lFq-3u-WKh" customClass="DrawingJointView" customModule="archy" customModuleProvider="target">
                                         <rect key="frame" x="282" y="8" width="89" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="Mak-EF-TyR">
+                                        <rect key="frame" x="143" y="110" width="89" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pose 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q7U-be-Wug">
+                                                <rect key="frame" x="29" y="2" width="52" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.00%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nqW-CO-RoT">
+                                                <rect key="frame" x="8" y="61.666666666666629" width="78" height="25.333333333333343"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="1VR-SE-o8s" customClass="DrawingJointView" customModule="archy" customModuleProvider="target">
+                                        <rect key="frame" x="143" y="110" width="89" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -151,18 +177,21 @@
                     <connections>
                         <outlet property="jointView" destination="B1i-aw-rU0" id="rkW-YP-1P2"/>
                         <outlet property="videoPreview" destination="ZXB-KZ-K0f" id="UWJ-C0-wGX"/>
+                        <outletCollection property="capturedJointBGViews" destination="Jh3-lS-lss" collectionClass="NSMutableArray" id="Gum-aV-4SW"/>
+                        <outletCollection property="capturedJointViews" destination="zqC-WD-m3H" collectionClass="NSMutableArray" id="w3o-P4-iUJ"/>
+                        <outletCollection property="capturedJointBGViews" destination="mxO-gy-dTc" collectionClass="NSMutableArray" id="Oeh-uy-F9K"/>
+                        <outletCollection property="capturedJointConfidenceLabels" destination="TfQ-Uc-l2d" collectionClass="NSMutableArray" id="axX-4A-QVW"/>
+                        <outletCollection property="capturedJointViews" destination="nmX-0R-ylu" collectionClass="NSMutableArray" id="98Q-74-Eic"/>
+                        <outletCollection property="capturedJointViews" destination="lFq-3u-WKh" collectionClass="NSMutableArray" id="XfO-RK-5pf"/>
                         <outletCollection property="capturedJointBGViews" destination="nhA-Z3-8F3" collectionClass="NSMutableArray" id="LNS-rg-hTJ"/>
-                        <outletCollection property="capturedJointViews" destination="B0b-kV-Nw7" collectionClass="NSMutableArray" id="Qw6-WF-d4y"/>
                         <outletCollection property="capturedJointConfidenceLabels" destination="Gm5-07-cCU" collectionClass="NSMutableArray" id="Sep-ZH-AT1"/>
-                        <outletCollection property="capturedJointConfidenceLabels" destination="29C-uK-GGx" collectionClass="NSMutableArray" id="nSX-cX-xs9"/>
+                        <outletCollection property="capturedJointViews" destination="B0b-kV-Nw7" collectionClass="NSMutableArray" id="Qw6-WF-d4y"/>
                         <outletCollection property="capturedJointConfidenceLabels" destination="Kd1-xq-t9Y" collectionClass="NSMutableArray" id="aOE-p9-mFa"/>
                         <outletCollection property="capturedJointBGViews" destination="RWv-uq-9oZ" collectionClass="NSMutableArray" id="I8h-rV-5G1"/>
-                        <outletCollection property="capturedJointViews" destination="lFq-3u-WKh" collectionClass="NSMutableArray" id="XfO-RK-5pf"/>
-                        <outletCollection property="capturedJointViews" destination="nmX-0R-ylu" collectionClass="NSMutableArray" id="98Q-74-Eic"/>
-                        <outletCollection property="capturedJointConfidenceLabels" destination="TfQ-Uc-l2d" collectionClass="NSMutableArray" id="axX-4A-QVW"/>
-                        <outletCollection property="capturedJointBGViews" destination="Jh3-lS-lss" collectionClass="NSMutableArray" id="Gum-aV-4SW"/>
-                        <outletCollection property="capturedJointBGViews" destination="mxO-gy-dTc" collectionClass="NSMutableArray" id="Oeh-uy-F9K"/>
-                        <outletCollection property="capturedJointViews" destination="zqC-WD-m3H" collectionClass="NSMutableArray" id="w3o-P4-iUJ"/>
+                        <outletCollection property="capturedJointConfidenceLabels" destination="29C-uK-GGx" collectionClass="NSMutableArray" id="nSX-cX-xs9"/>
+                        <outletCollection property="capturedJointConfidenceLabels" destination="nqW-CO-RoT" collectionClass="NSMutableArray" id="Bew-Br-2hT"/>
+                        <outletCollection property="capturedJointViews" destination="1VR-SE-o8s" collectionClass="NSMutableArray" id="rSG-YG-A3s"/>
+                        <outletCollection property="capturedJointBGViews" destination="Mak-EF-TyR" collectionClass="NSMutableArray" id="wUR-hF-MWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tn-VE-taK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,7 +201,7 @@
         <!--Home View Controller-->
         <scene sceneID="CCK-Iq-0gY">
             <objects>
-                <viewController id="acU-f2-iBJ" customClass="HomeViewController" customModule="PoseEstimation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="acU-f2-iBJ" customClass="HomeViewController" customModule="archy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bbb-i1-8Mx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,7 +251,7 @@
         <!--Tips View Controller-->
         <scene sceneID="9dx-a8-mcU">
             <objects>
-                <viewController id="mrc-zC-g9d" customClass="TipsViewController" customModule="PoseEstimation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mrc-zC-g9d" customClass="TipsViewController" customModule="archy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b0d-c8-cbR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,7 +293,7 @@
         <!--Set Distance View Controller-->
         <scene sceneID="l99-mt-aMl">
             <objects>
-                <viewController id="JBp-Wx-Ofb" customClass="SetDistanceViewController" customModule="PoseEstimation_CoreML" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JBp-Wx-Ofb" customClass="SetDistanceViewController" customModule="archy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PgH-Bt-ycA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

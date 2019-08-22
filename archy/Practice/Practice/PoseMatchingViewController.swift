@@ -150,9 +150,6 @@ class PoseMatchingViewController: UIViewController {
     }
     
     func setUIcolor(){
-        self.view.backgroundColor = #colorLiteral(red: 0.01122807059, green: 0.738078773, blue: 0.8828260303, alpha: 1)
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = UIColor.white

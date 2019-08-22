@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F72DE6FB230E3C9500EA0D2E /* FullscreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE6F9230E3C9500EA0D2E /* FullscreenVC.swift */; };
+		F72DE6FC230E3C9500EA0D2E /* FullscreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE6FA230E3C9500EA0D2E /* FullscreenVC.xib */; };
+		F72DE6FF230E3CC400EA0D2E /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */; };
+		F72DE700230E3CC400EA0D2E /* VideosVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE6FE230E3CC400EA0D2E /* VideosVC.xib */; };
+		F72DE703230E3CE200EA0D2E /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE701230E3CE200EA0D2E /* PreviewVC.swift */; };
+		F72DE704230E3CE200EA0D2E /* PreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE702230E3CE200EA0D2E /* PreviewVC.xib */; };
+		F72DE708230E3D0A00EA0D2E /* AlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE706230E3D0A00EA0D2E /* AlbumsVC.swift */; };
+		F72DE709230E3D0A00EA0D2E /* AlbumsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE707230E3D0A00EA0D2E /* AlbumsVC.xib */; };
 		F782FA29230D025900E4C1B4 /* archeryTracking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */; };
 		F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F782FA35230D02B100E4C1B4 /* Assets.xcassets */; };
 		F782FA39230D02D200E4C1B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA38230D02D200E4C1B4 /* AppDelegate.swift */; };
@@ -29,9 +37,18 @@
 		F782FA62230D033C00E4C1B4 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA5D230D033B00E4C1B4 /* TipsViewController.swift */; };
 		F782FA63230D033C00E4C1B4 /* SetDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA5E230D033C00E4C1B4 /* SetDistanceViewController.swift */; };
 		F782FA64230D033C00E4C1B4 /* StillImageHeatmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA60230D033C00E4C1B4 /* StillImageHeatmapViewController.swift */; };
+		F782FA6D230D33DA00E4C1B4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F782FA6C230D33DA00E4C1B4 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F72DE6F9230E3C9500EA0D2E /* FullscreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenVC.swift; sourceTree = "<group>"; };
+		F72DE6FA230E3C9500EA0D2E /* FullscreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullscreenVC.xib; sourceTree = "<group>"; };
+		F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
+		F72DE6FE230E3CC400EA0D2E /* VideosVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosVC.xib; sourceTree = "<group>"; };
+		F72DE701230E3CE200EA0D2E /* PreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
+		F72DE702230E3CE200EA0D2E /* PreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewVC.xib; sourceTree = "<group>"; };
+		F72DE706230E3D0A00EA0D2E /* AlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsVC.swift; sourceTree = "<group>"; };
+		F72DE707230E3D0A00EA0D2E /* AlbumsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsVC.xib; sourceTree = "<group>"; };
 		F782FA1D230D025900E4C1B4 /* archy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = archy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F782FA28230D025900E4C1B4 /* archeryTracking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = archeryTracking.xcdatamodel; sourceTree = "<group>"; };
 		F782FA2F230D025A00E4C1B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +73,8 @@
 		F782FA5D230D033B00E4C1B4 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		F782FA5E230D033C00E4C1B4 /* SetDistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDistanceViewController.swift; sourceTree = "<group>"; };
 		F782FA60230D033C00E4C1B4 /* StillImageHeatmapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillImageHeatmapViewController.swift; sourceTree = "<group>"; };
+		F782FA6A230D33D000E4C1B4 /* archy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = archy.entitlements; sourceTree = "<group>"; };
+		F782FA6C230D33DA00E4C1B4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F782FA6D230D33DA00E4C1B4 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,43 +148,51 @@
 			path = "Body User Direction";
 			sourceTree = "<group>";
 		};
-		2DED98E2230D213C00FAF418 /* Library */ = {
+		F72DE6F4230E3C4300EA0D2E /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				2DED98E6230D218400FAF418 /* Albums */,
-				2DED98E5230D217B00FAF418 /* Preview */,
-				2DED98E4230D217600FAF418 /* Videos */,
-				2DED98E3230D216C00FAF418 /* Full Screen */,
+				F72DE6F8230E3C6700EA0D2E /* Fullscreen */,
+				F72DE6F7230E3C5B00EA0D2E /* Videos */,
+				F72DE6F6230E3C5400EA0D2E /* Preview */,
+				F72DE6F5230E3C4B00EA0D2E /* Albums */,
 			);
 			path = Library;
 			sourceTree = "<group>";
 		};
-		2DED98E3230D216C00FAF418 /* Full Screen */ = {
+		F72DE6F5230E3C4B00EA0D2E /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				F72DE706230E3D0A00EA0D2E /* AlbumsVC.swift */,
+				F72DE707230E3D0A00EA0D2E /* AlbumsVC.xib */,
 			);
-			path = "Full Screen";
+			path = Albums;
 			sourceTree = "<group>";
 		};
-		2DED98E4230D217600FAF418 /* Videos */ = {
+		F72DE6F6230E3C5400EA0D2E /* Preview */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Videos;
-			sourceTree = "<group>";
-		};
-		2DED98E5230D217B00FAF418 /* Preview */ = {
-			isa = PBXGroup;
-			children = (
+				F72DE701230E3CE200EA0D2E /* PreviewVC.swift */,
+				F72DE702230E3CE200EA0D2E /* PreviewVC.xib */,
 			);
 			path = Preview;
 			sourceTree = "<group>";
 		};
-		2DED98E6230D218400FAF418 /* Albums */ = {
+		F72DE6F7230E3C5B00EA0D2E /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */,
+				F72DE6FE230E3CC400EA0D2E /* VideosVC.xib */,
 			);
-			path = Albums;
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		F72DE6F8230E3C6700EA0D2E /* Fullscreen */ = {
+			isa = PBXGroup;
+			children = (
+				F72DE6F9230E3C9500EA0D2E /* FullscreenVC.swift */,
+				F72DE6FA230E3C9500EA0D2E /* FullscreenVC.xib */,
+			);
+			path = Fullscreen;
 			sourceTree = "<group>";
 		};
 		F782FA14230D025900E4C1B4 = {
@@ -172,6 +200,7 @@
 			children = (
 				F782FA1F230D025900E4C1B4 /* archy */,
 				F782FA1E230D025900E4C1B4 /* Products */,
+				F782FA6B230D33DA00E4C1B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +215,8 @@
 		F782FA1F230D025900E4C1B4 /* archy */ = {
 			isa = PBXGroup;
 			children = (
+				F72DE6F4230E3C4300EA0D2E /* Library */,
+				F782FA6A230D33D000E4C1B4 /* archy.entitlements */,
 				F782FA2F230D025A00E4C1B4 /* Info.plist */,
 				F782FA3A230D030600E4C1B4 /* LaunchScreen.storyboard */,
 				F782FA3B230D030600E4C1B4 /* Main.storyboard */,
@@ -193,7 +224,6 @@
 				F782FA35230D02B100E4C1B4 /* Assets.xcassets */,
 				F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */,
 				2DED98DC230D1EE200FAF418 /* Practice */,
-				2DED98E2230D213C00FAF418 /* Library */,
 			);
 			path = archy;
 			sourceTree = "<group>";
@@ -243,6 +273,14 @@
 			path = "Still Image Heatmap View Controller";
 			sourceTree = "<group>";
 		};
+		F782FA6B230D33DA00E4C1B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F782FA6C230D33DA00E4C1B4 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +314,14 @@
 					F782FA1C230D025900E4C1B4 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1030;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -303,8 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F782FA3D230D030600E4C1B4 /* Main.storyboard in Resources */,
+				F72DE704230E3CE200EA0D2E /* PreviewVC.xib in Resources */,
+				F72DE700230E3CC400EA0D2E /* VideosVC.xib in Resources */,
+				F72DE6FC230E3C9500EA0D2E /* FullscreenVC.xib in Resources */,
 				F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */,
 				F782FA3C230D030600E4C1B4 /* LaunchScreen.storyboard in Resources */,
+				F72DE709230E3D0A00EA0D2E /* AlbumsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +369,10 @@
 				F782FA5B230D033000E4C1B4 /* JointViewController.swift in Sources */,
 				F782FA44230D031400E4C1B4 /* PredictedPoint.swift in Sources */,
 				F782FA59230D033000E4C1B4 /* PoseMatchingViewController.swift in Sources */,
+				F72DE708230E3D0A00EA0D2E /* AlbumsVC.swift in Sources */,
 				F782FA57230D033000E4C1B4 /* model_hourglass.mlmodel in Sources */,
+				F72DE703230E3CE200EA0D2E /* PreviewVC.swift in Sources */,
+				F72DE6FB230E3C9500EA0D2E /* FullscreenVC.swift in Sources */,
 				F782FA62230D033C00E4C1B4 /* TipsViewController.swift in Sources */,
 				F782FA56230D033000E4C1B4 /* Measure.swift in Sources */,
 				F782FA45230D031400E4C1B4 /* MovingAverageFilter.swift in Sources */,
@@ -334,6 +387,7 @@
 				F782FA43230D031400E4C1B4 /* UIImage+CVPixelBuffer.swift in Sources */,
 				F782FA64230D033C00E4C1B4 /* StillImageHeatmapViewController.swift in Sources */,
 				F782FA29230D025900E4C1B4 /* archeryTracking.xcdatamodeld in Sources */,
+				F72DE6FF230E3CC400EA0D2E /* VideosVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
@@ -481,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";

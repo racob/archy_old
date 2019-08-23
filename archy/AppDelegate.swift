@@ -23,6 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let albumsVC = AlbumsVC(nibName: "AlbumsVC", bundle: nil)
         
         let nav = UINavigationController(rootViewController: albumsVC)
+//        UINavigationBar.appearance().backgroundColor = #colorLiteral(red: 0.04705882353, green: 0.09019607843, blue: 0.2117647059, alpha: 1)
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.04705882353, green: 0.09019607843, blue: 0.2117647059, alpha: 1)
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        
+
         
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

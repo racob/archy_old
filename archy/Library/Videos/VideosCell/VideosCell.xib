@@ -22,22 +22,9 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kJB-ro-LTh">
                         <rect key="frame" x="0.0" y="0.0" width="131" height="221"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idD-dw-ciF">
-                        <rect key="frame" x="54.5" y="99.5" width="22" height="22"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="22" id="Vey-TK-dq4"/>
-                            <constraint firstAttribute="height" constant="22" id="cBh-rs-STU"/>
-                        </constraints>
-                        <connections>
-                            <action selector="playButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gp8-e0-BfR"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="idD-dw-ciF" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ESj-Eq-665"/>
-                <constraint firstItem="idD-dw-ciF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="MSt-6F-NAG"/>
                 <constraint firstAttribute="bottom" secondItem="kJB-ro-LTh" secondAttribute="bottom" id="UfJ-Nw-4WU"/>
                 <constraint firstAttribute="trailing" secondItem="kJB-ro-LTh" secondAttribute="trailing" id="ery-ov-ur4"/>
                 <constraint firstItem="kJB-ro-LTh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m4g-FT-Trn"/>

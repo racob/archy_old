@@ -11,9 +11,7 @@ import UIKit
 class VideosCell: UICollectionViewCell {
 
     @IBOutlet weak var videoImage: UIImageView!
-    @IBAction func playButton(_ sender: Any) {
-        
-    }
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

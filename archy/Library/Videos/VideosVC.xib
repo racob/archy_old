@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QCo-p7-t8n">
-                    <rect key="frame" x="20" y="68" width="374" height="794"/>
+                    <rect key="frame" x="10" y="54" width="394" height="808"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xr0-4C-IhI">
-                        <size key="itemSize" width="50" height="50"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="xr0-4C-IhI">
+                        <size key="itemSize" width="131" height="221"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -41,9 +41,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="QCo-p7-t8n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L0I-Yv-ZU7"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QCo-p7-t8n" secondAttribute="trailing" constant="20" id="Mw1-L3-2w0"/>
-                <constraint firstItem="QCo-p7-t8n" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="nFG-v2-PdT"/>
+                <constraint firstItem="QCo-p7-t8n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="L0I-Yv-ZU7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QCo-p7-t8n" secondAttribute="trailing" constant="10" id="Mw1-L3-2w0"/>
+                <constraint firstItem="QCo-p7-t8n" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="nFG-v2-PdT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QCo-p7-t8n" secondAttribute="bottom" id="nva-07-eLS"/>
                 <constraint firstItem="fUB-jA-T4o" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rHY-zJ-VLx"/>
                 <constraint firstItem="fUB-jA-T4o" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="uwC-cb-YzS"/>

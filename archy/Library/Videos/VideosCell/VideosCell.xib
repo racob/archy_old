@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="VideosCell" customModule="archy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="131" height="221"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="131" height="221"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kJB-ro-LTh">
+                        <rect key="frame" x="0.0" y="0.0" width="131" height="221"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idD-dw-ciF">
+                        <rect key="frame" x="54.5" y="99.5" width="22" height="22"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="Vey-TK-dq4"/>
+                            <constraint firstAttribute="height" constant="22" id="cBh-rs-STU"/>
+                        </constraints>
+                        <connections>
+                            <action selector="playButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gp8-e0-BfR"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="idD-dw-ciF" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ESj-Eq-665"/>
+                <constraint firstItem="idD-dw-ciF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="MSt-6F-NAG"/>
+                <constraint firstAttribute="bottom" secondItem="kJB-ro-LTh" secondAttribute="bottom" id="UfJ-Nw-4WU"/>
+                <constraint firstAttribute="trailing" secondItem="kJB-ro-LTh" secondAttribute="trailing" id="ery-ov-ur4"/>
+                <constraint firstItem="kJB-ro-LTh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m4g-FT-Trn"/>
+                <constraint firstItem="kJB-ro-LTh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mRS-US-cb3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="131" height="221"/>
+            <connections>
+                <outlet property="videoImage" destination="kJB-ro-LTh" id="pkW-Ej-eZf"/>
+            </connections>
+            <point key="canvasLocation" x="196.37681159420291" y="209.93303571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>

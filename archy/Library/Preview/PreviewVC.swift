@@ -7,7 +7,7 @@ class PreviewVC: UIViewController {
 
     var playerController = AVPlayerViewController()
     var player: AVPlayer?
-    var totalScore = ""
+    var totalScore = 0
     var totalArrow = 40
     
     @IBAction func playVideoButton(_ sender: Any) {
@@ -31,6 +31,8 @@ class PreviewVC: UIViewController {
         urlVideo()
         alertInputScore()
         
+        
+        totalArrowLabel.text = "of " + "\(totalArrow)" + " arrows"
         
         
     }
@@ -71,7 +73,9 @@ class PreviewVC: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             print("Text field: \(textField!.text)")
-            self.totalScore = textField?.text ?? ""
+            self.totalScore = Int(textField?.text ?? "")!
+            self.totalScoreLabel.text = "\(self.totalScore)"
+            self.averageScoreCount()
         }))
 
         
@@ -84,11 +88,14 @@ class PreviewVC: UIViewController {
         alertWindow.rootViewController?.present(alert, animated:true, completion: nil)
     }
     
-    
-    
+    func averageScoreCount()
+    {
+        var  averageScore: float_t = float_t(totalScore / totalArrow)
+        averageScoreLabel.text  = "\(averageScore)"
+    }
     
 //    func generateThumbnailVideo() {
-//        let videoString:String? = Bundle.main.path(forResource:"videoarcher", ofType: ".mp4")
+//        let videoString:String? = Bundle.main.path(forResource:"videoarcher2", ofType: ".MOV")
 //
 //        if let url = videoString {
 //            let fileUrl = URL(fileURLWithPath: url)

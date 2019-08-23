@@ -142,6 +142,26 @@ class PoseMatchingViewController: UIViewController {
         }
         capturedPointsArray[currentIndex] = capturedPoints
         
+//        ======================================================
+        var cgString: [String] = []
+        for cp in capturedPoints {
+            if cp?.point == nil {
+                cgString.append("nil")
+            }else{
+                cgString.append(NSCoder.string(for: cp!.point))
+            }
+        }
+        //print(cgString)
+        print("\n===\n")
+        
+        let defaults = UserDefaults.standard
+        defaults.set(cgString, forKey: "cgString\(currentIndex)")
+        
+        let cgPoints = defaults.object(forKey: "cgString\(currentIndex)") as? [String] ?? [String]()
+        
+        print(cgPoints)
+//        =======================================================
+        
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: capturedPoints)
         UserDefaults.standard.set(encodedData, forKey: "points-\(currentIndex)")
         print(UserDefaults.standard.synchronize())

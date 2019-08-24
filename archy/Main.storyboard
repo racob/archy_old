@@ -142,28 +142,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="Vry-dO-AiY">
-                        <barButtonItem key="rightBarButtonItem" title="Capture🕺" style="done" id="LgM-9x-8e7">
-                            <connections>
-                                <action selector="tapCapture:" destination="BD9-1k-qdr" id="a7w-4u-cBY"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Capture🕺" style="done" id="LgM-9x-8e7"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="jointView" destination="B1i-aw-rU0" id="rkW-YP-1P2"/>
-                        <outlet property="videoPreview" destination="ZXB-KZ-K0f" id="UWJ-C0-wGX"/>
-                        <outletCollection property="capturedJointBGViews" destination="nhA-Z3-8F3" collectionClass="NSMutableArray" id="LNS-rg-hTJ"/>
-                        <outletCollection property="capturedJointViews" destination="B0b-kV-Nw7" collectionClass="NSMutableArray" id="Qw6-WF-d4y"/>
-                        <outletCollection property="capturedJointConfidenceLabels" destination="Gm5-07-cCU" collectionClass="NSMutableArray" id="Sep-ZH-AT1"/>
-                        <outletCollection property="capturedJointConfidenceLabels" destination="29C-uK-GGx" collectionClass="NSMutableArray" id="nSX-cX-xs9"/>
-                        <outletCollection property="capturedJointConfidenceLabels" destination="Kd1-xq-t9Y" collectionClass="NSMutableArray" id="aOE-p9-mFa"/>
-                        <outletCollection property="capturedJointBGViews" destination="RWv-uq-9oZ" collectionClass="NSMutableArray" id="I8h-rV-5G1"/>
-                        <outletCollection property="capturedJointViews" destination="lFq-3u-WKh" collectionClass="NSMutableArray" id="XfO-RK-5pf"/>
-                        <outletCollection property="capturedJointViews" destination="nmX-0R-ylu" collectionClass="NSMutableArray" id="98Q-74-Eic"/>
-                        <outletCollection property="capturedJointConfidenceLabels" destination="TfQ-Uc-l2d" collectionClass="NSMutableArray" id="axX-4A-QVW"/>
-                        <outletCollection property="capturedJointBGViews" destination="Jh3-lS-lss" collectionClass="NSMutableArray" id="Gum-aV-4SW"/>
-                        <outletCollection property="capturedJointBGViews" destination="mxO-gy-dTc" collectionClass="NSMutableArray" id="Oeh-uy-F9K"/>
-                        <outletCollection property="capturedJointViews" destination="zqC-WD-m3H" collectionClass="NSMutableArray" id="w3o-P4-iUJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tn-VE-taK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,10 +190,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="GOo-is-LdL"/>
-                    <connections>
-                        <outlet property="startPracticeButton" destination="RMU-Ne-UXa" id="Xwt-YK-IdT"/>
-                        <outlet property="textview" destination="b4O-SL-fCr" id="9B9-jK-h1L"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j23-qU-2ZY" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,9 +229,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="1fG-1G-nfi"/>
-                    <connections>
-                        <outlet property="okButton" destination="3K2-Bz-Ofd" id="231-qb-lAl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uR5-VV-77n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,10 +274,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="Add-rI-z3P"/>
-                    <connections>
-                        <outlet property="distancePicker" destination="oLd-Wb-8d7" id="biX-og-flU"/>
-                        <outlet property="nextButton" destination="Irc-4F-zAK" id="5M9-8K-Arq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZB-RZ-Ee6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,7 +300,7 @@
     </scenes>
     <resources>
         <image name="Archery" width="252" height="343"/>
-        <image name="setDistance" width="291" height="125"/>
-        <image name="useStand" width="225" height="225"/>
+        <image name="setDistance" width="291" height="123"/>
+        <image name="useStand" width="1186" height="1340"/>
     </resources>
 </document>

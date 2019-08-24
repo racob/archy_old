@@ -48,4 +48,9 @@ class HomeViewController: UIViewController {
         startPracticeButton.layer.cornerRadius = 4
     }
     
+    @IBAction func btnStartPracticeTapped(_ sender: UIButton) {
+        self.navigationController?.pushViewController(SetDistanceViewController(), animated: true)
+    }
+    
+    
 }

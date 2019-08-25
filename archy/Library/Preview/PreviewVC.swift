@@ -24,6 +24,8 @@ class PreviewVC: UIViewController {
     
     @IBOutlet var timeOfVideoLabel: UILabel!
     
+    @IBOutlet weak var posturalLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -90,7 +92,7 @@ class PreviewVC: UIViewController {
     
     func averageScoreCount()
     {
-        var  averageScore: float_t = float_t(totalScore / totalArrow)
+        var  averageScore: Double = Double(totalScore) / Double(totalArrow)
         averageScoreLabel.text  = "\(averageScore)"
     }
     

@@ -22,6 +22,11 @@ class VideosVC: UIViewController {
         videoCV.register(UINib(nibName: "VideosCell", bundle: nil), forCellWithReuseIdentifier: "videosCell")
         videoCV.delegate = self
         videoCV.dataSource = self
+        if covers == nil {
+            noVideosLabel.isHidden = false
+        } else {
+            noVideosLabel.isHidden  = true
+        }
 
         // Do any additional setup after loading the view.
     }

@@ -152,14 +152,14 @@ class PoseMatchingViewController: UIViewController {
             }
         }
         //print(cgString)
-        print("\n===\n")
+        print("\n=============================== Pose \(capturedIndex + 1)\n")
         
         let defaults = UserDefaults.standard
         defaults.set(cgString, forKey: "cgString\(currentIndex)")
         
         let cgPoints = defaults.object(forKey: "cgString\(currentIndex)") as? [String] ?? [String]()
         
-        print(cgPoints)
+        print(cgPoints.joined(separator: "\n"))
 //        =======================================================
         
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: capturedPoints)

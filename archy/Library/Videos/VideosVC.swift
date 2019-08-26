@@ -26,6 +26,11 @@ class VideosVC: UIViewController {
         videoCV.register(UINib(nibName: "VideosCell", bundle: nil), forCellWithReuseIdentifier: "videosCell")
         videoCV.delegate = self
         videoCV.dataSource = self
+        if covers == nil {
+            noVideosLabel.isHidden = false
+        } else {
+            noVideosLabel.isHidden  = true
+        }
 
         if covers == nil {
             self.noVideosLabel.isHidden = false
@@ -68,6 +73,11 @@ extension VideosVC : UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let cellHeight = cellWidth*1.5
         
         return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(PreviewVC(), animated: true)
+        
     }
     
     

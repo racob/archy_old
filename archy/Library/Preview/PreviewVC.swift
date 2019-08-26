@@ -26,6 +26,8 @@ class PreviewVC: UIViewController {
     
     @IBOutlet var timeOfVideoLabel: UILabel!
     
+    @IBOutlet weak var posturalLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

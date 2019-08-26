@@ -15,27 +15,24 @@ class VideosVC: UIViewController {
     
     var library: [Library]?
     var covers : [UIColor]?
+    var selectedCategory = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = self.selectedCategory
+        
         covers = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.black, UIColor.blue, UIColor.gray]
         videoCV.register(UINib(nibName: "VideosCell", bundle: nil), forCellWithReuseIdentifier: "videosCell")
         videoCV.delegate = self
         videoCV.dataSource = self
 
-        // Do any additional setup after loading the view.
+        if covers == nil {
+            self.noVideosLabel.isHidden = false
+        }else{
+            self.noVideosLabel.isHidden = true
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -60,6 +57,10 @@ extension VideosVC : UICollectionViewDelegate, UICollectionViewDataSource, UICol
         cell.videoImage.backgroundColor = covers[indexPath.row]
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(PreviewVC(), animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

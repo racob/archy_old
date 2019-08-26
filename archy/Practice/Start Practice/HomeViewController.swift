@@ -52,5 +52,8 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(SetDistanceViewController(), animated: true)
     }
     
+    @IBAction func btnLibraryTapped(_ sender: UIButton) {
+        self.navigationController?.pushViewController(AlbumsVC(), animated: true)
+    }
     
 }

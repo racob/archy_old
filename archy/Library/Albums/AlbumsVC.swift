@@ -23,15 +23,17 @@ class AlbumsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        distances = ["5 m", "10 m", "15 m", "20 m"]
+        
+        self.navigationItem.title = "Library"        
+        
+        distances = ["5 meters", "10 meters", "15 meters", "20 meters"]
         totalVideos = [3, 5, 8, 2]
         covers = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.blue]
         albumTable.register(UINib(nibName: "AlbumCell", bundle: nil), forCellReuseIdentifier: "tableCell")
         albumTable.delegate = self
         albumTable.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
+    
     func loadVideoLibrary() {
         guard let managedContext = delegate?.persistentContainer.viewContext else { return }
         library = [Library]()
@@ -43,16 +45,6 @@ class AlbumsVC: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension AlbumsVC : UITableViewDelegate, UITableViewDataSource {
@@ -74,6 +66,9 @@ extension AlbumsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(VideosVC(), animated: true)
+        let selectedCategory = self.distances?[indexPath.row] ?? ""
+        let vc = VideosVC()
+        vc.selectedCategory = selectedCategory
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

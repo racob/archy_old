@@ -31,6 +31,9 @@
                     <state key="normal" title="Library">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="btnLibraryTapped:" destination="-1" eventType="touchUpInside" id="4mf-qc-gHi"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm7-MS-HXu">
                     <rect key="frame" x="24" y="742" width="366" height="40"/>

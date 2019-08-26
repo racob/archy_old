@@ -9,11 +9,13 @@ class PreviewVC: UIViewController {
     var player: AVPlayer?
     var totalScore = 0
     var totalArrow = 40
+    var isFromPractice = false
     
     @IBAction func playVideoButton(_ sender: Any) {
         playVideo()
     }
     
+    @IBOutlet weak var imgThumbnail: UIImageView!
     @IBOutlet var totalScoreLabel: UILabel!
     
     @IBOutlet var averageScoreLabel: UILabel!
@@ -26,15 +28,15 @@ class PreviewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.navigationItem.title = "Preview"
         
         urlVideo()
-        alertInputScore()
-        
+        if self.isFromPractice {
+            alertInputScore()
+        }
         
         totalArrowLabel.text = "of " + "\(totalArrow)" + " arrows"
-        
-        
     }
 
 
@@ -42,27 +44,23 @@ class PreviewVC: UIViewController {
         let videoString:String? = Bundle.main.path(forResource:"videoarcher2", ofType: ".MOV")
         
         if let url = videoString {
-            
             let videoURL = NSURL(fileURLWithPath: url)
             
             self.player = AVPlayer(url: videoURL as URL)
             self.playerController.player = self.player
+            
+            self.imgThumbnail.setupPreview(withPath: videoString!)
         }
     }
     
     
-    func playVideo()
-    {
+    func playVideo() {
         self.present(self.playerController, animated: true, completion: {
-            
             self.playerController.player?.play()
-            
         })
     }
 
-    func alertInputScore()
-    {
-      
+    func alertInputScore() {
         let alert = UIAlertController(title: "Input Your Total Score", message: "Your score will be seen in Preview", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
@@ -88,10 +86,17 @@ class PreviewVC: UIViewController {
         alertWindow.rootViewController?.present(alert, animated:true, completion: nil)
     }
     
-    func averageScoreCount()
-    {
-        var  averageScore: float_t = float_t(totalScore / totalArrow)
-        averageScoreLabel.text  = "\(averageScore)"
+    func averageScoreCount() {
+        let averageScore: Double = Double(totalScore) / Double(totalArrow)
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.roundingMode = .up
+        
+        let averageScoreRounded = String(describing: formatter.string(from: NSNumber(value: averageScore)))
+        
+        averageScoreLabel.text  = averageScoreRounded
     }
     
 //    func generateThumbnailVideo() {

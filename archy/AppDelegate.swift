@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.setNavigation()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let startVC = HomeViewController(nibName: "HomeViewController", bundle: nil)
@@ -24,9 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
-
-        
+//        
         return true
+    }
+    
+    func setNavigation() {
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = .white
+        navigationBarAppearace.barTintColor = #colorLiteral(red: 0.04705882353, green: 0.0862745098, blue: 0.2078431373, alpha: 1)
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationBarAppearace.isTranslucent = false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

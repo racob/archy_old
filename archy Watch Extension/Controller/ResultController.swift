@@ -1,5 +1,5 @@
 //
-//  FinishController.swift
+//  ResultController.swift
 //  archy Watch Extension
 //
 //  Created by Hai on 24/08/19.
@@ -9,7 +9,7 @@
 import Foundation
 import WatchKit
 
-class FinishController: WKInterfaceController {
+class ResultController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         

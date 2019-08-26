@@ -12,10 +12,13 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var scnKit: WKInterfaceSCNScene!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        self.scnKit.scene = nil
+        self.scnKit.setAlpha(0)
         
     }
     
@@ -28,10 +31,12 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+//        pushController(withName: "StateController", context: nil)
+        WKInterfaceController.reloadRootControllers(withNames: ["StateController"], contexts: nil)
     }
     
     @IBAction func distancePush() {
-        pushController(withName: "DistanceController", context: nil)
+//        pushController(withName: "DistanceController", context: nil)
     }
     
 }

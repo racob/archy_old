@@ -14,154 +14,106 @@
             <objects>
                 <controller identifier="HomeController" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="archy_Watch" customModuleProvider="target">
                     <items>
-                        <sceneKitScene height="31" alignment="left" id="rUL-Hw-ecb"/>
-                        <label alignment="left" text="Hai, Archer! Are you ready to shoot?" numberOfLines="0" id="3u9-pd-htT">
-                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="pvS-cm-rOZ"/>
+                        <imageView alignment="center" verticalAlignment="center" image="Archery2" id="5Yk-F2-hLG"/>
+                        <label alignment="center" verticalAlignment="center" text="Set up archy on your iPhone " textAlignment="center" numberOfLines="0" id="bMR-O8-PGK">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                         </label>
-                        <button width="147" alignment="center" verticalAlignment="bottom" title="Let's Go" id="G4d-5F-2Ne">
-                            <connections>
-                                <action selector="distancePush" destination="AgC-eL-Hgc" id="gle-kA-dYR"/>
-                            </connections>
-                        </button>
-                        <sceneKitScene height="17" alignment="left" verticalAlignment="bottom" id="pvS-cm-rOZ"/>
                     </items>
                     <color key="backgroundColor" red="0.039808567613363266" green="0.074240453541278839" blue="0.18040251731872559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <outlet property="scnKit" destination="pvS-cm-rOZ" id="DBK-fn-zuL"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-1384" y="247"/>
         </scene>
-        <!--AdjustmentController-->
-        <scene sceneID="foi-AP-r4y">
+        <!--Distance(...m)-->
+        <scene sceneID="2sT-mF-34k">
             <objects>
-                <controller identifier="AdjustmentController" fullScreen="YES" id="mgX-A3-FSE" customClass="AdjustmentController" customModule="archy_Watch_Extension">
+                <controller identifier="StateController" title="Distance(...m)" fullScreen="YES" id="mwM-lZ-h0R" customClass="StateController" customModule="archy_Watch_Extension">
                     <items>
-                        <sceneKitScene height="31" alignment="left" id="Cu0-cV-wNZ"/>
-                        <label alignment="left" text="For best result, place your phone on camera stand so you can see your body clearly." numberOfLines="0" id="z4D-Bz-tib"/>
-                        <button width="147" alignment="center" verticalAlignment="bottom" title="OK" id="K6n-Hj-cn9">
-                            <connections>
-                                <action selector="okButton" destination="mgX-A3-FSE" id="Lcp-N9-zgg"/>
-                            </connections>
-                        </button>
-                        <sceneKitScene height="17" alignment="left" verticalAlignment="bottom" id="Kxg-P6-4b3"/>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="48p-Cp-lt2"/>
+                        <imageView width="0.5" height="0.40000000000000002" heightAdjustment="4" alignment="center" verticalAlignment="center" image="Group 2" id="nM6-fY-OL3"/>
+                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Distance(m)" id="TbV-Dt-5RO"/>
+                        <label alignment="center" verticalAlignment="center" text="Make sure your body fit inside the guidelines" textAlignment="center" numberOfLines="0" id="DRJ-fC-D0t">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <outlet property="imageState" destination="nM6-fY-OL3" id="eS5-ni-ruv"/>
+                        <outlet property="messageState" destination="DRJ-fC-D0t" id="hNS-ae-TGf"/>
+                        <outlet property="scnKit" destination="48p-Cp-lt2" id="QiE-V1-ETa"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-904" y="246"/>
+            <point key="canvasLocation" x="-1148" y="246"/>
         </scene>
         <!--PracticeController-->
-        <scene sceneID="J9K-jY-ttC">
+        <scene sceneID="6Yo-1u-ZuW">
             <objects>
-                <controller identifier="PracticeController" fullScreen="YES" id="hbd-Hz-QBl" customClass="PracticeController" customModule="archy_Watch_Extension">
+                <controller identifier="PracticeController" fullScreen="YES" id="IeH-as-Zvf" customClass="PracticeController" customModule="archy_Watch_Extension">
                     <items>
-                        <label alignment="left" verticalAlignment="center" text="  Practice" id="ifr-GE-sEi"/>
-                        <sceneKitScene height="33" alignment="left" verticalAlignment="center" id="49O-Ht-eYk"/>
-                        <group width="65" height="65" alignment="center" verticalAlignment="center" animationDuration="2" radius="19" id="2Zp-1g-PVS">
+                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Practice" id="xwU-Jp-VAP"/>
+                        <button alignment="center" verticalAlignment="center" backgroundImage="Finish" id="Bnt-Ws-tZf">
+                            <connections>
+                                <action selector="finishButtohn" destination="IeH-as-Zvf" id="FKI-F2-xOp"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="siS-dw-29C">
                             <items>
-                                <button width="1" height="1" alignment="left" verticalAlignment="center" backgroundImage="Finish" id="hbm-TG-kZb">
-                                    <connections>
-                                        <action selector="stopButton" destination="hbd-Hz-QBl" id="CCL-Nv-1fG"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
-                        <sceneKitScene height="18" alignment="left" verticalAlignment="center" id="d4Z-UC-tdr"/>
-                        <group width="1" alignment="left" verticalAlignment="center" id="trb-mE-soG">
-                            <items>
-                                <imageView width="18" height="18" alignment="left" image="ic_timer" id="eum-Tq-9Ml"/>
-                                <timer alignment="left" verticalAlignment="bottom" previewedSeconds="600" id="qmC-gn-WTq">
+                                <imageView alignment="left" verticalAlignment="bottom" image="ic_timer" id="LxL-R4-Njs"/>
+                                <timer alignment="left" previewedSeconds="600" id="JLJ-v2-17a">
                                     <calendarUnit key="units" minute="YES" second="YES"/>
                                 </timer>
-                                <label alignment="right" text="1" id="i8U-YF-Owl"/>
-                                <imageView width="18" height="18" alignment="right" image="Group" id="gYs-pk-8Oz"/>
+                                <label alignment="right" text="0" id="4x9-zb-o6c"/>
+                                <imageView height="1" alignment="right" image="Group" id="ILT-Re-c8R"/>
                             </items>
                         </group>
-                        <sceneKitScene height="17" alignment="left" verticalAlignment="bottom" id="kdt-Nw-Tkt"/>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="3mC-xR-vS6"/>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
-                        <outlet property="arrowLabel" destination="i8U-YF-Owl" id="2CW-Pc-kOP"/>
-                        <outlet property="resultTime" destination="qmC-gn-WTq" id="Nvf-E0-P1x"/>
+                        <outlet property="arrowPractice" destination="4x9-zb-o6c" id="duh-OR-flR"/>
+                        <outlet property="timerPractice" destination="JLJ-v2-17a" id="3V5-OU-g7D"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-654" y="237"/>
-        </scene>
-        <!--StopController-->
-        <scene sceneID="zyt-qt-0c9">
-            <objects>
-                <controller identifier="StopController" fullScreen="YES" id="as0-ln-wUB" customClass="StopController" customModule="archy_Watch_Extension">
-                    <items>
-                        <button width="1" height="33" alignment="left" verticalAlignment="bottom" title="Yes, finish" id="Frk-Ey-72W">
-                            <connections>
-                                <action selector="finishButton" destination="as0-ln-wUB" id="a5U-fu-vh5"/>
-                            </connections>
-                        </button>
-                        <button width="1" height="33" alignment="left" verticalAlignment="bottom" title="Close" id="Ta5-t9-Xlv">
-                            <connections>
-                                <action selector="closeButton" destination="as0-ln-wUB" id="DrD-oH-Iqz"/>
-                            </connections>
-                        </button>
-                        <sceneKitScene height="17" alignment="left" verticalAlignment="bottom" id="xKt-Zd-IlJ"/>
-                        <label alignment="left" verticalAlignment="center" numberOfLines="0" id="c03-3d-9FT">
-                            <string key="text">Want
-to finish practice?</string>
-                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                        </label>
-                        <label alignment="left" verticalAlignment="center" text="Your practice will be saved in library." numberOfLines="0" id="fUi-sE-ctv">
-                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                        </label>
-                    </items>
-                    <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="-420.59259259259261" y="245.50761421319794"/>
+            <point key="canvasLocation" x="-884" y="246"/>
         </scene>
         <!--FinishController-->
-        <scene sceneID="6QX-Cl-Cyw">
+        <scene sceneID="Adv-iP-sbN">
             <objects>
-                <controller identifier="FinishController" fullScreen="YES" id="dwR-Fd-WEm" customClass="FinishController" customModule="archy_Watch_Extension">
+                <controller identifier="FinishController" fullScreen="YES" id="TP4-Kc-M4z" customClass="FinishController" customModule="archy_Watch_Extension">
                     <items>
-                        <label alignment="left" verticalAlignment="center" text="  Practice Done" id="LfX-Oq-k7N"/>
-                        <sceneKitScene height="11" alignment="left" verticalAlignment="center" id="Bo9-Rz-MT7"/>
-                        <label height="89" alignment="left" verticalAlignment="bottom" text="Input your total score, then see your preview practice on your iPhone." numberOfLines="0" id="A9U-NF-eAd"/>
-                        <button width="1" alignment="left" verticalAlignment="bottom" title="Practice" id="iSO-lm-70N">
-                            <connections>
-                                <action selector="practiceButton" destination="dwR-Fd-WEm" id="1k6-Eh-D4o"/>
-                            </connections>
-                        </button>
-                        <sceneKitScene height="17" alignment="left" verticalAlignment="bottom" id="gqp-2b-Hes"/>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="GUY-8n-gc5"/>
+                        <label width="0.90000000000000002" alignment="center" verticalAlignment="center" text="Want to finish practice?" numberOfLines="0" id="w0Y-ed-L50">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <label width="0.90000000000000002" alignment="center" verticalAlignment="center" text="Your practice will be saved in library." numberOfLines="0" id="JQv-WI-caB">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Yes, finish" id="Ie0-sr-IQu"/>
+                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Close" id="zKb-P4-xJu"/>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-168.74074074074073" y="239.4670050761421"/>
+            <point key="canvasLocation" x="-602" y="246"/>
         </scene>
-        <!--DistanceController-->
-        <scene sceneID="htX-8g-Wqs">
+        <!--ResultController-->
+        <scene sceneID="ACR-lj-W3H">
             <objects>
-                <controller identifier="DistanceController" fullScreen="YES" id="jwH-lx-hhD" customClass="DistanceController" customModule="archy_Watch_Extension">
+                <controller identifier="ResultController" fullScreen="YES" id="Zp8-kF-9Lg" customClass="ResultController" customModule="archy_Watch_Extension">
                     <items>
-                        <label alignment="left" verticalAlignment="center" text="   Distance (m)" id="bsv-E2-HPv"/>
-                        <picker width="0.5" height="100" alignment="center" verticalAlignment="center" focusStyle="stack" id="7l4-Py-wah">
-                            <connections>
-                                <action selector="pickerSelected:" destination="jwH-lx-hhD" id="dDz-Pg-keB"/>
-                            </connections>
-                        </picker>
-                        <button width="147" alignment="center" verticalAlignment="bottom" title="Next" id="xiy-lG-0qt">
-                            <connections>
-                                <action selector="okButton" destination="jwH-lx-hhD" id="NrH-fc-C72"/>
-                            </connections>
-                        </button>
-                        <sceneKitScene height="17" alignment="left" verticalAlignment="bottom" id="zQA-Zw-Yql"/>
+                        <label alignment="center" verticalAlignment="center" text="Input your total score, then see your preview practice on your iPhone." textAlignment="left" numberOfLines="0" id="iB2-q5-ZEo"/>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="7ie-6b-nsn"/>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <connections>
-                        <outlet property="distanceTargetPicker" destination="7l4-Py-wah" id="Fls-fm-QfP"/>
-                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="-1146" y="247"/>
+            <point key="canvasLocation" x="-397" y="246"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

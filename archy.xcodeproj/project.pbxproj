@@ -48,6 +48,7 @@
 		F782FA63230D033C00E4C1B4 /* SetDistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA5E230D033C00E4C1B4 /* SetDistanceViewController.swift */; };
 		F782FA64230D033C00E4C1B4 /* StillImageHeatmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA60230D033C00E4C1B4 /* StillImageHeatmapViewController.swift */; };
 		F782FA6D230D33DA00E4C1B4 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F782FA6C230D33DA00E4C1B4 /* HealthKit.framework */; };
+		F7DE4BAF23122EFD0077F634 /* savedPose.txt in Resources */ = {isa = PBXBuildFile; fileRef = F7DE4BAE23122EFD0077F634 /* savedPose.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		F782FA60230D033C00E4C1B4 /* StillImageHeatmapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StillImageHeatmapViewController.swift; sourceTree = "<group>"; };
 		F782FA6A230D33D000E4C1B4 /* archy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = archy.entitlements; sourceTree = "<group>"; };
 		F782FA6C230D33DA00E4C1B4 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		F7DE4BAE23122EFD0077F634 /* savedPose.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = savedPose.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				4E60F936230E69B200198B2F /* Extension */,
 				F72DE6F4230E3C4300EA0D2E /* Library */,
 				F782FA6A230D33D000E4C1B4 /* archy.entitlements */,
+				F7DE4BAE23122EFD0077F634 /* savedPose.txt */,
 				F782FA2F230D025A00E4C1B4 /* Info.plist */,
 				F782FA3A230D030600E4C1B4 /* LaunchScreen.storyboard */,
 				F782FA3B230D030600E4C1B4 /* Main.storyboard */,
@@ -277,6 +280,7 @@
 				F782FA35230D02B100E4C1B4 /* Assets.xcassets */,
 				F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */,
 				2DED98DC230D1EE200FAF418 /* Practice */,
+				F72DE6F4230E3C4300EA0D2E /* Library */,
 			);
 			path = archy;
 			sourceTree = "<group>";
@@ -407,6 +411,7 @@
 				F72DE704230E3CE200EA0D2E /* PreviewVC.xib in Resources */,
 				4E60F935230E4FA900198B2F /* VideosCell.xib in Resources */,
 				F72DE700230E3CC400EA0D2E /* VideosVC.xib in Resources */,
+				F7DE4BAF23122EFD0077F634 /* savedPose.txt in Resources */,
 				F72DE6FC230E3C9500EA0D2E /* FullscreenVC.xib in Resources */,
 				F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */,
 				F782FA3C230D030600E4C1B4 /* LaunchScreen.storyboard in Resources */,

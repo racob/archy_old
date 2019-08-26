@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch40" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--HomeController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="HomeController" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="archy_Watch" customModuleProvider="target">
+                    <items>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="pvS-cm-rOZ"/>
+                        <imageView alignment="center" verticalAlignment="center" image="Archery2" id="5Yk-F2-hLG"/>
+                        <label alignment="center" verticalAlignment="center" text="Set up archy on your iPhone " textAlignment="center" numberOfLines="0" id="bMR-O8-PGK">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" red="0.039808567613363266" green="0.074240453541278839" blue="0.18040251731872559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <outlet property="scnKit" destination="pvS-cm-rOZ" id="DBK-fn-zuL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-1384" y="247"/>
+        </scene>
+        <!--Distance(...m)-->
+        <scene sceneID="2sT-mF-34k">
+            <objects>
+                <controller identifier="StateController" title="Distance(...m)" fullScreen="YES" id="mwM-lZ-h0R" customClass="StateController" customModule="archy_Watch_Extension">
+                    <items>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="48p-Cp-lt2"/>
+                        <imageView width="0.5" height="0.40000000000000002" heightAdjustment="4" alignment="center" verticalAlignment="center" image="Group 2" id="nM6-fY-OL3"/>
+                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Distance(m)" id="TbV-Dt-5RO"/>
+                        <label alignment="center" verticalAlignment="center" text="Make sure your body fit inside the guidelines" textAlignment="center" numberOfLines="0" id="DRJ-fC-D0t">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <outlet property="imageState" destination="nM6-fY-OL3" id="eS5-ni-ruv"/>
+                        <outlet property="messageState" destination="DRJ-fC-D0t" id="hNS-ae-TGf"/>
+                        <outlet property="scnKit" destination="48p-Cp-lt2" id="QiE-V1-ETa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-1148" y="246"/>
+        </scene>
+        <!--PracticeController-->
+        <scene sceneID="6Yo-1u-ZuW">
+            <objects>
+                <controller identifier="PracticeController" fullScreen="YES" id="IeH-as-Zvf" customClass="PracticeController" customModule="archy_Watch_Extension">
+                    <items>
+                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Practice" id="xwU-Jp-VAP"/>
+                        <button alignment="center" verticalAlignment="center" backgroundImage="Finish" id="Bnt-Ws-tZf">
+                            <connections>
+                                <action selector="finishButtohn" destination="IeH-as-Zvf" id="FKI-F2-xOp"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="siS-dw-29C">
+                            <items>
+                                <imageView alignment="left" verticalAlignment="bottom" image="ic_timer" id="LxL-R4-Njs"/>
+                                <timer alignment="left" previewedSeconds="600" id="JLJ-v2-17a">
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                                <label alignment="right" text="0" id="4x9-zb-o6c"/>
+                                <imageView height="1" alignment="right" image="Group" id="ILT-Re-c8R"/>
+                            </items>
+                        </group>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="3mC-xR-vS6"/>
+                    </items>
+                    <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <outlet property="arrowPractice" destination="4x9-zb-o6c" id="duh-OR-flR"/>
+                        <outlet property="timerPractice" destination="JLJ-v2-17a" id="3V5-OU-g7D"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-884" y="246"/>
+        </scene>
+        <!--FinishController-->
+        <scene sceneID="Adv-iP-sbN">
+            <objects>
+                <controller identifier="FinishController" fullScreen="YES" id="TP4-Kc-M4z" customClass="FinishController" customModule="archy_Watch_Extension">
+                    <items>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="GUY-8n-gc5"/>
+                        <label width="0.90000000000000002" alignment="center" verticalAlignment="center" text="Want to finish practice?" numberOfLines="0" id="w0Y-ed-L50">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <label width="0.90000000000000002" alignment="center" verticalAlignment="center" text="Your practice will be saved in library." numberOfLines="0" id="JQv-WI-caB">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Yes, finish" id="Ie0-sr-IQu"/>
+                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Close" id="zKb-P4-xJu"/>
+                    </items>
+                    <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-602" y="246"/>
+        </scene>
+        <!--ResultController-->
+        <scene sceneID="ACR-lj-W3H">
+            <objects>
+                <controller identifier="ResultController" fullScreen="YES" id="Zp8-kF-9Lg" customClass="ResultController" customModule="archy_Watch_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Input your total score, then see your preview practice on your iPhone." textAlignment="left" numberOfLines="0" id="iB2-q5-ZEo"/>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="7ie-6b-nsn"/>
+                    </items>
+                    <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-397" y="246"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="archy_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="archy_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+</document>

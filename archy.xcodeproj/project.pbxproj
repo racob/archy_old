@@ -25,6 +25,19 @@
 		F72DE704230E3CE200EA0D2E /* PreviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE702230E3CE200EA0D2E /* PreviewVC.xib */; };
 		F72DE708230E3D0A00EA0D2E /* AlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE706230E3D0A00EA0D2E /* AlbumsVC.swift */; };
 		F72DE709230E3D0A00EA0D2E /* AlbumsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE707230E3D0A00EA0D2E /* AlbumsVC.xib */; };
+		0E3B4BBD230D34F3001A8CA3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B4BBB230D34F3001A8CA3 /* Interface.storyboard */; };
+		0E3B4BBF230D34F3001A8CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B4BBE230D34F3001A8CA3 /* Assets.xcassets */; };
+		0E3B4BC6230D34F4001A8CA3 /* archy Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0E3B4BC5230D34F3001A8CA3 /* archy Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0E3B4BCB230D34F4001A8CA3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B4BCA230D34F4001A8CA3 /* InterfaceController.swift */; };
+		0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B4BCC230D34F4001A8CA3 /* ExtensionDelegate.swift */; };
+		0E3B4BCF230D34F4001A8CA3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B4BCE230D34F4001A8CA3 /* NotificationController.swift */; };
+		0E3B4BD1230D34F4001A8CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B4BD0230D34F4001A8CA3 /* Assets.xcassets */; };
+		0E3B4BD6230D34F4001A8CA3 /* archy Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0E3B4BB9230D34F2001A8CA3 /* archy Watch.app */; };
+		0E47C1CB2310D15600BB2BC6 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CA2310D15600BB2BC6 /* StateController.swift */; };
+		0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CC2310D1C900BB2BC6 /* PracticeController.swift */; };
+		0E47C1CF2310D23200BB2BC6 /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CE2310D23200BB2BC6 /* FinishController.swift */; };
+		0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1D02310D28C00BB2BC6 /* ResultController.swift */; };
+		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
 		F782FA29230D025900E4C1B4 /* archeryTracking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */; };
 		F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F782FA35230D02B100E4C1B4 /* Assets.xcassets */; };
 		F782FA39230D02D200E4C1B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FA38230D02D200E4C1B4 /* AppDelegate.swift */; };
@@ -51,6 +64,48 @@
 		F7DE4BAF23122EFD0077F634 /* savedPose.txt in Resources */ = {isa = PBXBuildFile; fileRef = F7DE4BAE23122EFD0077F634 /* savedPose.txt */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E3B4BC7230D34F4001A8CA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F782FA15230D025900E4C1B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E3B4BC4230D34F3001A8CA3;
+			remoteInfo = "archy Watch Extension";
+		};
+		0E3B4BD4230D34F4001A8CA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F782FA15230D025900E4C1B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E3B4BB8230D34F2001A8CA3;
+			remoteInfo = "archy Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0E3B4BDC230D34F4001A8CA3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0E3B4BC6230D34F4001A8CA3 /* archy Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E3B4BDE230D34F4001A8CA3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0E3B4BD6230D34F4001A8CA3 /* archy Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2DB28528230FDEF10056ECA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		2DB2852A230FE0F60056ECA7 /* SetDistanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetDistanceViewController.xib; sourceTree = "<group>"; };
@@ -70,6 +125,24 @@
 		F72DE702230E3CE200EA0D2E /* PreviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewVC.xib; sourceTree = "<group>"; };
 		F72DE706230E3D0A00EA0D2E /* AlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsVC.swift; sourceTree = "<group>"; };
 		F72DE707230E3D0A00EA0D2E /* AlbumsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumsVC.xib; sourceTree = "<group>"; };
+		0E3B4BB9230D34F2001A8CA3 /* archy Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "archy Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E3B4BBC230D34F3001A8CA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		0E3B4BBE230D34F3001A8CA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E3B4BC0230D34F3001A8CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E3B4BC5230D34F3001A8CA3 /* archy Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "archy Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E3B4BCA230D34F4001A8CA3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		0E3B4BCC230D34F4001A8CA3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		0E3B4BCE230D34F4001A8CA3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		0E3B4BD0230D34F4001A8CA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E3B4BD2230D34F4001A8CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E3B4BD3230D34F4001A8CA3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "archy Watch Extension.entitlements"; sourceTree = "<group>"; };
+		0E3B4BE0230D3516001A8CA3 /* archy Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "archy Watch.entitlements"; sourceTree = "<group>"; };
+		0E47C1CA2310D15600BB2BC6 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		0E47C1CC2310D1C900BB2BC6 /* PracticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeController.swift; sourceTree = "<group>"; };
+		0E47C1CE2310D23200BB2BC6 /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
+		0E47C1D02310D28C00BB2BC6 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		0EAFB465230E30F9006B9232 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F782FA1D230D025900E4C1B4 /* archy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = archy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F782FA28230D025900E4C1B4 /* archeryTracking.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = archeryTracking.xcdatamodel; sourceTree = "<group>"; };
 		F782FA2F230D025A00E4C1B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +173,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E3B4BC2230D34F3001A8CA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F782FA1A230D025900E4C1B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -111,6 +191,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E3B4BBA230D34F3001A8CA3 /* archy Watch */ = {
+			isa = PBXGroup;
+			children = (
+				0E3B4BE0230D3516001A8CA3 /* archy Watch.entitlements */,
+				0E3B4BBB230D34F3001A8CA3 /* Interface.storyboard */,
+				0E3B4BBE230D34F3001A8CA3 /* Assets.xcassets */,
+				0E3B4BC0230D34F3001A8CA3 /* Info.plist */,
+				0EAFB465230E30F9006B9232 /* Storyboard.storyboard */,
+			);
+			path = "archy Watch";
+			sourceTree = "<group>";
+		};
+		0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0E47C1D22311167C00BB2BC6 /* Model */,
+				0E5E16F7230E6D6A006A33DA /* Controller */,
+				0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */,
+				0E3B4BCC230D34F4001A8CA3 /* ExtensionDelegate.swift */,
+				0E3B4BCE230D34F4001A8CA3 /* NotificationController.swift */,
+				0E3B4BD0230D34F4001A8CA3 /* Assets.xcassets */,
+				0E3B4BD2230D34F4001A8CA3 /* Info.plist */,
+				0E3B4BD3230D34F4001A8CA3 /* PushNotificationPayload.apns */,
+			);
+			path = "archy Watch Extension";
+			sourceTree = "<group>";
+		};
+		0E47C1D22311167C00BB2BC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E5E16F7230E6D6A006A33DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E3B4BCA230D34F4001A8CA3 /* InterfaceController.swift */,
+				0E47C1CA2310D15600BB2BC6 /* StateController.swift */,
+				0E47C1CC2310D1C900BB2BC6 /* PracticeController.swift */,
+				0E47C1CE2310D23200BB2BC6 /* FinishController.swift */,
+				0E47C1D02310D28C00BB2BC6 /* ResultController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2DED98DC230D1EE200FAF418 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				F782FA1F230D025900E4C1B4 /* archy */,
+				0E3B4BBA230D34F3001A8CA3 /* archy Watch */,
+				0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */,
 				F782FA1E230D025900E4C1B4 /* Products */,
 				F782FA6B230D33DA00E4C1B4 /* Frameworks */,
 			);
@@ -262,6 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				F782FA1D230D025900E4C1B4 /* archy.app */,
+				0E3B4BB9230D34F2001A8CA3 /* archy Watch.app */,
+				0E3B4BC5230D34F3001A8CA3 /* archy Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,6 +472,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E3B4BB8230D34F2001A8CA3 /* archy Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E3B4BDD230D34F4001A8CA3 /* Build configuration list for PBXNativeTarget "archy Watch" */;
+			buildPhases = (
+				0E3B4BB7230D34F2001A8CA3 /* Resources */,
+				0E3B4BDC230D34F4001A8CA3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E3B4BC8230D34F4001A8CA3 /* PBXTargetDependency */,
+			);
+			name = "archy Watch";
+			productName = "archy Watch";
+			productReference = 0E3B4BB9230D34F2001A8CA3 /* archy Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		0E3B4BC4230D34F3001A8CA3 /* archy Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E3B4BDB230D34F4001A8CA3 /* Build configuration list for PBXNativeTarget "archy Watch Extension" */;
+			buildPhases = (
+				0E3B4BC1230D34F3001A8CA3 /* Sources */,
+				0E3B4BC2230D34F3001A8CA3 /* Frameworks */,
+				0E3B4BC3230D34F3001A8CA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "archy Watch Extension";
+			productName = "archy Watch Extension";
+			productReference = 0E3B4BC5230D34F3001A8CA3 /* archy Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		F782FA1C230D025900E4C1B4 /* archy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F782FA32230D025A00E4C1B4 /* Build configuration list for PBXNativeTarget "archy" */;
@@ -349,10 +513,12 @@
 				F782FA19230D025900E4C1B4 /* Sources */,
 				F782FA1A230D025900E4C1B4 /* Frameworks */,
 				F782FA1B230D025900E4C1B4 /* Resources */,
+				0E3B4BDE230D34F4001A8CA3 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0E3B4BD5230D34F4001A8CA3 /* PBXTargetDependency */,
 			);
 			name = archy;
 			productName = archeryTracking;
@@ -369,6 +535,22 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Eibiel Sardjanto";
 				TargetAttributes = {
+					0E3B4BB8230D34F2001A8CA3 = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					0E3B4BC4230D34F3001A8CA3 = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					F782FA1C230D025900E4C1B4 = {
 						CreatedOnToolsVersion = 10.3;
 						LastSwiftMigration = 1030;
@@ -397,11 +579,31 @@
 			projectRoot = "";
 			targets = (
 				F782FA1C230D025900E4C1B4 /* archy */,
+				0E3B4BB8230D34F2001A8CA3 /* archy Watch */,
+				0E3B4BC4230D34F3001A8CA3 /* archy Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E3B4BB7230D34F2001A8CA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E3B4BBF230D34F3001A8CA3 /* Assets.xcassets in Resources */,
+				0E3B4BBD230D34F3001A8CA3 /* Interface.storyboard in Resources */,
+				0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E3B4BC3230D34F3001A8CA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E3B4BD1230D34F4001A8CA3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F782FA1B230D025900E4C1B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,6 +629,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E3B4BC1230D34F3001A8CA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E47C1CF2310D23200BB2BC6 /* FinishController.swift in Sources */,
+				0E3B4BCF230D34F4001A8CA3 /* NotificationController.swift in Sources */,
+				0E47C1CB2310D15600BB2BC6 /* StateController.swift in Sources */,
+				0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */,
+				0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */,
+				0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */,
+				0E3B4BCB230D34F4001A8CA3 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F782FA19230D025900E4C1B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,7 +678,117 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0E3B4BC8230D34F4001A8CA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E3B4BC4230D34F3001A8CA3 /* archy Watch Extension */;
+			targetProxy = 0E3B4BC7230D34F4001A8CA3 /* PBXContainerItemProxy */;
+		};
+		0E3B4BD5230D34F4001A8CA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E3B4BB8230D34F2001A8CA3 /* archy Watch */;
+			targetProxy = 0E3B4BD4230D34F4001A8CA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0E3B4BBB230D34F3001A8CA3 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E3B4BBC230D34F3001A8CA3 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		0E3B4BD7230D34F4001A8CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "archy Watch/archy Watch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				IBSC_MODULE = archy_Watch_Extension;
+				INFOPLIST_FILE = "archy Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = racob.archy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.3;
+			};
+			name = Debug;
+		};
+		0E3B4BD8230D34F4001A8CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "archy Watch/archy Watch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				IBSC_MODULE = archy_Watch_Extension;
+				INFOPLIST_FILE = "archy Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = racob.archy.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.3;
+			};
+			name = Release;
+		};
+		0E3B4BD9230D34F4001A8CA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "archy Watch Extension/archy Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				INFOPLIST_FILE = "archy Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = racob.archy.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.3;
+			};
+			name = Debug;
+		};
+		0E3B4BDA230D34F4001A8CA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "archy Watch Extension/archy Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5BTQXWQ8C2;
+				INFOPLIST_FILE = "archy Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = racob.archy.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.3;
+			};
+			name = Release;
+		};
 		F782FA30230D025A00E4C1B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -625,6 +951,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E3B4BDB230D34F4001A8CA3 /* Build configuration list for PBXNativeTarget "archy Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E3B4BD9230D34F4001A8CA3 /* Debug */,
+				0E3B4BDA230D34F4001A8CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E3B4BDD230D34F4001A8CA3 /* Build configuration list for PBXNativeTarget "archy Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E3B4BD7230D34F4001A8CA3 /* Debug */,
+				0E3B4BD8230D34F4001A8CA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F782FA18230D025900E4C1B4 /* Build configuration list for PBXProject "archy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

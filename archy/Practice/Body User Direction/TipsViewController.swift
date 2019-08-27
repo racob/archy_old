@@ -28,4 +28,6 @@ class TipsViewController: UIViewController {
         self.navigationController?.pushViewController(PoseMatchingViewController(), animated: true)
     }
     
+    
+    
 }

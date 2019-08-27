@@ -48,6 +48,11 @@ class PoseMatchingViewController: UIViewController {
         
         // setup camera
         setUpCamera()
+        
+        // present UI overlay
+        let vc = CameraViewController(nibName: "CameraViewController", bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: false, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +61,7 @@ class PoseMatchingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         setUIcolor()
         self.videoCapture.start()
     }

@@ -56,7 +56,7 @@ class PoseMatchingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setUIcolor()
+//        setUIcolor()
         self.videoCapture.start()
     }
     

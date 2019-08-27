@@ -20,16 +20,19 @@
 		0E47C1CF2310D23200BB2BC6 /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CE2310D23200BB2BC6 /* FinishController.swift */; };
 		0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1D02310D28C00BB2BC6 /* ResultController.swift */; };
 		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
+		2D8AF912F1D2683C7F5BF506 /* libPods-archy Watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45235579362C2095CDCB3325 /* libPods-archy Watch.a */; };
 		2DB28529230FDEF10056ECA7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB28528230FDEF10056ECA7 /* HomeViewController.xib */; };
 		2DB2852B230FE0F60056ECA7 /* SetDistanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852A230FE0F60056ECA7 /* SetDistanceViewController.xib */; };
 		2DB2852D230FE1B80056ECA7 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852C230FE1B80056ECA7 /* TipsViewController.xib */; };
 		2DB2852F230FE60C0056ECA7 /* PoseMatchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852E230FE60C0056ECA7 /* PoseMatchingViewController.xib */; };
+		4199946F5676A8A4F08023C9 /* Pods_archy_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECCEDFBD73A71DA0F26842B /* Pods_archy_Watch_Extension.framework */; };
 		4E60F92E230E49BB00198B2F /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F92C230E49BB00198B2F /* AlbumCell.swift */; };
 		4E60F92F230E49BB00198B2F /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E60F92D230E49BB00198B2F /* AlbumCell.xib */; };
 		4E60F934230E4FA900198B2F /* VideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F932230E4FA900198B2F /* VideosCell.swift */; };
 		4E60F935230E4FA900198B2F /* VideosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E60F933230E4FA900198B2F /* VideosCell.xib */; };
 		4E60F938230E69EA00198B2F /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F937230E69EA00198B2F /* UIImageView+Extension.swift */; };
 		54076308230E55AE00F3F865 /* videoarcher2.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 54076307230E55AE00F3F865 /* videoarcher2.MOV */; };
+		F65B19B2A68A337FC9487069 /* Pods_archy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85ED87C8FC85D0A5581736D2 /* Pods_archy.framework */; };
 		F72DE6FB230E3C9500EA0D2E /* FullscreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE6F9230E3C9500EA0D2E /* FullscreenVC.swift */; };
 		F72DE6FC230E3C9500EA0D2E /* FullscreenVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72DE6FA230E3C9500EA0D2E /* FullscreenVC.xib */; };
 		F72DE6FF230E3CC400EA0D2E /* VideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */; };
@@ -107,6 +110,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02974E68E1810E16681EA8F0 /* Pods-archy Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-archy Watch Extension.release.xcconfig"; path = "Target Support Files/Pods-archy Watch Extension/Pods-archy Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		0DF65869261F9053F538C208 /* Pods-archy Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-archy Watch Extension.debug.xcconfig"; path = "Target Support Files/Pods-archy Watch Extension/Pods-archy Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		0E3B4BB9230D34F2001A8CA3 /* archy Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "archy Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3B4BBC230D34F3001A8CA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		0E3B4BBE230D34F3001A8CA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,12 +134,19 @@
 		2DB2852A230FE0F60056ECA7 /* SetDistanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetDistanceViewController.xib; sourceTree = "<group>"; };
 		2DB2852C230FE1B80056ECA7 /* TipsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsViewController.xib; sourceTree = "<group>"; };
 		2DB2852E230FE60C0056ECA7 /* PoseMatchingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoseMatchingViewController.xib; sourceTree = "<group>"; };
+		3A83B4AF06350F474D2A8325 /* Pods-archy Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-archy Watch.debug.xcconfig"; path = "Target Support Files/Pods-archy Watch/Pods-archy Watch.debug.xcconfig"; sourceTree = "<group>"; };
+		45235579362C2095CDCB3325 /* libPods-archy Watch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-archy Watch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E60F92C230E49BB00198B2F /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		4E60F92D230E49BB00198B2F /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		4E60F932230E4FA900198B2F /* VideosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCell.swift; sourceTree = "<group>"; };
 		4E60F933230E4FA900198B2F /* VideosCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosCell.xib; sourceTree = "<group>"; };
 		4E60F937230E69EA00198B2F /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		54076307230E55AE00F3F865 /* videoarcher2.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = videoarcher2.MOV; sourceTree = "<group>"; };
+		6ECCEDFBD73A71DA0F26842B /* Pods_archy_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_archy_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		853147C0DF98979588B57327 /* Pods-archy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-archy.debug.xcconfig"; path = "Target Support Files/Pods-archy/Pods-archy.debug.xcconfig"; sourceTree = "<group>"; };
+		85ED87C8FC85D0A5581736D2 /* Pods_archy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_archy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D08F3515B0BEB8AEE667A77D /* Pods-archy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-archy.release.xcconfig"; path = "Target Support Files/Pods-archy/Pods-archy.release.xcconfig"; sourceTree = "<group>"; };
+		E4E95ADDD2BB953B90C46F2D /* Pods-archy Watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-archy Watch.release.xcconfig"; path = "Target Support Files/Pods-archy Watch/Pods-archy Watch.release.xcconfig"; sourceTree = "<group>"; };
 		F72DE6F9230E3C9500EA0D2E /* FullscreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenVC.swift; sourceTree = "<group>"; };
 		F72DE6FA230E3C9500EA0D2E /* FullscreenVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullscreenVC.xib; sourceTree = "<group>"; };
 		F72DE6FD230E3CC400EA0D2E /* VideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosVC.swift; sourceTree = "<group>"; };
@@ -177,6 +189,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4199946F5676A8A4F08023C9 /* Pods_archy_Watch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823B14F2FA4596B143FF391D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D8AF912F1D2683C7F5BF506 /* libPods-archy Watch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F782FA6D230D33DA00E4C1B4 /* HealthKit.framework in Frameworks */,
+				F65B19B2A68A337FC9487069 /* Pods_archy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +347,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		EF8A5CDF197D680543366B9D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				853147C0DF98979588B57327 /* Pods-archy.debug.xcconfig */,
+				D08F3515B0BEB8AEE667A77D /* Pods-archy.release.xcconfig */,
+				3A83B4AF06350F474D2A8325 /* Pods-archy Watch.debug.xcconfig */,
+				E4E95ADDD2BB953B90C46F2D /* Pods-archy Watch.release.xcconfig */,
+				0DF65869261F9053F538C208 /* Pods-archy Watch Extension.debug.xcconfig */,
+				02974E68E1810E16681EA8F0 /* Pods-archy Watch Extension.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F72DE6F4230E3C4300EA0D2E /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +419,7 @@
 				0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */,
 				F782FA1E230D025900E4C1B4 /* Products */,
 				F782FA6B230D33DA00E4C1B4 /* Frameworks */,
+				EF8A5CDF197D680543366B9D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -464,6 +501,9 @@
 			isa = PBXGroup;
 			children = (
 				F782FA6C230D33DA00E4C1B4 /* HealthKit.framework */,
+				85ED87C8FC85D0A5581736D2 /* Pods_archy.framework */,
+				45235579362C2095CDCB3325 /* libPods-archy Watch.a */,
+				6ECCEDFBD73A71DA0F26842B /* Pods_archy_Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -475,8 +515,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3B4BDD230D34F4001A8CA3 /* Build configuration list for PBXNativeTarget "archy Watch" */;
 			buildPhases = (
+				7A21EDD58807A096D8895D52 /* [CP] Check Pods Manifest.lock */,
 				0E3B4BB7230D34F2001A8CA3 /* Resources */,
 				0E3B4BDC230D34F4001A8CA3 /* Embed App Extensions */,
+				823B14F2FA4596B143FF391D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -492,6 +534,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3B4BDB230D34F4001A8CA3 /* Build configuration list for PBXNativeTarget "archy Watch Extension" */;
 			buildPhases = (
+				4B5B4B8F0256D8D936D4E2FC /* [CP] Check Pods Manifest.lock */,
 				0E3B4BC1230D34F3001A8CA3 /* Sources */,
 				0E3B4BC2230D34F3001A8CA3 /* Frameworks */,
 				0E3B4BC3230D34F3001A8CA3 /* Resources */,
@@ -509,10 +552,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F782FA32230D025A00E4C1B4 /* Build configuration list for PBXNativeTarget "archy" */;
 			buildPhases = (
+				EB1DD435DE8D599D478A0DEF /* [CP] Check Pods Manifest.lock */,
 				F782FA19230D025900E4C1B4 /* Sources */,
 				F782FA1A230D025900E4C1B4 /* Frameworks */,
 				F782FA1B230D025900E4C1B4 /* Resources */,
 				0E3B4BDE230D34F4001A8CA3 /* Embed Watch Content */,
+				3541CD5709C26442A41996D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -627,6 +672,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3541CD5709C26442A41996D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-archy/Pods-archy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-archy/Pods-archy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B5B4B8F0256D8D936D4E2FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-archy Watch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A21EDD58807A096D8895D52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-archy Watch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB1DD435DE8D599D478A0DEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-archy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E3B4BC1230D34F3001A8CA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -704,14 +840,15 @@
 /* Begin XCBuildConfiguration section */
 		0E3B4BD7230D34F4001A8CA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A83B4AF06350F474D2A8325 /* Pods-archy Watch.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TBKWRDFGJK;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				IBSC_MODULE = archy_Watch_Extension;
 				INFOPLIST_FILE = "archy Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -723,14 +860,15 @@
 		};
 		0E3B4BD8230D34F4001A8CA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4E95ADDD2BB953B90C46F2D /* Pods-archy Watch.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TBKWRDFGJK;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				IBSC_MODULE = archy_Watch_Extension;
 				INFOPLIST_FILE = "archy Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -742,17 +880,18 @@
 		};
 		0E3B4BD9230D34F4001A8CA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DF65869261F9053F538C208 /* Pods-archy Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TBKWRDFGJK;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "archy Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -764,17 +903,18 @@
 		};
 		0E3B4BDA230D34F4001A8CA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02974E68E1810E16681EA8F0 /* Pods-archy Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TBKWRDFGJK;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "archy Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -902,19 +1042,20 @@
 		};
 		F782FA33230D025A00E4C1B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 853147C0DF98979588B57327 /* Pods-archy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TBKWRDFGJK;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -924,19 +1065,20 @@
 		};
 		F782FA34230D025A00E4C1B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D08F3515B0BEB8AEE667A77D /* Pods-archy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TBKWRDFGJK;
+				DEVELOPMENT_TEAM = JSB449F8V6;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy;
+				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

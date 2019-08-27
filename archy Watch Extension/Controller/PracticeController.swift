@@ -35,7 +35,7 @@ class PracticeController: WKInterfaceController {
 //        let repaet = Repeated.
         
         
-//        _ = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(PracticeController.sayFeedback), userInfo: nil, repeats: false)
+        _ = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(PracticeController.sayFeedback), userInfo: nil, repeats: false)
         alertHapticFeedback.invalidate()
 //        alertHapticFeedback.
         alertHapticFeedback = nil
@@ -49,9 +49,9 @@ class PracticeController: WKInterfaceController {
     
     @objc func sayFeedback()
     {
-        let string = "Hold to long"
+        let string = "Tahan "
         let utterance = AVSpeechUtterance(string: string)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
         let synth = AVSpeechSynthesizer()
         synth.speak(utterance)
     }

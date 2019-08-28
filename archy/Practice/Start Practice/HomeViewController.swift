@@ -56,4 +56,5 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(AlbumsVC(), animated: true)
     }
     
+    
 }

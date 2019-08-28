@@ -20,10 +20,13 @@
 		0E47C1CF2310D23200BB2BC6 /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CE2310D23200BB2BC6 /* FinishController.swift */; };
 		0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1D02310D28C00BB2BC6 /* ResultController.swift */; };
 		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
+		2D7FB8CA231500B200190ACA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FB8C9231500B200190ACA /* Constants.swift */; };
 		2DB28529230FDEF10056ECA7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB28528230FDEF10056ECA7 /* HomeViewController.xib */; };
 		2DB2852B230FE0F60056ECA7 /* SetDistanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852A230FE0F60056ECA7 /* SetDistanceViewController.xib */; };
 		2DB2852D230FE1B80056ECA7 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852C230FE1B80056ECA7 /* TipsViewController.xib */; };
 		2DB2852F230FE60C0056ECA7 /* PoseMatchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852E230FE60C0056ECA7 /* PoseMatchingViewController.xib */; };
+		2DB285332313DCFC0056ECA7 /* BodyMeasurementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB285312313DCFC0056ECA7 /* BodyMeasurementController.swift */; };
+		2DB285342313DCFC0056ECA7 /* BodyMeasurementController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB285322313DCFC0056ECA7 /* BodyMeasurementController.xib */; };
 		4E60F92E230E49BB00198B2F /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F92C230E49BB00198B2F /* AlbumCell.swift */; };
 		4E60F92F230E49BB00198B2F /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E60F92D230E49BB00198B2F /* AlbumCell.xib */; };
 		4E60F934230E4FA900198B2F /* VideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F932230E4FA900198B2F /* VideosCell.swift */; };
@@ -125,10 +128,13 @@
 		0E47C1CE2310D23200BB2BC6 /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
 		0E47C1D02310D28C00BB2BC6 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		0EAFB465230E30F9006B9232 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		2D7FB8C9231500B200190ACA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DB28528230FDEF10056ECA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		2DB2852A230FE0F60056ECA7 /* SetDistanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetDistanceViewController.xib; sourceTree = "<group>"; };
 		2DB2852C230FE1B80056ECA7 /* TipsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipsViewController.xib; sourceTree = "<group>"; };
 		2DB2852E230FE60C0056ECA7 /* PoseMatchingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoseMatchingViewController.xib; sourceTree = "<group>"; };
+		2DB285312313DCFC0056ECA7 /* BodyMeasurementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMeasurementController.swift; sourceTree = "<group>"; };
+		2DB285322313DCFC0056ECA7 /* BodyMeasurementController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyMeasurementController.xib; sourceTree = "<group>"; };
 		4E60F92C230E49BB00198B2F /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		4E60F92D230E49BB00198B2F /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		4E60F932230E4FA900198B2F /* VideosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCell.swift; sourceTree = "<group>"; };
@@ -237,6 +243,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		2DB285302313DCDE0056ECA7 /* Body Measurement */ = {
+			isa = PBXGroup;
+			children = (
+				2DB285312313DCFC0056ECA7 /* BodyMeasurementController.swift */,
+				2DB285322313DCFC0056ECA7 /* BodyMeasurementController.xib */,
+			);
+			path = "Body Measurement";
+			sourceTree = "<group>";
+		};
 		2DED98DC230D1EE200FAF418 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +260,7 @@
 				2DED98DF230D206900FAF418 /* Start Practice */,
 				2DED98E0230D20BB00FAF418 /* Target Distance */,
 				2DED98E1230D20CA00FAF418 /* Body User Direction */,
+				2DB285302313DCDE0056ECA7 /* Body Measurement */,
 				F782FA51230D033000E4C1B4 /* Practice */,
 			);
 			path = Practice;
@@ -321,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				4E60F937230E69EA00198B2F /* UIImageView+Extension.swift */,
+				2D7FB8C9231500B200190ACA /* Constants.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -613,6 +630,7 @@
 				4E60F935230E4FA900198B2F /* VideosCell.xib in Resources */,
 				F72DE700230E3CC400EA0D2E /* VideosVC.xib in Resources */,
 				F7DE4BAF23122EFD0077F634 /* savedPose.txt in Resources */,
+				2DB285342313DCFC0056ECA7 /* BodyMeasurementController.xib in Resources */,
 				F72DE6FC230E3C9500EA0D2E /* FullscreenVC.xib in Resources */,
 				F782FA36230D02B100E4C1B4 /* Assets.xcassets in Resources */,
 				F782FA3C230D030600E4C1B4 /* LaunchScreen.storyboard in Resources */,
@@ -657,6 +675,7 @@
 				F72DE6FB230E3C9500EA0D2E /* FullscreenVC.swift in Sources */,
 				F782FA62230D033C00E4C1B4 /* TipsViewController.swift in Sources */,
 				F782FA56230D033000E4C1B4 /* Measure.swift in Sources */,
+				2D7FB8CA231500B200190ACA /* Constants.swift in Sources */,
 				F782FA45230D031400E4C1B4 /* MovingAverageFilter.swift in Sources */,
 				4E60F92E230E49BB00198B2F /* AlbumCell.swift in Sources */,
 				4E60F934230E4FA900198B2F /* VideosCell.swift in Sources */,
@@ -669,6 +688,7 @@
 				F782FA63230D033C00E4C1B4 /* SetDistanceViewController.swift in Sources */,
 				F782FA58230D033000E4C1B4 /* model_cpm.mlmodel in Sources */,
 				F782FA43230D031400E4C1B4 /* UIImage+CVPixelBuffer.swift in Sources */,
+				2DB285332313DCFC0056ECA7 /* BodyMeasurementController.swift in Sources */,
 				F782FA64230D033C00E4C1B4 /* StillImageHeatmapViewController.swift in Sources */,
 				F782FA29230D025900E4C1B4 /* archeryTracking.xcdatamodeld in Sources */,
 				F72DE6FF230E3CC400EA0D2E /* VideosVC.swift in Sources */,

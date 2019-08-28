@@ -26,6 +26,7 @@
 		2DB2852D230FE1B80056ECA7 /* TipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852C230FE1B80056ECA7 /* TipsViewController.xib */; };
 		2DB2852F230FE60C0056ECA7 /* PoseMatchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DB2852E230FE60C0056ECA7 /* PoseMatchingViewController.xib */; };
 		4199946F5676A8A4F08023C9 /* Pods_archy_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECCEDFBD73A71DA0F26842B /* Pods_archy_Watch_Extension.framework */; };
+		4E5E7A662316165D007B1463 /* HeartRateDataRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5E7A652316165D007B1463 /* HeartRateDataRecord.swift */; };
 		4E60F92E230E49BB00198B2F /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F92C230E49BB00198B2F /* AlbumCell.swift */; };
 		4E60F92F230E49BB00198B2F /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E60F92D230E49BB00198B2F /* AlbumCell.xib */; };
 		4E60F934230E4FA900198B2F /* VideosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60F932230E4FA900198B2F /* VideosCell.swift */; };
@@ -136,6 +137,7 @@
 		2DB2852E230FE60C0056ECA7 /* PoseMatchingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoseMatchingViewController.xib; sourceTree = "<group>"; };
 		3A83B4AF06350F474D2A8325 /* Pods-archy Watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-archy Watch.debug.xcconfig"; path = "Target Support Files/Pods-archy Watch/Pods-archy Watch.debug.xcconfig"; sourceTree = "<group>"; };
 		45235579362C2095CDCB3325 /* libPods-archy Watch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-archy Watch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E5E7A652316165D007B1463 /* HeartRateDataRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateDataRecord.swift; sourceTree = "<group>"; };
 		4E60F92C230E49BB00198B2F /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		4E60F92D230E49BB00198B2F /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		4E60F932230E4FA900198B2F /* VideosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCell.swift; sourceTree = "<group>"; };
@@ -357,7 +359,6 @@
 				0DF65869261F9053F538C208 /* Pods-archy Watch Extension.debug.xcconfig */,
 				02974E68E1810E16681EA8F0 /* Pods-archy Watch Extension.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -476,6 +477,7 @@
 			children = (
 				F782FA52230D033000E4C1B4 /* PoseMatchingViewController.swift */,
 				2DB2852E230FE60C0056ECA7 /* PoseMatchingViewController.xib */,
+				4E5E7A652316165D007B1463 /* HeartRateDataRecord.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -800,6 +802,7 @@
 				F782FA61230D033C00E4C1B4 /* VideoCapture.swift in Sources */,
 				F782FA46230D031400E4C1B4 /* HeatmapPostProcessor.swift in Sources */,
 				F782FA4D230D032500E4C1B4 /* HomeViewController.swift in Sources */,
+				4E5E7A662316165D007B1463 /* HeartRateDataRecord.swift in Sources */,
 				F782FA4C230D032500E4C1B4 /* HeatmapViewController.swift in Sources */,
 				F782FA5A230D033000E4C1B4 /* DrawingJointView.swift in Sources */,
 				F782FA63230D033C00E4C1B4 /* SetDistanceViewController.swift in Sources */,

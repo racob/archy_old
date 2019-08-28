@@ -160,17 +160,26 @@ extension BodyMeasurementController {
         predictedPoints = mvfilters.map { $0.averagedValue() }
         /* =================================================================== */
         
+//        let matchingRatios = capturedPointsArray
+//            .map { $0?.matchVector(with: predictedPoints) }
+//            .compactMap { $0 }
+        
         for i in 0..<self.modelPoint!.count {
-            let minX = self.modelPoint![i].point.x - 0.001
-            let maxX = self.modelPoint![i].point.x + 0.001
-            let minY = self.modelPoint![i].point.y - 0.001
-            let maxY = self.modelPoint![i].point.y + 0.001
+            let minX = self.modelPoint![i].point.x - (self.modelPoint![i].point.x * 0.45)
+            let maxX = self.modelPoint![i].point.x + (self.modelPoint![i].point.x * 0.45)
+            let minY = self.modelPoint![i].point.y - (self.modelPoint![i].point.y * 0.45)
+            let maxY = self.modelPoint![i].point.y + (self.modelPoint![i].point.y * 0.45)
             
             if let predicted = predictedPoints[i] {
                 if predicted.maxPoint.x > minX && predicted.maxPoint.x < maxX {
                     if predicted.maxPoint.y > minY && predicted.maxPoint.y < maxY {
                         self.cocokIndicator[i] = true
+                        print("cocok ke", i)
+                    }else{
+                        self.cocokIndicator[i] = false
                     }
+                }else{
+                    self.cocokIndicator[i] = false
                 }
                 
             }
@@ -179,6 +188,7 @@ extension BodyMeasurementController {
         DispatchQueue.main.sync { [weak self] in
             guard let self = self else { return }
             if !self.cocokIndicator.contains(false) { // Bener
+                print("yeay")
                 self.imgBody.image = UIImage(named: bgBody.success.rawValue)
                 self.lblDesc.text = descBody.success.rawValue
                 self.lblDesc.textColor = Constants.colorLightBlue

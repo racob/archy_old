@@ -221,7 +221,6 @@ extension PoseMatchingViewController {
             .compactMap { $0 }
         
         
-        
         /* =================================================================== */
         /* ======================= display the results ======================= */
         DispatchQueue.main.sync { [weak self] in

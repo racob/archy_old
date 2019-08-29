@@ -8,10 +8,19 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        WKInterfaceController.reloadRootControllers(withNames: ["StateController"], contexts: nil)
+    }
 
-class InterfaceController: WKInterfaceController {
-
+    var wcSession: WCSession!
+    
     @IBOutlet weak var scnKit: WKInterfaceSCNScene!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -19,6 +28,12 @@ class InterfaceController: WKInterfaceController {
         // Configure interface objects here.
         self.scnKit.scene = nil
         self.scnKit.setAlpha(0)
+        
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
+        
+        
         
     }
     

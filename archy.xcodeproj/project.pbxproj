@@ -243,6 +243,7 @@
 		0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0EB8B0E92315234400FBD117 /* PhoneSessionManager.swift */,
 				0E47C1D22311167C00BB2BC6 /* Model */,
 				0E5E16F7230E6D6A006A33DA /* Controller */,
 				0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */,
@@ -477,6 +478,7 @@
 				F782FA3A230D030600E4C1B4 /* LaunchScreen.storyboard */,
 				F782FA3B230D030600E4C1B4 /* Main.storyboard */,
 				F782FA38230D02D200E4C1B4 /* AppDelegate.swift */,
+				0EB8B0E62315186C00FBD117 /* WatchSessionDelegate.swift */,
 				F782FA35230D02B100E4C1B4 /* Assets.xcassets */,
 				F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */,
 				2DED98DC230D1EE200FAF418 /* Practice */,
@@ -813,6 +815,7 @@
 				0E47C1CB2310D15600BB2BC6 /* StateController.swift in Sources */,
 				0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */,
 				0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */,
+				0EB8B0EB2315234400FBD117 /* PhoneSessionManager.swift in Sources */,
 				0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */,
 				0E3B4BCB230D34F4001A8CA3 /* InterfaceController.swift in Sources */,
 			);
@@ -833,6 +836,7 @@
 				F72DE703230E3CE200EA0D2E /* PreviewVC.swift in Sources */,
 				F72DE6FB230E3C9500EA0D2E /* FullscreenVC.swift in Sources */,
 				F782FA62230D033C00E4C1B4 /* TipsViewController.swift in Sources */,
+				0EB8B0E72315186C00FBD117 /* WatchSessionDelegate.swift in Sources */,
 				F782FA56230D033000E4C1B4 /* Measure.swift in Sources */,
 				2D7FB8CA231500B200190ACA /* Constants.swift in Sources */,
 				F782FA45230D031400E4C1B4 /* MovingAverageFilter.swift in Sources */,

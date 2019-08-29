@@ -7,9 +7,23 @@
 //
 
 import UIKit
+import WatchConnectivity
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
 
+    var wcSession: WCSession!
     @IBOutlet weak var startPracticeButton: UIButton!
     @IBOutlet weak var textview: UITextView!
     
@@ -23,6 +37,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomUI()
+        
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
         
         let firstAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 40)]
         let secondAttributes : [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 27)]
@@ -50,6 +68,10 @@ class HomeViewController: UIViewController {
     
     @IBAction func btnStartPracticeTapped(_ sender: UIButton) {
         self.navigationController?.pushViewController(SetDistanceViewController(), animated: true)
+        let message = ["message": "letsGO"]
+        wcSession.sendMessage(message, replyHandler: nil) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     @IBAction func btnLibraryTapped(_ sender: UIButton) {

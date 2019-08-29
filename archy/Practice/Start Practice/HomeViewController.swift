@@ -78,4 +78,5 @@ class HomeViewController: UIViewController, WCSessionDelegate {
         self.navigationController?.pushViewController(AlbumsVC(), animated: true)
     }
     
+    
 }

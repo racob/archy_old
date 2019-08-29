@@ -25,7 +25,10 @@ class TipsViewController: UIViewController {
     }
     
     @IBAction func btnOkTapped(_ sender: Any) {
-        self.navigationController?.pushViewController(PoseMatchingViewController(), animated: true)
+        let vc = BodyMeasurementController() //PoseMatchingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
     
 }

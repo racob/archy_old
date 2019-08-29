@@ -19,6 +19,8 @@
 		0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CC2310D1C900BB2BC6 /* PracticeController.swift */; };
 		0E47C1CF2310D23200BB2BC6 /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CE2310D23200BB2BC6 /* FinishController.swift */; };
 		0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1D02310D28C00BB2BC6 /* ResultController.swift */; };
+		0EAF587623176935000AE6FB /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587523176935000AE6FB /* WatchSessionManager.swift */; };
+		0EAF58772317699D000AE6FB /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587523176935000AE6FB /* WatchSessionManager.swift */; };
 		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
 		2D7FB8CA231500B200190ACA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FB8C9231500B200190ACA /* Constants.swift */; };
 		2D8AF912F1D2683C7F5BF506 /* libPods-archy Watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45235579362C2095CDCB3325 /* libPods-archy Watch.a */; };
@@ -135,6 +137,7 @@
 		0E47C1CC2310D1C900BB2BC6 /* PracticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeController.swift; sourceTree = "<group>"; };
 		0E47C1CE2310D23200BB2BC6 /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
 		0E47C1D02310D28C00BB2BC6 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		0EAF587523176935000AE6FB /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		0EAFB465230E30F9006B9232 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2D7FB8C9231500B200190ACA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DB28528230FDEF10056ECA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -269,6 +272,14 @@
 				0E47C1D02310D28C00BB2BC6 /* ResultController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0EAF587423176912000AE6FB /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				0EAF587523176935000AE6FB /* WatchSessionManager.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 		2DB285302313DCDE0056ECA7 /* Body Measurement */ = {
@@ -436,6 +447,7 @@
 		F782FA14230D025900E4C1B4 = {
 			isa = PBXGroup;
 			children = (
+				0EAF587423176912000AE6FB /* Commons */,
 				F782FA1F230D025900E4C1B4 /* archy */,
 				0E3B4BBA230D34F3001A8CA3 /* archy Watch */,
 				0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */,
@@ -797,6 +809,7 @@
 			files = (
 				0E47C1CF2310D23200BB2BC6 /* FinishController.swift in Sources */,
 				0E3B4BCF230D34F4001A8CA3 /* NotificationController.swift in Sources */,
+				0EAF58772317699D000AE6FB /* WatchSessionManager.swift in Sources */,
 				0E47C1CB2310D15600BB2BC6 /* StateController.swift in Sources */,
 				0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */,
 				0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */,
@@ -813,6 +826,7 @@
 				F782FA5B230D033000E4C1B4 /* JointViewController.swift in Sources */,
 				4E60F938230E69EA00198B2F /* UIImageView+Extension.swift in Sources */,
 				F782FA44230D031400E4C1B4 /* PredictedPoint.swift in Sources */,
+				0EAF587623176935000AE6FB /* WatchSessionManager.swift in Sources */,
 				F782FA59230D033000E4C1B4 /* PoseMatchingViewController.swift in Sources */,
 				F72DE708230E3D0A00EA0D2E /* AlbumsVC.swift in Sources */,
 				F782FA57230D033000E4C1B4 /* model_hourglass.mlmodel in Sources */,

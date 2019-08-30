@@ -62,7 +62,7 @@ class PoseMatchingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        setUIcolor()
+//        setUIcolor()
         self.videoCapture.start()
     }
     
@@ -225,7 +225,6 @@ extension PoseMatchingViewController {
         let matchingRatios = capturedPointsArray
             .map { $0?.matchVector(with: predictedPoints) }
             .compactMap { $0 }
-        
         
         
         /* =================================================================== */

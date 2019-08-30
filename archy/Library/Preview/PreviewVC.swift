@@ -1,9 +1,10 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Charts
 
 
-class PreviewVC: UIViewController {
+class PreviewVC: UIViewController, ChartViewDelegate {
 
     var playerController = AVPlayerViewController()
     var player: AVPlayer?
@@ -28,8 +29,16 @@ class PreviewVC: UIViewController {
     
     @IBOutlet weak var posturalLabel: UILabel!
     
+    @IBOutlet weak var heartLineChartView: LineChartView!
+    
+    //dummy data chart
+    let durationPractice = ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    let bpm = [72,75,80,86,82,90,93,101,94,112,105,95]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupChartView()
         
         self.navigationItem.title = "Preview"
         
@@ -37,6 +46,7 @@ class PreviewVC: UIViewController {
         if self.isFromPractice {
             alertInputScore()
         }
+        
         
         totalArrowLabel.text = "of " + "\(totalArrow)" + " arrows"
     }
@@ -101,25 +111,48 @@ class PreviewVC: UIViewController {
         averageScoreLabel.text  = averageScoreRounded
     }
     
-//    func generateThumbnailVideo() {
-//        let videoString:String? = Bundle.main.path(forResource:"videoarcher2", ofType: ".MOV")
-//
-//        if let url = videoString {
-//            let fileUrl = URL(fileURLWithPath: url)
-//            var avAsset = AVURLAsset(url: fileUrl, options: nil)
-//            var imageGenerator = AVAssetImageGenerator(asset: avAsset)
-//            imageGenerator.appliesPreferredTrackTransform = true
-//            var thumbnail: UIImage?
-//
-//            do {
-//                thumbnail = try UIImage(cgImage: imageGenerator.copyCGImage(at: CMTime(seconds: 0, preferredTimescale: 1), actualTime: nil))
-//
-//
-//              self.videoThumbnail.image = thumbnail!
-//            } catch let e as NSError {
-//                print("Error: \(e.localizedDescription)")
-//            }
-//        }
-//    }
+    func setChartData(durationPractice: [String])
+    {
+        var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
+        for i in 0..<durationPractice.count
+        {
+            yVals1.append(ChartDataEntry(x: Double(i), y: Double(bpm[i])))
+        }
+        
+        let set1: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Heart rate (bpm)")
+        set1.axisDependency = .left
+        set1.setColor(UIColor.red.withAlphaComponent(0.5))
+        set1.setCircleColor(UIColor.red)
+        set1.lineWidth = 2.0
+        set1.circleRadius = 6.0
+        set1.fillAlpha = 65 / 255.0
+        set1.fillColor = UIColor.red
+        set1.highlightColor = UIColor.white
+        set1.drawCirclesEnabled = true
+        
+        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
+        dataSets.append(set1)
+        
+        let data : LineChartData = LineChartData(dataSets: dataSets)
+        data.setValueTextColor(UIColor.black)
+        
+        self.heartLineChartView.data = data
+    }
+    
+    func setupChartView()
+    {
+        self.heartLineChartView.delegate = self
+        self.heartLineChartView.gridBackgroundColor = UIColor.white
+        self.heartLineChartView.noDataText = "No Data Provided"
+        self.heartLineChartView.dragEnabled = true
+        self.heartLineChartView.setScaleEnabled(true)
+        self.heartLineChartView.pinchZoomEnabled = true
+        
+        setChartData(durationPractice: durationPractice)
+        
+    }
     
 }
+
+
+

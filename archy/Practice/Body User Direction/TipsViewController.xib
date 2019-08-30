@@ -21,9 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="useStand" highlightedImage="useStand" translatesAutoresizingMaskIntoConstraints="NO" id="yDq-tU-MDY">
-                    <rect key="frame" x="24" y="68" width="366" height="482"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtY-eW-jzk">
                     <rect key="frame" x="24" y="742" width="366" height="40"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,19 +44,24 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="useStand" highlightedImage="useStand" translatesAutoresizingMaskIntoConstraints="NO" id="yDq-tU-MDY">
+                    <rect key="frame" x="87" y="198" width="240" height="288"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="yDq-tU-MDY" secondAttribute="height" multiplier="1:1.2" id="aFn-wI-4sU"/>
+                        <constraint firstAttribute="width" constant="240" id="mhw-2Y-hdv"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.047058823530000002" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KtY-eW-jzk" secondAttribute="trailing" constant="24" id="44w-pu-yNz"/>
-                <constraint firstItem="yDq-tU-MDY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="Sqx-0v-rUY"/>
                 <constraint firstItem="KtY-eW-jzk" firstAttribute="top" secondItem="Sn3-bc-0ue" secondAttribute="bottom" constant="80" id="U6L-QS-c3d"/>
-                <constraint firstItem="yDq-tU-MDY" firstAttribute="trailing" secondItem="Sn3-bc-0ue" secondAttribute="trailing" id="Vj9-B5-CX5"/>
                 <constraint firstItem="Sn3-bc-0ue" firstAttribute="trailing" secondItem="KtY-eW-jzk" secondAttribute="trailing" id="dKZ-IX-Y2H"/>
-                <constraint firstItem="Sn3-bc-0ue" firstAttribute="top" secondItem="yDq-tU-MDY" secondAttribute="bottom" constant="24" id="j44-a6-QC4"/>
                 <constraint firstItem="KtY-eW-jzk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="jPw-H2-mPE"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KtY-eW-jzk" secondAttribute="bottom" constant="80" id="sV0-3f-uoA"/>
+                <constraint firstItem="Sn3-bc-0ue" firstAttribute="top" secondItem="yDq-tU-MDY" secondAttribute="bottom" constant="88" id="uAA-Dn-8Hq"/>
                 <constraint firstItem="Sn3-bc-0ue" firstAttribute="leading" secondItem="KtY-eW-jzk" secondAttribute="leading" id="wWm-cs-Gud"/>
-                <constraint firstItem="yDq-tU-MDY" firstAttribute="leading" secondItem="Sn3-bc-0ue" secondAttribute="leading" id="wk7-pH-sHv"/>
+                <constraint firstItem="yDq-tU-MDY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zMY-4k-uTa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>

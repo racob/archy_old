@@ -22,7 +22,7 @@
                     </items>
                     <color key="backgroundColor" red="0.039808567613363266" green="0.074240453541278839" blue="0.18040251731872559" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
-                        <outlet property="scnKit" destination="pvS-cm-rOZ" id="DBK-fn-zuL"/>
+                        <outlet property="tittle" destination="bMR-O8-PGK" id="PLH-Ji-4p9"/>
                     </connections>
                 </controller>
             </objects>
@@ -33,18 +33,20 @@
             <objects>
                 <controller identifier="StateController" title="Distance(...m)" fullScreen="YES" id="mwM-lZ-h0R" customClass="StateController" customModule="archy_Watch_Extension">
                     <items>
-                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="48p-Cp-lt2"/>
                         <imageView width="0.5" height="0.40000000000000002" heightAdjustment="4" alignment="center" verticalAlignment="center" image="Group 2" id="nM6-fY-OL3"/>
-                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Distance(m)" id="TbV-Dt-5RO"/>
+                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Distance(m)" id="TbV-Dt-5RO">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
                         <label alignment="center" verticalAlignment="center" text="Make sure your body fit inside the guidelines" textAlignment="center" numberOfLines="0" id="DRJ-fC-D0t">
                             <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                         </label>
+                        <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="kJH-uI-qCt"/>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
+                        <outlet property="distanceLabel" destination="TbV-Dt-5RO" id="p55-NG-jMY"/>
                         <outlet property="imageState" destination="nM6-fY-OL3" id="eS5-ni-ruv"/>
                         <outlet property="messageState" destination="DRJ-fC-D0t" id="hNS-ae-TGf"/>
-                        <outlet property="scnKit" destination="48p-Cp-lt2" id="QiE-V1-ETa"/>
                     </connections>
                 </controller>
             </objects>
@@ -55,7 +57,9 @@
             <objects>
                 <controller identifier="PracticeController" fullScreen="YES" id="IeH-as-Zvf" customClass="PracticeController" customModule="archy_Watch_Extension">
                     <items>
-                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Practice" id="xwU-Jp-VAP"/>
+                        <label width="0.90000000000000002" height="0.10000000000000001" heightAdjustment="8" alignment="center" text="Practice" id="xwU-Jp-VAP">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
                         <button alignment="center" verticalAlignment="center" backgroundImage="Finish" id="Bnt-Ws-tZf">
                             <connections>
                                 <action selector="finishButtohn" destination="IeH-as-Zvf" id="FKI-F2-xOp"/>

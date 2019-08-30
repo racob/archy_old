@@ -36,13 +36,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Score (pts)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sq-Hd-tSV">
-                            <rect key="frame" x="211" y="659" width="187" height="21"/>
+                            <rect key="frame" x="211" y="324" width="187" height="21"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXS-Vn-Kvn">
-                            <rect key="frame" x="358" y="699" width="40" height="20"/>
+                            <rect key="frame" x="358" y="364" width="40" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="0Mn-QH-gK5"/>
                             </constraints>
@@ -68,31 +68,31 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iC-bV-NTP">
-                            <rect key="frame" x="211" y="680" width="147" height="57.5"/>
+                            <rect key="frame" x="211" y="345" width="147" height="57.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="48"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Total Score (pts)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxv-5v-0rU">
-                            <rect key="frame" x="16" y="659" width="187" height="21"/>
+                            <rect key="frame" x="16" y="324" width="187" height="21"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="of 40 arrows" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylN-f9-DY4">
-                            <rect key="frame" x="16" y="737.5" width="187" height="18"/>
+                            <rect key="frame" x="16" y="402.5" width="187" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="320" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJV-ew-3Ex">
-                            <rect key="frame" x="16" y="680" width="187" height="57.5"/>
+                            <rect key="frame" x="16" y="345" width="187" height="57.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="48"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 3" translatesAutoresizingMaskIntoConstraints="NO" id="rTv-Ol-rFv">
-                            <rect key="frame" x="16" y="284" width="382" height="351"/>
+                            <rect key="frame" x="16" y="284" width="382" height="16"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17.53" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8d-dH-Pbt">
                             <rect key="frame" x="16" y="37" width="382" height="16"/>
@@ -101,7 +101,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="per arrow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHU-zf-XeI">
-                            <rect key="frame" x="211" y="737.5" width="187" height="18"/>
+                            <rect key="frame" x="211" y="402.5" width="187" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -159,7 +159,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Group 3" width="350" height="351"/>
+        <image name="Group 3" width="374" height="307"/>
         <image name="Play button" width="74" height="74"/>
     </resources>
 </document>

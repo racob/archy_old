@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReplayKit
 
 class CameraViewController: UIViewController {
 
@@ -39,9 +40,10 @@ class CameraViewController: UIViewController {
                                       style: UIAlertAction.Style.cancel,
                                       handler: {(_: UIAlertAction!) in
                                         //finish button action
-                                        let vc = PreviewVC(nibName: "PreviewVC", bundle: nil)
-                                        vc.modalPresentationStyle = .currentContext
-                                        self.present(vc, animated: true, completion: nil)
+                                        self.stopRecording()
+//                                        let vc = PreviewVC(nibName: "PreviewVC", bundle: nil)
+//                                        vc.modalPresentationStyle = .currentContext
+//                                        self.present(vc, animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -73,8 +75,35 @@ class CameraViewController: UIViewController {
         })
         let invalidator = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { timer in
             countdown.invalidate()
+            self.startRecording()
             self.startTimer()
         })
+    }
+    
+    func startRecording() {
+        let recorder = RPScreenRecorder.shared()
+        
+        recorder.startRecording{ [unowned self] (error) in
+            if let unwrappedError = error {
+                print(unwrappedError.localizedDescription)
+            }
+        }
+    }
+    
+    func stopRecording() {
+        let recorder = RPScreenRecorder.shared()
+        
+        recorder.stopRecording { [unowned self] (preview, error) in
+            
+            if let unwrappedPreview = preview {
+                unwrappedPreview.previewControllerDelegate = self as? RPPreviewViewControllerDelegate
+                self.present(unwrappedPreview, animated: true)
+            }
+        }
+    }
+    
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        dismiss(animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

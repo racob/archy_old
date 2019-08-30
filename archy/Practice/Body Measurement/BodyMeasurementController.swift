@@ -9,6 +9,7 @@
 import UIKit
 import CoreMedia
 import Vision
+import WatchConnectivity
 
 class BodyMeasurementController: UIViewController {
 
@@ -16,6 +17,8 @@ class BodyMeasurementController: UIViewController {
     @IBOutlet weak var viewCamera: UIView!
     @IBOutlet weak var imgBody: UIImageView!
     @IBOutlet weak var lblDesc: UILabel!
+    
+    var connectivityHandler = WatchSessionManager.shared
     
     var videoCapture: VideoCapture!
     
@@ -47,7 +50,8 @@ class BodyMeasurementController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        connectivityHandler.iOSDelegate = self
+        
         self.setUpModel()
         self.setUpCamera()
     }
@@ -117,7 +121,51 @@ class BodyMeasurementController: UIViewController {
     func resizePreviewLayer() {
         self.videoCapture.previewLayer?.frame = self.viewCamera.bounds
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        do {
+            try connectivityHandler.updateApplicationContext(applicationContext: ["state" : 7])
+        } catch {
+            print("Error: \(error)")
+        }
+    }
 
+}
+
+
+// MARK: extension connectivity watchkit
+
+extension BodyMeasurementController: iOSDelegate {
+    
+    func applicationContextReceived(tuple: ApplicationContextReceived) {
+        DispatchQueue.main.async() {
+            if let row = tuple.applicationContext["row"] as? Int {
+//                self.nextButton.backgroundColor = Constant.itemList[row].2
+            }
+        }
+    }
+    
+    
+    func messageReceived(tuple: MessageReceived) {
+        // Handle receiving message
+        
+        guard let reply = tuple.replyHandler else {
+            return
+        }
+        
+        // Need reply to counterpart
+        switch tuple.message["request"] as! RequestType.RawValue {
+        case RequestType.date.rawValue:
+            reply(["date" : "\(Date())"])
+        case RequestType.version.rawValue:
+            let version = ["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"]
+            reply(["version" : version])
+        default:
+            break
+        }
+    }
+    
+    
 }
 
 // MARK: - VideoCaptureDelegate
@@ -175,6 +223,7 @@ extension BodyMeasurementController {
                     if predicted.maxPoint.y > minY && predicted.maxPoint.y < maxY {
                         self.cocokIndicator[i] = true
                         print("cocok ke", i)
+                        
                     }else{
                         self.cocokIndicator[i] = false
                     }
@@ -192,14 +241,28 @@ extension BodyMeasurementController {
                 self.imgBody.image = UIImage(named: bgBody.success.rawValue)
                 self.lblDesc.text = descBody.success.rawValue
                 self.lblDesc.textColor = Constants.colorLightBlue
+                self.present(CameraViewController(), animated: true, completion: nil)
+//                self.navigationController?.pushViewController(CameraViewController(), animated: true)
+                let  i = 10
+                do {
+                    try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
+                } catch {
+                    print("Error: \(error)")
+                }
                 
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                    self.navigationController?.pushViewController(PoseMatchingViewController(), animated: true)
-//                })
             }else{ // Salah
                 self.imgBody.image = UIImage(named: bgBody.failed.rawValue)
                 self.lblDesc.text = descBody.begin.rawValue
                 self.lblDesc.textColor = Constants.colorRed
+                
+                let i = Int.random(in: 1..<3)
+                
+                do {
+                    try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
+                } catch {
+                    print("Error: \(error)")
+                }
+                print(i)
             }
             
             // draw line
@@ -207,4 +270,5 @@ extension BodyMeasurementController {
         }
         
     }
+    
 }

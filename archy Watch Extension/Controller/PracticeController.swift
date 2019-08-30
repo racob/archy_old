@@ -24,9 +24,9 @@ class PracticeController: WKInterfaceController {
 //        startRecord()
     }
     @IBAction func finishButtohn() {
-//        curentTime = Date()
-//         timerPractice.setDate(curentTime)
-//        timerPractice.start()
+        curentTime = Date()
+         timerPractice.setDate(curentTime)
+        timerPractice.start()
         
         
         
@@ -49,9 +49,9 @@ class PracticeController: WKInterfaceController {
     
     @objc func sayFeedback()
     {
-        let string = "Hold to long"
+        let string = "Tahan "
         let utterance = AVSpeechUtterance(string: string)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
         let synth = AVSpeechSynthesizer()
         synth.speak(utterance)
     }

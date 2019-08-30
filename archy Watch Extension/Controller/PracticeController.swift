@@ -24,9 +24,9 @@ class PracticeController: WKInterfaceController {
 //        startRecord()
     }
     @IBAction func finishButtohn() {
-//        curentTime = Date()
-//         timerPractice.setDate(curentTime)
-//        timerPractice.start()
+        curentTime = Date()
+         timerPractice.setDate(curentTime)
+        timerPractice.start()
         
         
         
@@ -35,7 +35,7 @@ class PracticeController: WKInterfaceController {
 //        let repaet = Repeated.
         
         
-        _ = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(PracticeController.sayFeedback), userInfo: nil, repeats: false)
+//        _ = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(PracticeController.sayFeedback), userInfo: nil, repeats: false)
         alertHapticFeedback.invalidate()
 //        alertHapticFeedback.
         alertHapticFeedback = nil

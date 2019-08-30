@@ -21,6 +21,10 @@
 		0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1D02310D28C00BB2BC6 /* ResultController.swift */; };
 		0EAF587623176935000AE6FB /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587523176935000AE6FB /* WatchSessionManager.swift */; };
 		0EAF58772317699D000AE6FB /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587523176935000AE6FB /* WatchSessionManager.swift */; };
+		0EAF587923176F06000AE6FB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587823176F06000AE6FB /* Request.swift */; };
+		0EAF587A23176F06000AE6FB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587823176F06000AE6FB /* Request.swift */; };
+		0EAF587C23176F83000AE6FB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587B23176F83000AE6FB /* Constant.swift */; };
+		0EAF587D23176F83000AE6FB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587B23176F83000AE6FB /* Constant.swift */; };
 		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
 		2D7FB8CA231500B200190ACA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FB8C9231500B200190ACA /* Constants.swift */; };
 		2D8AF912F1D2683C7F5BF506 /* libPods-archy Watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45235579362C2095CDCB3325 /* libPods-archy Watch.a */; };
@@ -138,6 +142,8 @@
 		0E47C1CE2310D23200BB2BC6 /* FinishController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishController.swift; sourceTree = "<group>"; };
 		0E47C1D02310D28C00BB2BC6 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		0EAF587523176935000AE6FB /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		0EAF587823176F06000AE6FB /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		0EAF587B23176F83000AE6FB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		0EAFB465230E30F9006B9232 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2D7FB8C9231500B200190ACA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DB28528230FDEF10056ECA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -243,7 +249,6 @@
 		0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0EB8B0E92315234400FBD117 /* PhoneSessionManager.swift */,
 				0E47C1D22311167C00BB2BC6 /* Model */,
 				0E5E16F7230E6D6A006A33DA /* Controller */,
 				0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */,
@@ -279,6 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				0EAF587523176935000AE6FB /* WatchSessionManager.swift */,
+				0EAF587823176F06000AE6FB /* Request.swift */,
+				0EAF587B23176F83000AE6FB /* Constant.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -478,7 +485,6 @@
 				F782FA3A230D030600E4C1B4 /* LaunchScreen.storyboard */,
 				F782FA3B230D030600E4C1B4 /* Main.storyboard */,
 				F782FA38230D02D200E4C1B4 /* AppDelegate.swift */,
-				0EB8B0E62315186C00FBD117 /* WatchSessionDelegate.swift */,
 				F782FA35230D02B100E4C1B4 /* Assets.xcassets */,
 				F782FA27230D025900E4C1B4 /* archeryTracking.xcdatamodeld */,
 				2DED98DC230D1EE200FAF418 /* Practice */,
@@ -815,8 +821,9 @@
 				0E47C1CB2310D15600BB2BC6 /* StateController.swift in Sources */,
 				0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */,
 				0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */,
-				0EB8B0EB2315234400FBD117 /* PhoneSessionManager.swift in Sources */,
 				0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */,
+				0EAF587D23176F83000AE6FB /* Constant.swift in Sources */,
+				0EAF587A23176F06000AE6FB /* Request.swift in Sources */,
 				0E3B4BCB230D34F4001A8CA3 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -833,16 +840,17 @@
 				F782FA59230D033000E4C1B4 /* PoseMatchingViewController.swift in Sources */,
 				F72DE708230E3D0A00EA0D2E /* AlbumsVC.swift in Sources */,
 				F782FA57230D033000E4C1B4 /* model_hourglass.mlmodel in Sources */,
+				0EAF587C23176F83000AE6FB /* Constant.swift in Sources */,
 				F72DE703230E3CE200EA0D2E /* PreviewVC.swift in Sources */,
 				F72DE6FB230E3C9500EA0D2E /* FullscreenVC.swift in Sources */,
 				F782FA62230D033C00E4C1B4 /* TipsViewController.swift in Sources */,
-				0EB8B0E72315186C00FBD117 /* WatchSessionDelegate.swift in Sources */,
 				F782FA56230D033000E4C1B4 /* Measure.swift in Sources */,
 				2D7FB8CA231500B200190ACA /* Constants.swift in Sources */,
 				F782FA45230D031400E4C1B4 /* MovingAverageFilter.swift in Sources */,
 				4E60F92E230E49BB00198B2F /* AlbumCell.swift in Sources */,
 				4E60F934230E4FA900198B2F /* VideosCell.swift in Sources */,
 				F782FA4B230D032500E4C1B4 /* DrawingHeatmapView.swift in Sources */,
+				0EAF587923176F06000AE6FB /* Request.swift in Sources */,
 				F782FA61230D033C00E4C1B4 /* VideoCapture.swift in Sources */,
 				F782FA46230D031400E4C1B4 /* HeatmapPostProcessor.swift in Sources */,
 				F73390B1231424D800E61DE8 /* CameraViewController.swift in Sources */,

@@ -68,10 +68,15 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     @IBAction func btnStartPracticeTapped(_ sender: UIButton) {
         self.navigationController?.pushViewController(SetDistanceViewController(), animated: true)
-        let message = ["message": "letsGO"]
-        wcSession.sendMessage(message, replyHandler: nil) { (error) in
-            print(error.localizedDescription)
-        }
+//        let message = ["message": "letsGO"]
+//        wcSession.sendMessage(message, replyHandler: nil) { (error) in
+//            print(error.localizedDescription)
+//        }
+//        do {
+////            try wcSession.updateApplicationContext(["setdistance":"set"])
+//        } catch {
+//            print(error)
+//        }
     }
     
     @IBAction func btnLibraryTapped(_ sender: UIButton) {

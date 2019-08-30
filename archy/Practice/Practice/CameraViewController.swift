@@ -40,10 +40,9 @@ class CameraViewController: UIViewController {
                                       style: UIAlertAction.Style.cancel,
                                       handler: {(_: UIAlertAction!) in
                                         //finish button action
-                                        self.stopRecording()
-//                                        let vc = PreviewVC(nibName: "PreviewVC", bundle: nil)
-//                                        vc.modalPresentationStyle = .currentContext
-//                                        self.present(vc, animated: true, completion: nil)
+                                        let vc = PreviewVC(nibName: "PreviewVC", bundle: nil)
+                                        vc.modalPresentationStyle = .currentContext
+                                        self.present(vc, animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
     }

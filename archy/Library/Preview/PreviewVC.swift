@@ -34,6 +34,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     //dummy data chart
     let durationPractice = ["1","2","3","4","5","6","7","8","9","10","11","12"]
     let bpm = [72,75,80,86,82,90,93,101,94,112,105,95]
+    var posturalSway: [Bool] = [true,false,true,true,false,true,false,false,true,false,true,true]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,29 +112,40 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         averageScoreLabel.text  = averageScoreRounded
     }
     
-    func setChartData(durationPractice: [String])
+    func setChartData(durationPractice: [String],posturalSway: [Bool])
     {
         var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
+        var yVals2 : [ChartDataEntry] = [ChartDataEntry]()
+      
+        
+        
         for i in 0..<durationPractice.count
         {
             yVals1.append(ChartDataEntry(x: Double(i), y: Double(bpm[i])))
+            
+            if posturalSway[i] {
+               yVals2.append(ChartDataEntry(x: Double(i), y: Double(bpm[i])))
+            }
         }
         
         let set1: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Heart rate (bpm)")
         set1.axisDependency = .left
-        set1.setColor(UIColor.red.withAlphaComponent(0.5))
-        set1.setCircleColor(UIColor.red)
+        set1.setColor(UIColor.blue.withAlphaComponent(0.5))
+        set1.setCircleColor(UIColor.blue)
         set1.lineWidth = 2.0
         set1.circleRadius = 6.0
         set1.fillAlpha = 65 / 255.0
-        set1.fillColor = UIColor.red
+        set1.fillColor = UIColor.blue
         set1.highlightColor = UIColor.white
-        set1.drawCirclesEnabled = true
+        set1.drawCirclesEnabled = false
         
-        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-        dataSets.append(set1)
+        let set3: LineChartDataSet = LineChartDataSet(entries: yVals2, label: "Postural sway happened")
+        set3.axisDependency = .left
+        set3.setColor(UIColor.red.withAlphaComponent(0.5))
+        set3.setCircleColor(UIColor.red.withAlphaComponent(0.5))
+        set3.lineWidth = 0
         
-        let data : LineChartData = LineChartData(dataSets: dataSets)
+        let data : LineChartData = LineChartData(dataSets: [set1, set3])
         data.setValueTextColor(UIColor.black)
         
         self.heartLineChartView.data = data
@@ -147,8 +159,9 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         self.heartLineChartView.dragEnabled = true
         self.heartLineChartView.setScaleEnabled(true)
         self.heartLineChartView.pinchZoomEnabled = true
+        self.heartLineChartView.animate(xAxisDuration: 2.5)
         
-        setChartData(durationPractice: durationPractice)
+        setChartData(durationPractice: durationPractice, posturalSway: posturalSway)
         
     }
     

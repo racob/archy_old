@@ -192,6 +192,10 @@ extension BodyMeasurementController {
                 self.imgBody.image = UIImage(named: bgBody.success.rawValue)
                 self.lblDesc.text = descBody.success.rawValue
                 self.lblDesc.textColor = Constants.colorLightBlue
+                
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                    self.navigationController?.pushViewController(PoseMatchingViewController(), animated: true)
+//                })
             }else{ // Salah
                 self.imgBody.image = UIImage(named: bgBody.failed.rawValue)
                 self.lblDesc.text = descBody.begin.rawValue

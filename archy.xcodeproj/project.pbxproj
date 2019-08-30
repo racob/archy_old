@@ -902,10 +902,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSB449F8V6;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				IBSC_MODULE = archy_Watch_Extension;
 				INFOPLIST_FILE = "archy Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -922,10 +922,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSB449F8V6;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				IBSC_MODULE = archy_Watch_Extension;
 				INFOPLIST_FILE = "archy Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -941,14 +941,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSB449F8V6;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "archy Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -964,14 +964,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSB449F8V6;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "archy Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1105,14 +1105,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSB449F8V6;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1128,14 +1128,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = archy/archy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSB449F8V6;
+				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "$(SRCROOT)/archy/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = khoirunnisa.archy;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.archy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

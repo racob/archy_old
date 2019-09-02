@@ -25,10 +25,16 @@ class TipsViewController: UIViewController {
     }
     
     @IBAction func btnOkTapped(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "debugMode")
         let vc = BodyMeasurementController() //PoseMatchingViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func debugButtonTapped(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "debugMode")
+        let vc = BodyMeasurementController() //PoseMatchingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     
 }

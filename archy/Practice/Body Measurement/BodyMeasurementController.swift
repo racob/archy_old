@@ -241,9 +241,9 @@ extension BodyMeasurementController {
                 self.imgBody.image = UIImage(named: bgBody.success.rawValue)
                 self.lblDesc.text = descBody.success.rawValue
                 self.lblDesc.textColor = Constants.colorLightBlue
-                self.present(CameraViewController(), animated: true, completion: nil)
+                self.present(PoseMatchingViewController(), animated: false, completion: nil)
 //                self.navigationController?.pushViewController(CameraViewController(), animated: true)
-                let  i = 10
+                let i = 10
                 do {
                     try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
                 } catch {

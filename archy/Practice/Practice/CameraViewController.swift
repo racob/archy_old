@@ -11,7 +11,6 @@ import ReplayKit
 
 class CameraViewController: UIViewController {
 
-
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var upperViews: [UIView]!
     @IBOutlet weak var stopButton: UIButton!
@@ -74,31 +73,8 @@ class CameraViewController: UIViewController {
         })
         let invalidator = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { timer in
             countdown.invalidate()
-            self.startRecording()
             self.startTimer()
         })
-    }
-    
-    func startRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.startRecording{ [unowned self] (error) in
-            if let unwrappedError = error {
-                print(unwrappedError.localizedDescription)
-            }
-        }
-    }
-    
-    func stopRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.stopRecording { [unowned self] (preview, error) in
-            
-            if let unwrappedPreview = preview {
-                unwrappedPreview.previewControllerDelegate = self as? RPPreviewViewControllerDelegate
-                self.present(unwrappedPreview, animated: true)
-            }
-        }
     }
     
     func previewControllerDidFinish(_ previewController: RPPreviewViewController) {

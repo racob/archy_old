@@ -15,6 +15,8 @@ class CameraViewController: UIViewController {
     @IBOutlet var upperViews: [UIView]!
     @IBOutlet weak var stopButton: UIButton!
     
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,9 +41,7 @@ class CameraViewController: UIViewController {
                                       style: UIAlertAction.Style.cancel,
                                       handler: {(_: UIAlertAction!) in
                                         //finish button action
-                                        let vc = PreviewVC(nibName: "PreviewVC", bundle: nil)
-                                        vc.modalPresentationStyle = .currentContext
-                                        self.present(vc, animated: true, completion: nil)
+                                        self.finishPractice()
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -80,14 +80,37 @@ class CameraViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func finishPractice() {
+        var idVideo = 0
+        
+        //Increment Id Video
+        let currentIdVideo:Int? = UserDefaults.standard.object(forKey: "current_id_video") as? Int
+        if let currentId = currentIdVideo {
+            idVideo = currentId + 1
+        }else{
+            UserDefaults.standard.set(currentIdVideo, forKey: "current_id_video")
+        }
+        
+        //Save to Core Data
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let graph = Graph(context: managedContext)
+        
+        graph.id_video = Int64(idVideo)
+//        graph.heart_rate
+//        graph.postural_sway
+        
+        do {
+            try managedContext.save()
+        } catch let err {
+            print("Error : \(err)")
+        }
+        
+        
+        //Go to Preview
+        let vc = PreviewVC(nibName: "PreviewVC", bundle: nil)
+        vc.modalPresentationStyle = .currentContext
+        self.present(vc, animated: true, completion: nil)
     }
-    */
 
 }

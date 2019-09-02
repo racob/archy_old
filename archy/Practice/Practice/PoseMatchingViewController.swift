@@ -70,11 +70,11 @@ class PoseMatchingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-<<<<<<< HEAD
+
         setUIproperties()
-=======
+
 //        setUIcolor()
->>>>>>> 16b755f30f31ed1e8cabf224aa3290e8efb17e4b
+
         self.videoCapture.start()
         arrowIndex.text = "1"
     }
@@ -364,7 +364,6 @@ extension PoseMatchingViewController {
             .map { $0?.matchVector(with: predictedPoints) }
             .compactMap { $0 }
         
-<<<<<<< HEAD
 //        if matchingRatios[matchIndex % 5] > 0.80 {
 //            print("Posematch \((matchIndex % 5) + 1)")
 //            if (matchIndex % 5) == 4 {
@@ -373,8 +372,6 @@ extension PoseMatchingViewController {
 //            }
 //            matchIndex += 1
 //        }
-=======
->>>>>>> 16b755f30f31ed1e8cabf224aa3290e8efb17e4b
         
         /* =================================================================== */
         /* ======================= display the results ======================= */

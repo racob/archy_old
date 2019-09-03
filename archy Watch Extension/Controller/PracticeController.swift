@@ -10,35 +10,59 @@ import Foundation
 import WatchKit
 import AVFoundation
 
-class PracticeController: WKInterfaceController {
+class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
+    func didUpdateMotion(_ manager: WorkoutManager, posturalSway: Double) {
+        DispatchQueue.main.async {
+//            self.posturalSway = posturalSway
+            self.instruction(instruction: posturalSway)
+        }
+    }
+    var posturalSway: Double?
     @IBOutlet weak var timerPractice: WKInterfaceTimer!
     @IBOutlet weak var arrowPractice: WKInterfaceLabel!
     var dataPractice: [Int: [String  : Any]]?
+    
+    var stateArrowPostion  = true
+    var arrow = 1
+    func instruction(instruction: Double)  {
+        if instruction == 0.0 {
+            if stateArrowPostion {
+                stateArrowPostion = false
+                speakText(voiceOutdata: "Arrow \(String(Int(arrow))) ready to knocking")
+                arrow += 1
+                
+            }
+        }else{
+            if !stateArrowPostion {
+                stateArrowPostion = true
+                speakText(voiceOutdata: "Ready To Shot")
+                
+            }
+        }
+    }
+    let workoutManager = WorkoutManager()
 //    var startTime = NSDate()
     var curentTime:Date!
+    
+    override init() {
+        super.init()
+        workoutManager.delegate = self
+    }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
 //
-//        let WKInterface
-       
+        workoutManager.startWorkout()
 //        startRecord()
     }
+    
     @IBAction func finishButtohn() {
-        curentTime = Date()
-         timerPractice.setDate(curentTime)
-        timerPractice.start()
-        
-        
-        
-        
-        
-//        let repaet = Repeated.
-        
-        
+   
+//        stopRecord()
+        workoutManager.stopWorkout()
 //        _ = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(PracticeController.sayFeedback), userInfo: nil, repeats: false)
-        alertHapticFeedback.invalidate()
+//        alertHapticFeedback.invalidate()
 //        alertHapticFeedback.
-        alertHapticFeedback = nil
+//        alertHapticFeedback = nil
         
         
         
@@ -61,6 +85,8 @@ class PracticeController: WKInterfaceController {
         
     }
     func startRecord() {
+        curentTime = Date()
+        timerPractice.setDate(curentTime)
         timerPractice.start()
     }
     func stopRecord() {
@@ -69,6 +95,7 @@ class PracticeController: WKInterfaceController {
     }
     override func willActivate() {
         super.willActivate()
+//        startRecord()
 //        let textChoices = ["Yes"]
 //        presentTextInputController(withSuggestions: textChoices,
 //                                                  allowedInputMode: WKTextInputMode.plain,
@@ -80,7 +107,7 @@ class PracticeController: WKInterfaceController {
 //        )
         
 //        let voice = AVSpeechSynthesisVoice
-        alertHapticFeedback = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(PracticeController.alertHaptic), userInfo: nil, repeats: true)
+//        alertHapticFeedback = Timer.scheduledTimer(timeInterval: 0, target: self, selector: #selector(PracticeController.alertHaptic), userInfo: nil, repeats: true)
         
     }
     var alertHapticFeedback: Timer!
@@ -96,5 +123,30 @@ class PracticeController: WKInterfaceController {
         print("currentTime : \(date.timeIntervalSince(curentTime))")
         print(elapsedTime)
     }
-    
+    func speakText(voiceOutdata: String ) {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .duckOthers)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("audioSession properties weren't set because of an error.")
+        }
+        
+        let utterance = AVSpeechUtterance(string: voiceOutdata)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = 0.4
+        
+        let synth = AVSpeechSynthesizer()
+        synth.speak(utterance)
+        
+        defer {
+//            disableAVSession()
+        }
+    }
+    private func disableAVSession() {
+        do {
+            try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("audioSession properties weren't disable.")
+        }
+    }
 }

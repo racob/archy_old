@@ -25,6 +25,9 @@
 		0EAF587A23176F06000AE6FB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587823176F06000AE6FB /* Request.swift */; };
 		0EAF587C23176F83000AE6FB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587B23176F83000AE6FB /* Constant.swift */; };
 		0EAF587D23176F83000AE6FB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587B23176F83000AE6FB /* Constant.swift */; };
+		0EAF5884231BA0D6000AE6FB /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF5883231BA0D6000AE6FB /* MotionManager.swift */; };
+		0EAF5886231BAF54000AE6FB /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF5885231BAF54000AE6FB /* WorkoutManager.swift */; };
+		0EAF5888231BAF6C000AE6FB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAF5887231BAF6C000AE6FB /* HealthKit.framework */; };
 		0EAFB466230E30F9006B9232 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAFB465230E30F9006B9232 /* Storyboard.storyboard */; };
 		2D7FB8CA231500B200190ACA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7FB8C9231500B200190ACA /* Constants.swift */; };
 		2D8AF912F1D2683C7F5BF506 /* libPods-archy Watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45235579362C2095CDCB3325 /* libPods-archy Watch.a */; };
@@ -144,6 +147,9 @@
 		0EAF587523176935000AE6FB /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		0EAF587823176F06000AE6FB /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		0EAF587B23176F83000AE6FB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		0EAF5883231BA0D6000AE6FB /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		0EAF5885231BAF54000AE6FB /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		0EAF5887231BAF6C000AE6FB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		0EAFB465230E30F9006B9232 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		2D7FB8C9231500B200190ACA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2DB28528230FDEF10056ECA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4199946F5676A8A4F08023C9 /* Pods_archy_Watch_Extension.framework in Frameworks */,
+				0EAF5888231BAF6C000AE6FB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +256,7 @@
 		0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				0E47C1D22311167C00BB2BC6 /* Model */,
+				0EAF5882231BA0C0000AE6FB /* Model */,
 				0E5E16F7230E6D6A006A33DA /* Controller */,
 				0E3B4BDF230D34FA001A8CA3 /* archy Watch Extension.entitlements */,
 				0E3B4BCC230D34F4001A8CA3 /* ExtensionDelegate.swift */,
@@ -259,13 +266,6 @@
 				0E3B4BD3230D34F4001A8CA3 /* PushNotificationPayload.apns */,
 			);
 			path = "archy Watch Extension";
-			sourceTree = "<group>";
-		};
-		0E47C1D22311167C00BB2BC6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0E5E16F7230E6D6A006A33DA /* Controller */ = {
@@ -288,6 +288,15 @@
 				0EAF587B23176F83000AE6FB /* Constant.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		0EAF5882231BA0C0000AE6FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EAF5883231BA0D6000AE6FB /* MotionManager.swift */,
+				0EAF5885231BAF54000AE6FB /* WorkoutManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2DB285302313DCDE0056ECA7 /* Body Measurement */ = {
@@ -455,7 +464,6 @@
 		F782FA14230D025900E4C1B4 = {
 			isa = PBXGroup;
 			children = (
-				0EAF587423176912000AE6FB /* Commons */,
 				F782FA1F230D025900E4C1B4 /* archy */,
 				0E3B4BBA230D34F3001A8CA3 /* archy Watch */,
 				0E3B4BC9230D34F4001A8CA3 /* archy Watch Extension */,
@@ -478,6 +486,7 @@
 		F782FA1F230D025900E4C1B4 /* archy */ = {
 			isa = PBXGroup;
 			children = (
+				0EAF587423176912000AE6FB /* Commons */,
 				4E60F936230E69B200198B2F /* Extension */,
 				F782FA6A230D33D000E4C1B4 /* archy.entitlements */,
 				F7DE4BAE23122EFD0077F634 /* savedPose.txt */,
@@ -545,6 +554,7 @@
 		F782FA6B230D33DA00E4C1B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EAF5887231BAF6C000AE6FB /* HealthKit.framework */,
 				F782FA6C230D33DA00E4C1B4 /* HealthKit.framework */,
 				85ED87C8FC85D0A5581736D2 /* Pods_archy.framework */,
 				45235579362C2095CDCB3325 /* libPods-archy Watch.a */,
@@ -637,6 +647,12 @@
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
+							};
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 1;
+							};
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
 							};
 						};
 					};
@@ -820,6 +836,8 @@
 				0EAF58772317699D000AE6FB /* WatchSessionManager.swift in Sources */,
 				0E47C1CB2310D15600BB2BC6 /* StateController.swift in Sources */,
 				0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */,
+				0EAF5886231BAF54000AE6FB /* WorkoutManager.swift in Sources */,
+				0EAF5884231BA0D6000AE6FB /* MotionManager.swift in Sources */,
 				0E3B4BCD230D34F4001A8CA3 /* ExtensionDelegate.swift in Sources */,
 				0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */,
 				0EAF587D23176F83000AE6FB /* Constant.swift in Sources */,
@@ -940,6 +958,7 @@
 			baseConfigurationReference = 0DF65869261F9053F538C208 /* Pods-archy Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "archy Watch Extension/archy Watch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "archy Watch Extension/Info.plist";
@@ -963,6 +982,7 @@
 			baseConfigurationReference = 02974E68E1810E16681EA8F0 /* Pods-archy Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "archy Watch Extension/archy Watch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TBKWRDFGJK;
 				INFOPLIST_FILE = "archy Watch Extension/Info.plist";

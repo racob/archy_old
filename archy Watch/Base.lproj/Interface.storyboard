@@ -62,7 +62,7 @@
                         </label>
                         <button alignment="center" verticalAlignment="center" backgroundImage="Finish" id="Bnt-Ws-tZf">
                             <connections>
-                                <action selector="finishButtohn" destination="IeH-as-Zvf" id="FKI-F2-xOp"/>
+                                <action selector="start" destination="IeH-as-Zvf" id="AfZ-go-rLN"/>
                             </connections>
                         </button>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="siS-dw-29C">
@@ -78,10 +78,6 @@
                         <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="3mC-xR-vS6"/>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <connections>
-                        <outlet property="arrowPractice" destination="4x9-zb-o6c" id="duh-OR-flR"/>
-                        <outlet property="timerPractice" destination="JLJ-v2-17a" id="3V5-OU-g7D"/>
-                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-884" y="246"/>

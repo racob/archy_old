@@ -16,7 +16,6 @@ protocol CameraViewDelegate {
 
 class CameraViewController: UIViewController {
 
-
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var upperViews: [UIView]!
     @IBOutlet weak var stopButton: UIButton!
@@ -86,10 +85,13 @@ class CameraViewController: UIViewController {
         })
         let invalidator = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { timer in
             countdown.invalidate()
-            self.delegate.startRecording()
             self.startTimer()
             self.heartRate.startMockHeartData()
         })
+    }
+    
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        dismiss(animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

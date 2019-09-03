@@ -16,7 +16,6 @@ protocol CameraViewDelegate {
 
 class CameraViewController: UIViewController {
 
-
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var upperViews: [UIView]!
     @IBOutlet weak var stopButton: UIButton!

@@ -16,7 +16,8 @@ class PoseMatchingViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var poseView: UIView!
     @IBOutlet weak var arrowIndex: UILabel!
-    @IBOutlet weak var arrowView: UIView!
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet var upperViews: [UIView]!
     
     // MARK: - UI Property
     @IBOutlet weak var videoPreview: UIView!
@@ -29,7 +30,13 @@ class PoseMatchingViewController: UIViewController {
     
     var capturedIndex = 0
     var matchIndex = 0
-    
+//    let stepLabel = [
+//        "Step 1",
+//        "Step 2",
+//        "Step 3",
+//        "Step 4",
+//        "Step 5"
+//    ]
     // MARK: - AV Property
     var videoCapture: VideoCapture!
     
@@ -57,8 +64,10 @@ class PoseMatchingViewController: UIViewController {
         // setup camera
         setUpCamera()
         
-        // present UI overlay
-        self.setUiOverlay()
+        if !(UserDefaults.standard.bool(forKey: "debugMode")) {
+            showUI()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,13 +77,15 @@ class PoseMatchingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-
         setUIproperties()
-
-//        setUIcolor()
-
         self.videoCapture.start()
         arrowIndex.text = "1"
+        
+        if UserDefaults.standard.bool(forKey: "debugMode"){
+            poseView.isHidden = false
+        }else{
+            poseView.isHidden = true
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -109,13 +120,6 @@ class PoseMatchingViewController: UIViewController {
             // retrieving a value for a key
             if let data = UserDefaults.standard.data(forKey: "points-\(currentIndex)"),
                 let capturedPoints = NSKeyedUnarchiver.unarchiveObject(with: data) as? [CapturedPoint?] {
-//                for cp in capturedPoints {
-//                    if cp?.point == nil {
-//                        print("nil")
-//                    }else{
-//                        print(NSCoder.string(for: cp!.point))
-//                    }
-//                }
                 capturedPointsArray[currentIndex] = capturedPoints
                 capturedJointViews[currentIndex].bodyPoints = capturedPoints.map { capturedPoint in
                     if let capturedPoint = capturedPoint { return PredictedPoint(capturedPoint: capturedPoint) }
@@ -312,11 +316,16 @@ class PoseMatchingViewController: UIViewController {
     func showUI() {
         let vc = CameraViewController(nibName: "CameraViewController", bundle: nil)
         vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: false, completion: nil)
+        DispatchQueue.main.async {
+            self.present(vc, animated: false, completion: nil)
+        }
+        
     }
     
     func setUIproperties(){
-        arrowView.layer.cornerRadius = 4
+        for upperView in upperViews {
+            upperView.layer.cornerRadius = 4
+        }
         poseView.layer.cornerRadius = 6
         captureButton.layer.cornerRadius = 4
         nextButton.layer.cornerRadius = 4
@@ -372,29 +381,23 @@ extension PoseMatchingViewController {
             .map { $0?.matchVector(with: predictedPoints) }
             .compactMap { $0 }
         
-//        if matchingRatios[matchIndex % 5] > 0.80 {
-//            print("Posematch \((matchIndex % 5) + 1)")
-//            if (matchIndex % 5) == 4 {
-//                print("MANTAB\n")
-//                arrowIndex.text = "\(Int(arrowIndex.text!)! + 1)"
-//            }
-//            matchIndex += 1
-//        }
-        
         /* =================================================================== */
         /* ======================= display the results ======================= */
         DispatchQueue.main.sync { [weak self] in
             guard let self = self else { return }
             
             // update arrow count every 5 pose detected
-//            if matchingRatios[matchIndex % 5] > 0.80 {
-//                print("Posematch \((matchIndex % 5) + 1)")
-//                if (matchIndex % 5) == 4 {
-//                    print("MANTAB\n")
-//                    arrowIndex.text = "\(Int(arrowIndex.text!)! + 1)"
-//                }
-//                matchIndex += 1
-//            }
+            if (matchIndex % 5) < matchingRatios.count {
+                if matchingRatios[matchIndex % 5] > 0.80 {
+                    print("Posematch \((matchIndex % 5) + 1)")
+                    stepLabel.text = "\(matchIndex % 5 + 1)"
+                    if (matchIndex % 5) == 4 {
+                        print("Arrow \(String(describing: arrowIndex.text)) shot\n")
+                        arrowIndex.text = "\(Int(arrowIndex.text!)! + 1)"
+                    }
+                    matchIndex += 1
+                }
+            }
             
             // draw line
             self.jointView.bodyPoints = predictedPoints

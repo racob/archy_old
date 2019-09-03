@@ -51,6 +51,14 @@
                         <constraint firstAttribute="width" constant="240" id="mhw-2Y-hdv"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pje-sg-ocF" userLabel="debugButton">
+                    <rect key="frame" x="53" y="175" width="309" height="335"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <action selector="debugButtonTapped:" destination="-1" eventType="touchUpInside" id="ufG-wC-Zfs"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.047058823530000002" green="0.090196078430000007" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

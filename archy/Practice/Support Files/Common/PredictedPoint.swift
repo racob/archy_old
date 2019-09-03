@@ -25,7 +25,7 @@ struct PredictedPoint {
 }
 
 class CapturedPoint: NSObject, NSCoding {
-    let point: CGPoint
+    var point: CGPoint
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(point, forKey: "point")
@@ -37,6 +37,9 @@ class CapturedPoint: NSObject, NSCoding {
     
     init(predictedPoint: PredictedPoint) {
         point = predictedPoint.maxPoint
+    }
+    init(point: CGPoint) {
+        self.point = point
     }
 }
 

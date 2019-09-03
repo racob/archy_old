@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import ReplayKit
 
 class CameraViewController: UIViewController {
-
 
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var upperViews: [UIView]!
@@ -75,6 +75,10 @@ class CameraViewController: UIViewController {
             countdown.invalidate()
             self.startTimer()
         })
+    }
+    
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        dismiss(animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

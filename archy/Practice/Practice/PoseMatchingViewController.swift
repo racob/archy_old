@@ -12,6 +12,13 @@ import Vision
 
 class PoseMatchingViewController: UIViewController {
 
+    @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var poseView: UIView!
+    @IBOutlet weak var arrowIndex: UILabel!
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet var upperViews: [UIView]!
+    
     // MARK: - UI Property
     @IBOutlet weak var videoPreview: UIView!
     @IBOutlet weak var jointView: DrawingJointView!
@@ -19,9 +26,17 @@ class PoseMatchingViewController: UIViewController {
     @IBOutlet var capturedJointConfidenceLabels: [UILabel]!
     @IBOutlet var capturedJointBGViews: [UIView]!
     var capturedPointsArray: [[CapturedPoint?]?] = []
+    var savedPointsArray: [[CapturedPoint?]?] = []
     
     var capturedIndex = 0
-    
+    var matchIndex = 0
+//    let stepLabel = [
+//        "Step 1",
+//        "Step 2",
+//        "Step 3",
+//        "Step 4",
+//        "Step 5"
+//    ]
     // MARK: - AV Property
     var videoCapture: VideoCapture!
     
@@ -49,10 +64,10 @@ class PoseMatchingViewController: UIViewController {
         // setup camera
         setUpCamera()
         
-        // present UI overlay
-        let vc = CameraViewController(nibName: "CameraViewController", bundle: nil)
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: false, completion: nil)
+        if !(UserDefaults.standard.bool(forKey: "debugMode")) {
+            showUI()
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,8 +77,15 @@ class PoseMatchingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
-//        setUIcolor()
+        setUIproperties()
         self.videoCapture.start()
+        arrowIndex.text = "1"
+        
+        if UserDefaults.standard.bool(forKey: "debugMode"){
+            poseView.isHidden = false
+        }else{
+            poseView.isHidden = true
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,6 +103,8 @@ class PoseMatchingViewController: UIViewController {
         }
         
         capturedPointsArray = capturedJointViews.map { _ in return nil }
+//        loadSavedPose()
+//        capturedPointsArray = savedPointsArray
         
         for currentIndex in 0..<capturedPointsArray.count {
             // retrieving a value for a key
@@ -175,11 +199,132 @@ class PoseMatchingViewController: UIViewController {
         capturedIndex += 1
     }
     
-    func setUIcolor(){
+    func loadSavedPose() {
+        
+        savedPointsArray = Array(repeating: Array(repeating: nil, count: 14), count: 5)
+        
+        var points: [CGPoint] = [
+             CGPoint(x: 0.53645833333333326, y: 0.171875),//0
+             CGPoint(x: 0.56423611111111105, y: 0.296875),//1
+             CGPoint(x: 0.53645833333333326, y: 0.33854166666666669),//2
+             CGPoint(x: 0.41145833333333331, y: 0.421875),//3
+             CGPoint(x: 0.3142361111111111, y: 0.50520833333333337),//4
+             CGPoint(x: 0.61979166666666674, y: 0.296875),//5
+             CGPoint(x: 0.703125, y: 0.44965277777777785),//6
+             CGPoint(x: 0.328125, y: 0.546875),//7
+                                
+        ]
+        
+        for point in points {
+            let savedPoint: CapturedPoint = CapturedPoint(point: point)
+            savedPointsArray[0]?.insert(savedPoint, at: 0)
+            savedPointsArray[0]?.removeLast()
+        }
+        var encodedData = NSKeyedArchiver.archivedData(withRootObject: savedPointsArray[0])
+        UserDefaults.standard.set(encodedData, forKey: "points-\(0)")
+        
+        points = [  CGPoint(x: 0.71701388888888895, y: 0.13020833333333334),
+                    CGPoint(x: 0.74479166666666663, y: 0.22743055555555555),
+                    CGPoint(x: 0.78645833333333337, y: 0.24131944444444442),
+                    CGPoint(x: 0.67534722222222232, y: 0.13020833333333334),
+                    CGPoint(x: 0.50868055555555569, y: 0.15798611111111113),
+                    CGPoint(x: 0.63368055555555558, y: 0.25520833333333331),
+                    CGPoint(x: 0.48090277777777773, y: 0.25520833333333331),
+                    CGPoint(x: 0.53645833333333337, y: 0.24131944444444442)
+        ]
+        
+        for point in points {
+            let savedPoint: CapturedPoint = CapturedPoint(point: point)
+            savedPointsArray[1]?.insert(savedPoint, at: 0)
+            savedPointsArray[1]?.removeLast()
+        }
+        encodedData = NSKeyedArchiver.archivedData(withRootObject: savedPointsArray[1])
+        UserDefaults.standard.set(encodedData, forKey: "points-\(1)")
+        
+        points = [  CGPoint(x: 0.703125, y: 0.13020833333333334),
+                    CGPoint(x: 0.71701388888888895, y: 0.50520833333333337),
+                    CGPoint(x: 0.828125, y: 0.33854166666666669),
+                    CGPoint(x: 0.953125, y: 0.171875),
+                    CGPoint(x: 0.99479166666666663, y: 0.10243055555555557),
+                    CGPoint(x: 0.578125, y: 0.33854166666666669),
+                    CGPoint(x: 0.41145833333333331, y: 0.33854166666666669),
+                    CGPoint(x: 0.24479166666666663, y: 0.33854166666666669)
+        ]
+        
+        for point in points {
+            let savedPoint: CapturedPoint = CapturedPoint(point: point)
+            savedPointsArray[2]?.insert(savedPoint, at: 0)
+            savedPointsArray[2]?.removeLast()
+        }
+        encodedData = NSKeyedArchiver.archivedData(withRootObject: savedPointsArray[2])
+        UserDefaults.standard.set(encodedData, forKey: "points-\(2)")
+        
+        points = [  CGPoint(x: 0.703125, y: 0.13020833333333334),
+                    CGPoint(x: 0.703125, y: 0.26909722222222215),
+                    CGPoint(x: 0.80034722222222232, y: 0.296875),
+                    CGPoint(x: 0.953125, y: 0.25520833333333331),
+                    CGPoint(x: 0.81423611111111116, y: 0.22743055555555555),
+                    CGPoint(x: 0.578125, y: 0.296875),
+                    CGPoint(x: 0.43923611111111116, y: 0.33854166666666669),
+                    CGPoint(x: 0.328125, y: 0.296875)
+        ]
+        
+        for point in points {
+            let savedPoint: CapturedPoint = CapturedPoint(point: point)
+            savedPointsArray[3]?.insert(savedPoint, at: 0)
+            savedPointsArray[3]?.removeLast()
+        }
+        encodedData = NSKeyedArchiver.archivedData(withRootObject: savedPointsArray[3])
+        UserDefaults.standard.set(encodedData, forKey: "points-\(3)")
+        
+        points = [  CGPoint(x: 0.578125, y: 0.13020833333333334),
+                    CGPoint(x: 0.578125, y: 0.33854166666666669),
+                    CGPoint(x: 0.74479166666666663, y: 0.36631944444444442),
+                    CGPoint(x: 0.81423611111111116, y: 0.57465277777777768),
+                    CGPoint(x: 0.80034722222222232, y: 0.58854166666666663),
+                    CGPoint(x: 0.453125, y: 0.421875),
+                    CGPoint(x: 0.36979166666666669, y: 0.58854166666666663),
+                    CGPoint(x: 0.27256944444444448, y: 0.72743055555555547)
+        ]
+        
+        for point in points {
+            let savedPoint: CapturedPoint = CapturedPoint(point: point)
+            savedPointsArray[4]?.insert(savedPoint, at: 0)
+            savedPointsArray[4]?.removeLast()
+        }
+        encodedData = NSKeyedArchiver.archivedData(withRootObject: savedPointsArray[4])
+        UserDefaults.standard.set(encodedData, forKey: "points-\(4)")
+        
+    }
+    
+    @IBAction func tapNextButton(_ sender: Any) {
+        captureButton.isHidden = true
+        nextButton.isHidden = true
+        showUI()
+    }
+    
+    func showUI() {
+        let vc = CameraViewController(nibName: "CameraViewController", bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        DispatchQueue.main.async {
+            self.present(vc, animated: false, completion: nil)
+        }
+        
+    }
+    
+    func setUIproperties(){
+        for upperView in upperViews {
+            upperView.layer.cornerRadius = 4
+        }
+        poseView.layer.cornerRadius = 6
+        captureButton.layer.cornerRadius = 4
+        nextButton.layer.cornerRadius = 4
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
+    
+    
 }
 
 // MARK: - VideoCaptureDelegate
@@ -226,11 +371,24 @@ extension PoseMatchingViewController {
             .map { $0?.matchVector(with: predictedPoints) }
             .compactMap { $0 }
         
-        
         /* =================================================================== */
         /* ======================= display the results ======================= */
         DispatchQueue.main.sync { [weak self] in
             guard let self = self else { return }
+            
+            // update arrow count every 5 pose detected
+            if (matchIndex % 5) < matchingRatios.count {
+                if matchingRatios[matchIndex % 5] > 0.80 {
+                    print("Posematch \((matchIndex % 5) + 1)")
+                    stepLabel.text = "\(matchIndex % 5 + 1)"
+                    if (matchIndex % 5) == 4 {
+                        print("Arrow \(String(describing: arrowIndex.text)) shot\n")
+                        arrowIndex.text = "\(Int(arrowIndex.text!)! + 1)"
+                    }
+                    matchIndex += 1
+                }
+            }
+            
             // draw line
             self.jointView.bodyPoints = predictedPoints
             
@@ -246,7 +404,6 @@ extension PoseMatchingViewController {
                 }
             }
             topCapturedJointBGView?.backgroundColor = UIColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 0.4)
-//            print(matchingRatios)
         }
         /* =================================================================== */
     }

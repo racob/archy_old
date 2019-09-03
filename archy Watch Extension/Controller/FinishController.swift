@@ -15,4 +15,7 @@ class FinishController: WKInterfaceController {
         
         
     }
+    @IBAction func cancel() {
+        popToRootController()
+    }
 }

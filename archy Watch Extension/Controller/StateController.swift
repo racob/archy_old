@@ -74,8 +74,8 @@ class StateController: WKInterfaceController {
     let synth = AVSpeechSynthesizer()
     
     @objc func sayFeedback(){
-        
-        pushController(withName: "PracticeController", context: nil)
+        WKInterfaceController.reloadRootControllers(withNames: ["PracticeController"], contexts: nil)
+//        pushController(withName: "PracticeController", context: nil)
     }
 //    @objc func sayNegatifFeedback(){
 //        WKInterfaceDevice.current().play(.failure)

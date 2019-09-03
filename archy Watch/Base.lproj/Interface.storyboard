@@ -62,22 +62,24 @@
                         </label>
                         <button alignment="center" verticalAlignment="center" backgroundImage="Finish" id="Bnt-Ws-tZf">
                             <connections>
-                                <action selector="start" destination="IeH-as-Zvf" id="AfZ-go-rLN"/>
+                                <action selector="finishButton" destination="IeH-as-Zvf" id="Ssc-UK-Hmi"/>
                             </connections>
                         </button>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="siS-dw-29C">
                             <items>
                                 <imageView alignment="left" verticalAlignment="bottom" image="ic_timer" id="LxL-R4-Njs"/>
-                                <timer alignment="left" previewedSeconds="600" id="JLJ-v2-17a">
-                                    <calendarUnit key="units" minute="YES" second="YES"/>
-                                </timer>
-                                <label alignment="right" text="0" id="4x9-zb-o6c"/>
+                                <label alignment="left" text="00:00" id="jjS-r6-oCl"/>
+                                <label alignment="right" text="1" id="4x9-zb-o6c"/>
                                 <imageView height="1" alignment="right" image="Group" id="ILT-Re-c8R"/>
                             </items>
                         </group>
                         <sceneKitScene height="0.10000000000000001" alignment="left" verticalAlignment="bottom" id="3mC-xR-vS6"/>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <outlet property="arrowLabel" destination="4x9-zb-o6c" id="AHt-f2-ENH"/>
+                        <outlet property="timerLabel" destination="jjS-r6-oCl" id="tcf-rQ-dwK"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-884" y="246"/>
@@ -95,7 +97,11 @@
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
                         <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Yes, finish" id="Ie0-sr-IQu"/>
-                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Close" id="zKb-P4-xJu"/>
+                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Cancel" id="zKb-P4-xJu">
+                            <connections>
+                                <action selector="cancel" destination="TP4-Kc-M4z" id="BDh-PN-Iao"/>
+                            </connections>
+                        </button>
                     </items>
                     <color key="backgroundColor" red="0.039808567609999998" green="0.074240453540000001" blue="0.18040251730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </controller>

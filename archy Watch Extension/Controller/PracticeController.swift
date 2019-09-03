@@ -17,9 +17,12 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
             self.instruction(instruction: posturalSway)
         }
     }
+    
+    @IBOutlet weak var arrowLabel: WKInterfaceLabel!
+    @IBOutlet weak var timerLabel: WKInterfaceLabel!
+    var connectivityHandler = WatchSessionManager.shared
     var posturalSway: Double?
-    @IBOutlet weak var timerPractice: WKInterfaceTimer!
-    @IBOutlet weak var arrowPractice: WKInterfaceLabel!
+    
     var dataPractice: [Int: [String  : Any]]?
     
     var stateArrowPostion  = true
@@ -52,10 +55,12 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
         super.awake(withContext: context)
 //
         workoutManager.startWorkout()
+        connectivityHandler.watchOSDelegate = self
+        connectivityHandler.startSession()
 //        startRecord()
     }
     
-    @IBAction func finishButtohn() {
+    @IBAction func finishButton() {
    
 //        stopRecord()
         workoutManager.stopWorkout()
@@ -64,7 +69,7 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
 //        alertHapticFeedback.
 //        alertHapticFeedback = nil
         
-        
+        pushController(withName: "FinishController", context: nil)
         
         
 
@@ -84,17 +89,11 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
         WKInterfaceDevice.current().play(.start)
         
     }
-    func startRecord() {
-        curentTime = Date()
-        timerPractice.setDate(curentTime)
-        timerPractice.start()
-    }
-    func stopRecord() {
-        timerPractice.stop()
-        
-    }
+    
     override func willActivate() {
         super.willActivate()
+        connectivityHandler.watchOSDelegate = self
+        connectivityHandler.startSession()
 //        startRecord()
 //        let textChoices = ["Yes"]
 //        presentTextInputController(withSuggestions: textChoices,
@@ -149,4 +148,29 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
             print("audioSession properties weren't disable.")
         }
     }
+    func changeArrow(state: Int) {
+        arrowLabel.setText(String(state))
+    }
+}
+
+// MARK: Receive
+
+extension PracticeController: WatchOSDelegate{
+    func messageReceived(tuple: MessageReceived) {
+        
+    }
+    
+    func applicationContextReceived(tuple: ApplicationContextReceived) {
+        DispatchQueue.main.async() {
+            if let row = tuple.applicationContext["state"] as? Int {
+                self.changeArrow(state: row)
+                print("On watch \(row)")
+            }
+            
+            self.timerLabel.setText(tuple.applicationContext["timer"] as? String)
+        }
+        
+    }
+    
+    
 }

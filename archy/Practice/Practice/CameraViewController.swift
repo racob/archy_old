@@ -14,10 +14,14 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var upperViews: [UIView]!
     @IBOutlet weak var stopButton: UIButton!
+    var connectivityHandler = WatchSessionManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        connectivityHandler.iOSDelegate = self
+        connectivityHandler.startSession()
         setUpperCorner()
         buttonCountdown()
         
@@ -52,6 +56,13 @@ class CameraViewController: UIViewController {
         let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             seconds += 1     //This will decrement(count down)the seconds.
             self.timerLabel.text = self.timeString(time: TimeInterval(seconds))
+//            watchlabel.text =self.timeString(time: TimeInterval(seconds))
+            
+            do{
+                try self.connectivityHandler.updateApplicationContext(applicationContext: ["timer": self.timerLabel!.text])
+            }catch {
+                
+            }
         })
     }
 
@@ -94,4 +105,15 @@ class CameraViewController: UIViewController {
     }
     */
 
+}
+extension CameraViewController: iOSDelegate {
+    func messageReceived(tuple: MessageReceived) {
+        
+    }
+    
+    func applicationContextReceived(tuple: ApplicationContextReceived) {
+        
+    }
+    
+    
 }

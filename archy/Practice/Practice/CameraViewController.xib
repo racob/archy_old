@@ -35,7 +35,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icTimer" translatesAutoresizingMaskIntoConstraints="NO" id="BJu-hr-kWe">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_timer" translatesAutoresizingMaskIntoConstraints="NO" id="BJu-hr-kWe">
                             <rect key="frame" x="8" y="7" width="26" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <accessibility key="accessibilityConfiguration">
@@ -63,6 +63,6 @@
     </objects>
     <resources>
         <image name="buttonCountdown3" width="80" height="80"/>
-        <image name="icTimer" width="25" height="25"/>
+        <image name="ic_timer" width="293" height="293"/>
     </resources>
 </document>

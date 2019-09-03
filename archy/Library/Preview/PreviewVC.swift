@@ -138,12 +138,14 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         set1.fillColor = UIColor.blue
         set1.highlightColor = UIColor.white
         set1.drawCirclesEnabled = false
+        set1.valueTextColor = .black
         
         let set3: LineChartDataSet = LineChartDataSet(entries: yVals2, label: "Postural sway happened")
         set3.axisDependency = .left
         set3.setColor(UIColor.red.withAlphaComponent(0.5))
         set3.setCircleColor(UIColor.red.withAlphaComponent(0.5))
         set3.lineWidth = 0
+        set3.valueTextColor = .clear
         
         let data : LineChartData = LineChartData(dataSets: [set1, set3])
         data.setValueTextColor(UIColor.black)

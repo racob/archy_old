@@ -58,9 +58,7 @@ class PoseMatchingViewController: UIViewController {
         setUpCamera()
         
         // present UI overlay
-//        let vc = CameraViewController(nibName: "CameraViewController", bundle: nil)
-//        vc.modalPresentationStyle = .overCurrentContext
-//        present(vc, animated: false, completion: nil)
+        self.setUiOverlay()
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,6 +80,16 @@ class PoseMatchingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.videoCapture.stop()
+    }
+    
+    func setUiOverlay() {
+        // present UI overlay
+        let vc = CameraViewController(nibName: "CameraViewController", bundle: nil)
+        vc.delegate = self
+        vc.modalPresentationStyle = .overCurrentContext
+        DispatchQueue.main.async {
+            self.present(vc, animated: false, completion: nil)
+        }
     }
     
     // MARK: - Setup Captured Joint View
@@ -379,14 +387,14 @@ extension PoseMatchingViewController {
             guard let self = self else { return }
             
             // update arrow count every 5 pose detected
-            if matchingRatios[matchIndex % 5] > 0.80 {
-                print("Posematch \((matchIndex % 5) + 1)")
-                if (matchIndex % 5) == 4 {
-                    print("MANTAB\n")
-                    arrowIndex.text = "\(Int(arrowIndex.text!)! + 1)"
-                }
-                matchIndex += 1
-            }
+//            if matchingRatios[matchIndex % 5] > 0.80 {
+//                print("Posematch \((matchIndex % 5) + 1)")
+//                if (matchIndex % 5) == 4 {
+//                    print("MANTAB\n")
+//                    arrowIndex.text = "\(Int(arrowIndex.text!)! + 1)"
+//                }
+//                matchIndex += 1
+//            }
             
             // draw line
             self.jointView.bodyPoints = predictedPoints
@@ -406,4 +414,23 @@ extension PoseMatchingViewController {
         }
         /* =================================================================== */
     }
+}
+
+extension PoseMatchingViewController: CameraViewDelegate{
+    
+    func startRecording() {
+        videoCapture.startRecording()
+    }
+    
+    func stopRecording() {
+        videoCapture.stopRecording()
+        
+//        let vc = PreviewVC()
+//        self.present(vc, animated: true, completion: nil)
+    }
+    
+//    func savedVideoUrl() -> URL {
+//        return videoCapture.savedVideoUrl
+//    }
+    
 }

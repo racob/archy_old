@@ -38,7 +38,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupChartView()
+//        setupChartView()
         
         self.navigationItem.title = "Preview"
         
@@ -53,7 +53,13 @@ class PreviewVC: UIViewController, ChartViewDelegate {
 
 
     func urlVideo() {
-        let videoString:String? = Bundle.main.path(forResource:"videoarcher2", ofType: ".MOV")
+//        let videoString:String? = Bundle.main.path(forResource:"videoarcher2", ofType: ".MOV")
+        
+        let defaults = UserDefaults.standard
+        let videoString:String? = defaults.object(forKey: "savedUrl") as? String
+        
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let videoURL = URL(fileURLWithPath: documentsPath.appendingPathComponent("videoFile")).appendingPathExtension("MOV")
         
         if let url = videoString {
             let videoURL = NSURL(fileURLWithPath: url)

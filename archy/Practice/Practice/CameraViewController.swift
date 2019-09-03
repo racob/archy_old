@@ -7,7 +7,12 @@
 //
 
 import UIKit
-import ReplayKit
+
+protocol CameraViewDelegate {
+    func startRecording()
+    func stopRecording()
+//    func savedVideoUrl() -> URL
+}
 
 class CameraViewController: UIViewController {
 
@@ -18,11 +23,18 @@ class CameraViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
+    var delegate: CameraViewDelegate!
+    
+    var heartRate: HeartRateDataRecord!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUpperCorner()
         buttonCountdown()
+        
+        self.heartRate = HeartRateDataRecord()
+        self.heartRate.authorizeHealthKitInApp()
         
         // Do any additional setup after loading the view.
     }
@@ -74,44 +86,28 @@ class CameraViewController: UIViewController {
         })
         let invalidator = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { timer in
             countdown.invalidate()
-            self.startRecording()
+            self.delegate.startRecording()
             self.startTimer()
+            self.heartRate.startMockHeartData()
         })
-    }
-    
-    func startRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.startRecording{ [unowned self] (error) in
-            if let unwrappedError = error {
-                print(unwrappedError.localizedDescription)
-            }
-        }
-    }
-    
-    func stopRecording() {
-        let recorder = RPScreenRecorder.shared()
-        
-        recorder.stopRecording { [unowned self] (preview, error) in
-            
-            if let unwrappedPreview = preview {
-                unwrappedPreview.previewControllerDelegate = self as? RPPreviewViewControllerDelegate
-                self.present(unwrappedPreview, animated: true)
-            }
-        }
-    }
-    
-    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
-        dismiss(animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
     
+    func setHeartRate() {
+//        let heartRateVC = HeartRateDataRecord()
+//        heartRateVC.delegate = self
+    }
+    
     func finishPractice() {
-        var idVideo = 0
+        self.heartRate.stopMockHeartData()
         
+        self.delegate.stopRecording()
+
+        var idVideo = 0
+
         //Increment Id Video
         let currentIdVideo:Int? = UserDefaults.standard.object(forKey: "current_id_video") as? Int
         if let currentId = currentIdVideo {
@@ -119,25 +115,36 @@ class CameraViewController: UIViewController {
         }else{
             UserDefaults.standard.set(currentIdVideo, forKey: "current_id_video")
         }
-        
+
+        //Data Heart Rate
+        let rate = self.heartRate.rate
+        print("idVideo", idVideo)
+        print("data rate", rate)
+
         //Save to Core Data
         guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+
+        //Save Graph
         let graph = Graph(context: managedContext)
-        
         graph.id_video = Int64(idVideo)
-//        graph.heart_rate
+        graph.heart_rate = rate
 //        graph.postural_sway
-        
+
+        //Save Library
+        let library = Library(context: managedContext)
+        library.id_video = Int64(idVideo)
+        library.video_path = ""
+
         do {
             try managedContext.save()
+            print("core data saved")
         } catch let err {
+            print("core data NOT saved")
             print("Error : \(err)")
         }
         
-        
         //Go to Preview
-        let vc = PreviewVC(nibName: "PreviewVC", bundle: nil)
-        vc.modalPresentationStyle = .currentContext
+        let vc = PreviewVC()
         self.present(vc, animated: true, completion: nil)
     }
 

@@ -241,15 +241,14 @@ extension BodyMeasurementController {
                 self.imgBody.image = UIImage(named: bgBody.success.rawValue)
                 self.lblDesc.text = descBody.success.rawValue
                 self.lblDesc.textColor = Constants.colorLightBlue
-                self.present(PoseMatchingViewController(), animated: true, completion: nil)
-//                self.navigationController?.pushViewController(CameraViewController(), animated: true)
                 let  i = 10
                 do {
                     try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
                 } catch {
                     print("Error: \(error)")
                 }
-                
+                self.videoCapture.stop()
+                self.present(PoseMatchingViewController(), animated: true, completion: nil)
             }else{ // Salah
                 self.imgBody.image = UIImage(named: bgBody.failed.rawValue)
                 self.lblDesc.text = descBody.begin.rawValue
@@ -262,7 +261,6 @@ extension BodyMeasurementController {
                 } catch {
                     print("Error: \(error)")
                 }
-                print(i)
             }
             
             // draw line

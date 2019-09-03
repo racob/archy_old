@@ -219,7 +219,7 @@
                     <rect key="frame" x="284" y="44" width="110" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowCount" translatesAutoresizingMaskIntoConstraints="NO" id="H0J-PR-yaB">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bowArrow" translatesAutoresizingMaskIntoConstraints="NO" id="H0J-PR-yaB">
                             <rect key="frame" x="8" y="7" width="26" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <accessibility key="accessibilityConfiguration">
@@ -241,7 +241,7 @@
                     <rect key="frame" x="152" y="44" width="110" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowCount" translatesAutoresizingMaskIntoConstraints="NO" id="CrZ-5Z-KBU">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bowArrow" translatesAutoresizingMaskIntoConstraints="NO" id="CrZ-5Z-KBU">
                             <rect key="frame" x="8" y="7" width="26" height="26"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <accessibility key="accessibilityConfiguration">
@@ -266,6 +266,6 @@
         </view>
     </objects>
     <resources>
-        <image name="arrowCount" width="25" height="25"/>
+        <image name="bowArrow" width="965" height="1340"/>
     </resources>
 </document>

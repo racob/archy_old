@@ -9,21 +9,12 @@
 import UIKit
 import WatchConnectivity
 
-class HomeViewController: UIViewController, WCSessionDelegate {
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
+class HomeViewController: UIViewController {
     
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
     
 
-    var wcSession: WCSession!
+    var connectivityHandler = WatchSessionManager.shared
+    
     @IBOutlet weak var startPracticeButton: UIButton!
     @IBOutlet weak var textview: UITextView!
     
@@ -36,11 +27,11 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCustomUI()
         
-        wcSession = WCSession.default
-        wcSession.delegate = self
-        wcSession.activate()
+        connectivityHandler.iOSDelegate = self
+        
+        setCustomUI()
+
         
         let firstAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 40)]
         let secondAttributes : [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.white, .font: UIFont.systemFont(ofSize: 27)]
@@ -68,19 +59,34 @@ class HomeViewController: UIViewController, WCSessionDelegate {
     
     @IBAction func btnStartPracticeTapped(_ sender: UIButton) {
         self.navigationController?.pushViewController(SetDistanceViewController(), animated: true)
-//        let message = ["message": "letsGO"]
-//        wcSession.sendMessage(message, replyHandler: nil) { (error) in
-//            print(error.localizedDescription)
-//        }
-//        do {
-////            try wcSession.updateApplicationContext(["setdistance":"set"])
-//        } catch {
-//            print(error)
-//        }
+
     }
     
     @IBAction func btnLibraryTapped(_ sender: UIButton) {
         self.navigationController?.pushViewController(AlbumsVC(), animated: true)
+    }
+    
+}
+extension HomeViewController: iOSDelegate{
+    func applicationContextReceived(tuple: ApplicationContextReceived) {
+        print("YEY")
+        DispatchQueue.main.async() {
+            if let row = tuple.applicationContext["go"] as? String {
+//                self.changeTheme(row)
+                print(row)
+            }
+        }
+    }
+    
+    
+    func messageReceived(tuple: MessageReceived) {
+        DispatchQueue.main.async() {
+//            WKInterfaceDevice.current().play(.notification)
+            if let msg = tuple.message["go"] {
+//                self.messages.append("\(msg)")
+                print(msg)
+            }
+        }
     }
     
     

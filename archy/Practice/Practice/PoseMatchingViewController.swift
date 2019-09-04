@@ -27,7 +27,7 @@ class PoseMatchingViewController: UIViewController {
     @IBOutlet var capturedJointBGViews: [UIView]!
     var capturedPointsArray: [[CapturedPoint?]?] = []
     var savedPointsArray: [[CapturedPoint?]?] = []
-    var connectivityHandler = WatchSessionManager.shared
+//    var connectivityHandler = WatchSessionManager.shared
     var capturedIndex = 0
     var matchIndex = 0
 //    let stepLabel = [
@@ -54,7 +54,7 @@ class PoseMatchingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        connectivityHandler.iOSDelegate = self
+//        connectivityHandler.iOSDelegate = self
         // setup the drawing views
         setUpCapturedJointView()
 
@@ -328,38 +328,39 @@ class PoseMatchingViewController: UIViewController {
 }
 
 // MARK: - Connectivity
-extension PoseMatchingViewController: iOSDelegate {
-    
-    func applicationContextReceived(tuple: ApplicationContextReceived) {
-        DispatchQueue.main.async() {
-            if let row = tuple.applicationContext["row"] as? Int {
-                //                self.nextButton.backgroundColor = Constant.itemList[row].2
-            }
-        }
-    }
-    
-    
-    func messageReceived(tuple: MessageReceived) {
-        // Handle receiving message
-        
-        guard let reply = tuple.replyHandler else {
-            return
-        }
-        
-        // Need reply to counterpart
-        switch tuple.message["request"] as! RequestType.RawValue {
-        case RequestType.date.rawValue:
-            reply(["date" : "\(Date())"])
-        case RequestType.version.rawValue:
-            let version = ["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"]
-            reply(["version" : version])
-        default:
-            break
-        }
-    }
-    
-    
-}
+//extension PoseMatchingViewController: iOSDelegate {
+//    
+//    func applicationContextReceived(tuple: ApplicationContextReceived) {
+//        DispatchQueue.main.async() {
+//            if let row = tuple.applicationContext["goFinish"] as? String {
+//                //                self.nextButton.backgroundColor = Constant.itemList[row].2
+//                print(row)
+//            }
+//        }
+//    }
+//    
+//    
+//    func messageReceived(tuple: MessageReceived) {
+//        // Handle receiving message
+//        
+//        guard let reply = tuple.replyHandler else {
+//            return
+//        }
+//        
+//        // Need reply to counterpart
+//        switch tuple.message["request"] as! RequestType.RawValue {
+//        case RequestType.date.rawValue:
+//            reply(["date" : "\(Date())"])
+//        case RequestType.version.rawValue:
+//            let version = ["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"]
+//            reply(["version" : version])
+//        default:
+//            break
+//        }
+//    }
+//    
+//    
+//}
 
 // MARK: - VideoCaptureDelegate
 extension PoseMatchingViewController: VideoCaptureDelegate {
@@ -419,12 +420,12 @@ extension PoseMatchingViewController {
                         print("Arrow \(String(describing: arrowIndex.text)) shot\n")
                         arrowIndex.text = "\(Int(arrowIndex.text!)! + 1)"
                         //MARK: connect  arrow
-                        print(Int(arrowIndex.text!))
-                        do {
-                            try connectivityHandler.updateApplicationContext(applicationContext: ["state" : Int(arrowIndex.text!)])
-                        } catch {
-                            print("Error: \(error)")
-                        }
+//                        print(Int(arrowIndex.text!))
+//                        do {
+//                            try connectivityHandler.updateApplicationContext(applicationContext: ["state" : Int(arrowIndex.text!)])
+//                        } catch {
+//                            print("Error: \(error)")
+//                        }
                     }
                     matchIndex += 1
                 }

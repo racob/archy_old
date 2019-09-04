@@ -96,7 +96,11 @@
                         <label width="0.90000000000000002" alignment="center" verticalAlignment="center" text="Your practice will be saved in library." numberOfLines="0" id="JQv-WI-caB">
                             <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
-                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Yes, finish" id="Ie0-sr-IQu"/>
+                        <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Yes, finish" id="Ie0-sr-IQu">
+                            <connections>
+                                <action selector="finishButtonTap" destination="TP4-Kc-M4z" id="95f-Qh-gBZ"/>
+                            </connections>
+                        </button>
                         <button width="0.90000000000000002" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Cancel" id="zKb-P4-xJu">
                             <connections>
                                 <action selector="cancel" destination="TP4-Kc-M4z" id="BDh-PN-Iao"/>

@@ -1,12 +1,3 @@
-//
-//  WatchSessionManager.swift
-//  ComunicationWatch
-//
-//  Created by Hipolito Arias on 17/06/2018.
-//  Copyright © 2018 MasterApps. All rights reserved.
-//
-
-
 import WatchKit
 import WatchConnectivity
 
@@ -178,51 +169,3 @@ extension WatchSessionManager {
     }
     
 }
-
-//// MARK: User Info
-//// use when your app needs all the data
-//// FIFO queue
-//extension WatchSessionManager {
-//
-//    // Sender
-//    func transferUserInfo(userInfo: [String : AnyObject]) -> WCSessionUserInfoTransfer? {
-//        return validSession?.transferUserInfo(userInfo)
-//    }
-//
-//    func session(session: WCSession, didFinishUserInfoTransfer userInfoTransfer: WCSessionUserInfoTransfer, error: Error?) {
-//        // implement this on the sender if you need to confirm that
-//        // the user info did in fact transfer
-//    }
-//
-//    // Receiver
-//    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-//        // handle receiving user info
-//        DispatchQueue.main.async() {
-//            // make sure to put on the main queue to update UI!
-//        }
-//    }
-//
-//}
-
-//// MARK: Transfer File
-//extension WatchSessionManager {
-//
-//    // Sender
-//    func transferFile(file: NSURL, metadata: [String : AnyObject]) -> WCSessionFileTransfer? {
-//        return validSession?.transferFile(file as URL, metadata: metadata)
-//    }
-//
-//    func session(session: WCSession, didFinishFileTransfer fileTransfer: WCSessionFileTransfer, error: Error?) {
-//        // handle filed transfer completion
-//    }
-//
-//    // Receiver
-//    func session(session: WCSession, didReceiveFile file: WCSessionFile) {
-//        // handle receiving file
-//        DispatchQueue.main.async() {
-//            // make sure to put on the main queue to update UI!
-//        }
-//    }
-//}
-
-

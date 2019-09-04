@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ReplayKit
 
 class CameraViewController: UIViewController {
 
@@ -34,6 +33,10 @@ class CameraViewController: UIViewController {
         }
     }
     
+    func printTest() {
+        print("testprintbismillah")
+    }
+    
     @IBAction func tapStopButton(_ sender: Any) {
         let alert = UIAlertController(title: "Want to finish practice?", message: "Your practice will be saved in the Library",         preferredStyle: UIAlertController.Style.alert)
         
@@ -56,13 +59,13 @@ class CameraViewController: UIViewController {
         let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             seconds += 1     //This will decrement(count down)the seconds.
             self.timerLabel.text = self.timeString(time: TimeInterval(seconds))
-//            watchlabel.text =self.timeString(time: TimeInterval(seconds))
+
             
-            do{
-                try self.connectivityHandler.updateApplicationContext(applicationContext: ["timer": self.timerLabel!.text])
-            }catch {
-                
-            }
+//            do{
+//                try self.connectivityHandler.updateApplicationContext(applicationContext: ["timer": self.timerLabel!.text])
+//            }catch {
+//
+//            }
         })
     }
 
@@ -88,10 +91,6 @@ class CameraViewController: UIViewController {
         })
     }
     
-    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
-        dismiss(animated: true)
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
@@ -107,12 +106,25 @@ class CameraViewController: UIViewController {
 
 }
 extension CameraViewController: iOSDelegate {
-    func messageReceived(tuple: MessageReceived) {
-        
-    }
     
     func applicationContextReceived(tuple: ApplicationContextReceived) {
-        
+        DispatchQueue.main.async() {
+            if let row = tuple.applicationContext["goFinish"] as? String {
+                //                self.nextButton.backgroundColor = Constant.itemList[row].2
+                print(row)
+            }
+        }
+    }
+    
+    
+    func messageReceived(tuple: MessageReceived) {
+        DispatchQueue.main.async() {
+            //            WKInterfaceDevice.current().play(.notification)
+            if let msg = tuple.message["go"] {
+                //                self.messages.append("\(msg)")
+                self.printTest()
+            }
+        }
     }
     
     

@@ -19,6 +19,7 @@ class CameraViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var upperViews: [UIView]!
     @IBOutlet weak var stopButton: UIButton!
+    var connectivityHandler = WatchSessionManager.shared
     
     let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
@@ -29,6 +30,9 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        connectivityHandler.iOSDelegate = self
+        connectivityHandler.startSession()
         setUpperCorner()
         buttonCountdown()
         
@@ -42,6 +46,10 @@ class CameraViewController: UIViewController {
         for upperView in upperViews {
             upperView.layer.cornerRadius = 4
         }
+    }
+    
+    func printTest() {
+        print("testprintbismillah")
     }
     
     @IBAction func tapStopButton(_ sender: Any) {
@@ -64,6 +72,13 @@ class CameraViewController: UIViewController {
         let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             seconds += 1     //This will decrement(count down)the seconds.
             self.timerLabel.text = self.timeString(time: TimeInterval(seconds))
+
+            
+//            do{
+//                try self.connectivityHandler.updateApplicationContext(applicationContext: ["timer": self.timerLabel!.text])
+//            }catch {
+//
+//            }
         })
     }
 
@@ -162,4 +177,28 @@ class CameraViewController: UIViewController {
         self.present(nav, animated: true, completion: nil)
     }
 
+}
+extension CameraViewController: iOSDelegate {
+    
+    func applicationContextReceived(tuple: ApplicationContextReceived) {
+        DispatchQueue.main.async() {
+            if let row = tuple.applicationContext["goFinish"] as? String {
+                //                self.nextButton.backgroundColor = Constant.itemList[row].2
+                print(row)
+            }
+        }
+    }
+    
+    
+    func messageReceived(tuple: MessageReceived) {
+        DispatchQueue.main.async() {
+            //            WKInterfaceDevice.current().play(.notification)
+            if let msg = tuple.message["go"] {
+                //                self.messages.append("\(msg)")
+                self.printTest()
+            }
+        }
+    }
+    
+    
 }

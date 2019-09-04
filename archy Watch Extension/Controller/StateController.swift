@@ -21,7 +21,7 @@ class StateController: WKInterfaceController {
     
     var connectivityHandler = WatchSessionManager.shared
     
-    var state = false
+//    var state = false
     var dumy: String!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -45,53 +45,44 @@ class StateController: WKInterfaceController {
     }
     let fail = UIImage(named: "Group 2")
     let great = UIImage(named: "Path")
-    
-    func State(state: Bool) {
-        if state{
-            
-            
-            
-        }else{
-            
-            messageState.setText("Make sure your body fit inside the guidelines")
-            self.imageState.setImage(fail)
-            
-            self.state = true
-        }
-    }
-    
+
+    var repeatProcess = true
     func stateMeasure(state: Int) {
 
         if state == 10 {
-//            _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(StateController.sayNegatifFeedback), userInfo: nil, repeats: false)
-        
+            if repeatProcess{
+                let synth = AVSpeechSynthesizer()
+                WKInterfaceDevice.current().play(.success)
+                let utterance = AVSpeechUtterance(string: positif)
+                utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
+                synth.speak(utterance)
+                messageState.setText("Great! Let’s take a practice!")
+                self.imageState.setImage(great)
+                repeatProcess = false
+                
+                _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(StateController.sayFeedback), userInfo: nil, repeats: false)
+                
+                
+            }
             
-            _ = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(StateController.sayFeedback), userInfo: nil, repeats: false)
+            
         }
         
         
     }
     let positif = "Sempurna, Mari Berlatih"
-    let negatif = "Negatif, pastikan kamu benar"
     let synth = AVSpeechSynthesizer()
     
     @objc func sayFeedback(){
-        WKInterfaceDevice.current().play(.success)
-        let utterance = AVSpeechUtterance(string: positif)
-        utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
-        synth.speak(utterance)
-        messageState.setText("Great! Let’s take a practice!")
-        self.imageState.setImage(great)
-        pushController(withName: "PracticeController", context: nil)
-        
-        self.state = false
+        WKInterfaceController.reloadRootControllers(withNames: ["PracticeController"], contexts: nil)
+//        pushController(withName: "PracticeController", context: nil)
     }
-    @objc func sayNegatifFeedback(){
-        WKInterfaceDevice.current().play(.failure)
-        let utterance = AVSpeechUtterance(string: negatif)
-        utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
-        synth.speak(utterance)
-    }
+//    @objc func sayNegatifFeedback(){
+//        WKInterfaceDevice.current().play(.failure)
+//        let utterance = AVSpeechUtterance(string: negatif)
+//        utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
+//        synth.speak(utterance)
+//    }
     
     override func didDeactivate() {
         super.didDeactivate()

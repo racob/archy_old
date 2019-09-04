@@ -91,12 +91,14 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        print("ACTIVE")
         connectivityHandler.startSession()
         connectivityHandler.watchOSDelegate = self
         
     }
     
     override func didDeactivate() {
+        print("DEACTIVATE")
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
@@ -115,6 +117,7 @@ class InterfaceController: WKInterfaceController {
 
     }
     
+
 }
 
 extension InterfaceController: WatchOSDelegate {

@@ -14,7 +14,7 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
     func didUpdateMotion(_ manager: WorkoutManager, posturalSway: Double) {
         DispatchQueue.main.async {
 //            self.posturalSway = posturalSway
-            self.instruction(instruction: posturalSway)
+//            self.instruction(instruction: posturalSway)
         }
     }
     
@@ -27,22 +27,22 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
     
     var stateArrowPostion  = true
     var arrow = 1
-    func instruction(instruction: Double)  {
-        if instruction == 0.0 {
-            if stateArrowPostion {
-                stateArrowPostion = false
-                speakText(voiceOutdata: "Arrow \(String(Int(arrow))) ready to knocking")
-                arrow += 1
-                
-            }
-        }else{
-            if !stateArrowPostion {
-                stateArrowPostion = true
-                speakText(voiceOutdata: "Ready To Shot")
-                
-            }
-        }
-    }
+//    func instruction(instruction: Double)  {
+//        if instruction == 0.0 {
+//            if stateArrowPostion {
+//                stateArrowPostion = false
+//                speakText(voiceOutdata: "Arrow \(String(Int(arrow))) ready to knocking")
+//                arrow += 1
+//
+//            }
+//        }else{
+//            if !stateArrowPostion {
+//                stateArrowPostion = true
+//                speakText(voiceOutdata: "Ready To Shot")
+//
+//            }
+//        }
+//    }
     let workoutManager = WorkoutManager()
 //    var startTime = NSDate()
     var curentTime:Date!
@@ -57,6 +57,7 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
         workoutManager.startWorkout()
         connectivityHandler.watchOSDelegate = self
         connectivityHandler.startSession()
+        notification(steps: 4)
 //        startRecord()
     }
     
@@ -116,12 +117,12 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
         
 //        getDataPosturalSway(arraowN: 1)
     }
-    func getDataPosturalSway(arraowN: Int) {
-        let date = NSDate()
-        elapsedTime = date.timeIntervalSince(curentTime)
-        print("currentTime : \(date.timeIntervalSince(curentTime))")
-        print(elapsedTime)
-    }
+//    func getDataPosturalSway(arraowN: Int) {
+//        let date = NSDate()
+//        elapsedTime = date.timeIntervalSince(curentTime)
+//        print("currentTime : \(date.timeIntervalSince(curentTime))")
+//        print(elapsedTime)
+//    }
     func speakText(voiceOutdata: String ) {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .duckOthers)
@@ -138,9 +139,10 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
         synth.speak(utterance)
         
         defer {
-//            disableAVSession()
+            disableAVSession()
         }
     }
+    
     private func disableAVSession() {
         do {
             try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
@@ -149,8 +151,37 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
         }
     }
     func changeArrow(state: Int) {
+        
         arrowLabel.setText(String(state))
     }
+    
+    func finish() {
+        WKInterfaceController.reloadRootControllers(withNames: ["ResultController"], contexts: nil)
+    }
+    
+    func steps(steps: Int) -> String {
+        var speak = ""
+        switch steps {
+        case 1:
+            speak = "step 2, ready to draw"
+        case 2:
+             speak = "step 3, steady your aim"
+            
+        case 3:
+            speak = "step 4, release"
+           
+        case 4:
+             speak = "step 1, ready to knock"
+            
+        default: break
+            
+        }
+        return speak
+    }
+    func notification(steps: Int){
+        speakText(voiceOutdata: self.steps(steps: steps))
+    }
+    
 }
 
 // MARK: Receive
@@ -164,12 +195,15 @@ extension PracticeController: WatchOSDelegate{
         DispatchQueue.main.async() {
             if let row = tuple.applicationContext["state"] as? Int {
                 self.changeArrow(state: row)
-                print("On watch \(row)")
+            } else if let steps = tuple.applicationContext["stepswatchkit"] as? Int{
+                self.notification(steps: steps)
+            } else if let finish = tuple.applicationContext["finishWatch"] as? String{
+            self.finish()
             }
-            
             self.timerLabel.setText(tuple.applicationContext["timer"] as? String)
-        }
+                print(tuple.applicationContext["timer"])
         
+        }
     }
     
     

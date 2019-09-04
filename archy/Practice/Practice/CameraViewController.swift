@@ -48,11 +48,6 @@ class CameraViewController: UIViewController {
         }
     }
     
-    func printTest() {
-        print("testprintbismillah")
-    }
-    
-    
     @IBAction func tapStopButton(_ sender: Any) {
         let alert = UIAlertController(title: "Want to finish practice?", message: "Your practice will be saved in the Library",         preferredStyle: UIAlertController.Style.alert)
         
@@ -62,6 +57,12 @@ class CameraViewController: UIViewController {
                                       style: UIAlertAction.Style.cancel,
                                       handler: {(_: UIAlertAction!) in
                                         //finish button action
+                                        //asep
+                                        do{
+                                            try self.connectivityHandler.updateApplicationContext(applicationContext: ["finishWatch":"ok"])
+                                        }catch{
+                                            print("Error: \(String(describing: error))")
+                                        }
                                         self.finishPractice()
         }))
         self.present(alert, animated: true, completion: nil)

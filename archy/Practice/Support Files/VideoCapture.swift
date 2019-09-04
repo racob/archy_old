@@ -226,9 +226,9 @@ extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
         if output == videoOutput {
             connection.videoOrientation = .portrait
             
-            if connection.isVideoMirroringSupported {
-                connection.isVideoMirrored = true
-            }
+//            if connection.isVideoMirroringSupported {
+//                connection.isVideoMirrored = true
+//            }
         }
         
         if writable,

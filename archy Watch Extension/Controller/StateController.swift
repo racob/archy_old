@@ -54,7 +54,7 @@ class StateController: WKInterfaceController {
                 let synth = AVSpeechSynthesizer()
                 WKInterfaceDevice.current().play(.success)
                 let utterance = AVSpeechUtterance(string: positif)
-                utterance.voice = AVSpeechSynthesisVoice(language: "id-ID")
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                 synth.speak(utterance)
                 messageState.setText("Great! Let’s take a practice!")
                 self.imageState.setImage(great)
@@ -70,7 +70,7 @@ class StateController: WKInterfaceController {
         
         
     }
-    let positif = "Sempurna, Mari Berlatih"
+    let positif = "Great, let's practice"
     let synth = AVSpeechSynthesizer()
     
     @objc func sayFeedback(){

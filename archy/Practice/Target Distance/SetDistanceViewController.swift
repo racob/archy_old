@@ -54,6 +54,12 @@ class SetDistanceViewController: UIViewController {
         } catch {
             print("Error: \(error)")
         }
+        
+        //Save distance to userdefault
+        let selectedPicker = self.distancePicker.selectedRow(inComponent: 0)
+        let distanceSelected = Constant.itemList[selectedPicker].1
+        UserDefaults.standard.set(distanceSelected, forKey: userDefault.currentDistaceSelected.rawValue)
+        
         self.navigationController?.pushViewController(TipsViewController(), animated: true)
     }
     

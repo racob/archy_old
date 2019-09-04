@@ -27,7 +27,7 @@ class AlbumsVC: UIViewController {
         self.navigationItem.title = "Library"        
         
         distances = ["5 meters", "10 meters", "15 meters", "20 meters"]
-        totalVideos = [3, 5, 8, 2]
+        totalVideos = [0, 1, 0, 0]
         covers = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.blue]
         albumTable.register(UINib(nibName: "AlbumCell", bundle: nil), forCellReuseIdentifier: "tableCell")
         albumTable.delegate = self
@@ -36,10 +36,10 @@ class AlbumsVC: UIViewController {
     
     func loadVideoLibrary() {
         guard let managedContext = delegate?.persistentContainer.viewContext else { return }
-        library = [Library]()
+        self.library = [Library]()
         
         do {
-            library = try managedContext.fetch(Library.fetchRequest())
+            self.library = try managedContext.fetch(Library.fetchRequest())
         } catch {
             print(error)
         }
@@ -58,7 +58,11 @@ extension AlbumsVC : UITableViewDelegate, UITableViewDataSource {
         
         guard let covers = covers, let distances = distances, let totalVideos = totalVideos else { return UITableViewCell() }
         
-        cell.imageVideo.backgroundColor = covers[indexPath.row]
+        if totalVideos[indexPath.row] == 0 {
+            cell.imageVideo.backgroundColor = .lightGray
+        }else{
+            cell.imageVideo.backgroundColor = covers[indexPath.row]
+        }
         cell.titleLabel.text = distances[indexPath.row]
         cell.totalLabel.text = String(totalVideos[indexPath.row])
         
@@ -66,9 +70,14 @@ extension AlbumsVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var isEmpty: Bool = true
+        if self.totalVideos![indexPath.row] > 0 {
+            isEmpty = false
+        }
         let selectedCategory = self.distances?[indexPath.row] ?? ""
         let vc = VideosVC()
         vc.selectedCategory = selectedCategory
+        vc.isEmpty = isEmpty
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

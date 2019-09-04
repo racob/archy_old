@@ -13,30 +13,47 @@ class VideosVC: UIViewController {
     @IBOutlet weak var videoCV: UICollectionView!
     @IBOutlet weak var noVideosLabel: UILabel!
     
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
     var library: [Library]?
-    var covers : [UIColor]?
+    var covers : [UIColor]? //dummy
     var selectedCategory = ""
+    var isEmpty = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = self.selectedCategory
         
-        covers = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.black, UIColor.blue, UIColor.gray]
-        videoCV.register(UINib(nibName: "VideosCell", bundle: nil), forCellWithReuseIdentifier: "videosCell")
-        videoCV.delegate = self
-        videoCV.dataSource = self
-        if covers == nil {
-            noVideosLabel.isHidden = false
-        } else {
-            noVideosLabel.isHidden  = true
-        }
-
-        if covers == nil {
+        print("video", isEmpty)
+        
+        if self.isEmpty {
             self.noVideosLabel.isHidden = false
         }else{
             self.noVideosLabel.isHidden = true
         }
+        
+        covers = [UIColor.red, UIColor.green, UIColor.yellow, UIColor.black, UIColor.blue, UIColor.gray] //dummy
+        
+        self.fetchData()
+    }
+    
+    func fetchData(){
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        do {
+            self.library = try managedContext.fetch(Library.fetchRequest())
+            print(library)
+            self.setCollection()
+        } catch let err {
+            print("Error :", err)
+        }
+    }
+    
+    func setCollection() {
+        videoCV.register(UINib(nibName: "VideosCell", bundle: nil), forCellWithReuseIdentifier: "videosCell")
+        videoCV.delegate = self
+        videoCV.dataSource = self
     }
 
 }
@@ -44,22 +61,27 @@ class VideosVC: UIViewController {
 extension VideosVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        guard let library = library else { return 0 }
-//        return library.count
-        return covers?.count ?? 0
+        guard let library = library else { return 0 }
+        return library.count
+//        return covers?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videosCell", for: indexPath) as! VideosCell
         
-//        guard let library = library else { return cell }
-//        let data = library[indexPath.row]
-//        let video = data.video_path
-//        cell.videoImage.setupPreview(withPath: video!)
+        guard let library = library else { return cell }
+        let data = library[indexPath.row]
         
-        guard let covers = covers else { return UICollectionViewCell() }
+        let name = data.name_video!
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let url = URL(fileURLWithPath: documentsPath.appendingPathComponent(name)).appendingPathExtension("MOV")
+        print(url)
         
-        cell.videoImage.backgroundColor = covers[indexPath.row]
+        cell.videoImage.setupPreview(withPath: url.absoluteString)
+        
+//        guard let covers = covers else { return UICollectionViewCell() }
+//
+        cell.videoImage.backgroundColor = .black
         
         return cell
     }

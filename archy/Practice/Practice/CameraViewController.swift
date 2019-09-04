@@ -134,13 +134,15 @@ class CameraViewController: UIViewController {
         
         let currentNameVideo: String = UserDefaults.standard.object(forKey: userDefault.currentNameVideo.rawValue) as! String
         
+        let currentDistanceSelected: String = UserDefaults.standard.object(forKey: userDefault.currentDistaceSelected.rawValue) as! String
+        
         let library = Library(context: managedContext)
         library.id_video = Int64(idVideo)
         library.video_path = currentPathVideo
         library.name_video = currentNameVideo
         library.total_arrow = 9 //dummy
         library.created_at = Date()
-        library.distance = 10 //dummy
+        library.distance = currentDistanceSelected
 
         do {
             try managedContext.save()

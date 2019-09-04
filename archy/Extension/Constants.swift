@@ -18,4 +18,5 @@ enum userDefault: String {
     case currentPathVideo = "current_path_video"
     case currentIdVideo = "current_id_video"
     case currentNameVideo = "current_name_video"
+    case currentDistaceSelected = "current_distance_selected"
 }

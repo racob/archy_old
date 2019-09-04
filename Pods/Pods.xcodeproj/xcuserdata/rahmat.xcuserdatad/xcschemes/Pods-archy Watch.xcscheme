@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A4E6CF0FD3CB319BCB2C33BEEA3FB9C"
+               BlueprintIdentifier = "69482A690A1826BDB2D71ADC93122999"
                BuildableName = "libPods-archy Watch.a"
                BlueprintName = "Pods-archy Watch"
                ReferencedContainer = "container:Pods.xcodeproj">

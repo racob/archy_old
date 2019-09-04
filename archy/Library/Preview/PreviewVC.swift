@@ -114,16 +114,6 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     }
     
     func showData() {
-//        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-//
-//        do {
-//            let fetchRequest = Library.fetchRequest()
-//            let predicate = NSPredicate(format: "id_video = %@", self.idVideo)
-//            let library = try managedContext.fetch()
-//
-//        } catch let err {
-//            print("Error :", err)
-//        }
         print("Library", self.dataLirabry)
         print("Graph", self.dataGraph)
         
@@ -137,20 +127,14 @@ class PreviewVC: UIViewController, ChartViewDelegate {
 
 
     func urlVideo(_ videoName: String?) {
-        print(videoName)
         if let name = videoName {
-            let videoString: String? = Bundle.main.path(forResource: name, ofType: ".MOV")
-            print("str url", videoString)
+            let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+            let url = URL(fileURLWithPath: documentsPath.appendingPathComponent(name)).appendingPathExtension("MOV")
             
-            if let url = videoString {
-                print(url)
-                let videoURL = NSURL(fileURLWithPath: url)
-                
-                self.player = AVPlayer(url: videoURL as URL)
-                self.playerController.player = self.player
-                
-                self.imgThumbnail.setupPreview(withPath: url)
-            }
+            self.player = AVPlayer(url: url)
+            self.playerController.player = self.player
+            
+            self.imgThumbnail.setupPreview(withPath: url.absoluteString)
         }
     }
     

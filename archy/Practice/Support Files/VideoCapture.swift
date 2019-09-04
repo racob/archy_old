@@ -150,6 +150,7 @@ public class VideoCapture: NSObject {
         let videoOutputUrl = URL(fileURLWithPath: documentsPath.appendingPathComponent(videoName)).appendingPathExtension("MOV")
         let strVideoOutputUrl = videoOutputUrl.absoluteString
         
+        UserDefaults.standard.set(strVideoOutputUrl, forKey: userDefault.currentPathVideo.rawValue)        
         UserDefaults.standard.set(videoName, forKey: userDefault.currentNameVideo.rawValue)
         
         do {

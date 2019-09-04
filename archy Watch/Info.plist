@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>racob.archy</string>
+	<string>mc3.archy</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

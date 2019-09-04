@@ -152,6 +152,8 @@ class PracticeController: WKInterfaceController, WorkoutManagerDelegate {
     }
     func changeArrow(state: Int) {
         
+        speakText(voiceOutdata: "Arrow \(state)")
+        
         arrowLabel.setText(String(state))
     }
     

@@ -30,7 +30,7 @@ class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        UIApplication.shared.isIdleTimerDisabled = true
         connectivityHandler.iOSDelegate = self
         connectivityHandler.startSession()
         setUpperCorner()
@@ -119,6 +119,7 @@ class CameraViewController: UIViewController {
     func finishPractice() {
         
         self.timerPractice?.invalidate()
+        UIApplication.shared.isIdleTimerDisabled = false
         self.heartRate.stopMockHeartData()
         
         self.delegate.stopRecording()

@@ -38,7 +38,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     var totalArrow = 40
     var isFromPractice = false //false: Library, true:Practice
     var idVideo: String!
-    var dataLirabry: Library?
+    var dataLibrary: Library?
     var dataGraph: Graph?
     
     override func viewDidLoad() {
@@ -114,10 +114,8 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     }
     
     func showData() {
-        print("Library", self.dataLirabry)
-        print("Graph", self.dataGraph)
         
-        if let library = self.dataLirabry {            
+        if let library = dataLibrary {
             self.totalArrow = Int(library.total_arrow)
             self.totalArrowLabel.text = "of \(library.total_arrow) arrows"
             

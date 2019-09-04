@@ -73,12 +73,11 @@ class CameraViewController: UIViewController {
             seconds += 1     //This will decrement(count down)the seconds.
             self.timerLabel.text = self.timeString(time: TimeInterval(seconds))
 
-            
-//            do{
-//                try self.connectivityHandler.updateApplicationContext(applicationContext: ["timer": self.timerLabel!.text])
-//            }catch {
-//
-//            }
+            do{
+                try self.connectivityHandler.updateApplicationContext(applicationContext: ["timer": self.timerLabel!.text])
+            }catch {
+
+            }
         })
     }
 
@@ -171,7 +170,7 @@ class CameraViewController: UIViewController {
         let vc = PreviewVC()
         vc.isFromPractice = true
         vc.idVideo = String(idVideo)
-        vc.dataLirabry = library
+        vc.dataLibrary = library
         vc.dataGraph = graph
         let nav = UINavigationController(rootViewController: vc)
         self.present(nav, animated: true, completion: nil)
@@ -195,7 +194,7 @@ extension CameraViewController: iOSDelegate {
             //            WKInterfaceDevice.current().play(.notification)
             if let msg = tuple.message["go"] {
                 //                self.messages.append("\(msg)")
-                self.printTest()
+                self.finishPractice()
             }
         }
     }

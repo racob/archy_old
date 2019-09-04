@@ -6,12 +6,6 @@ import Charts
 
 class PreviewVC: UIViewController, ChartViewDelegate {
 
-    var playerController = AVPlayerViewController()
-    var player: AVPlayer?
-    var totalScore = 0
-    var totalArrow = 40
-    var isFromPractice = false
-    
     @IBAction func playVideoButton(_ sender: Any) {
         playVideo()
     }
@@ -34,58 +28,58 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     //dummy data chart
     let durationPractice = ["1","2","3","4","5","6","7","8","9","10","11","12"]
     let bpm = [72,75,80,86,82,90,93,101,94,112,105,95]
+    let posturalSway = [false, false, false, true, false, false, true, false, false, true, false, false]
+    
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
+    var playerController = AVPlayerViewController()
+    var player: AVPlayer?
+    var totalScore = 0
+    var totalArrow = 40
+    var isFromPractice = false //false: Library, true:Practice
+    var idVideo: String!
+    var dataLirabry: Library?
+    var dataGraph: Graph?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupChartView()
+        setupChartView()
         
         self.navigationItem.title = "Preview"
         
-        urlVideo()
         if self.isFromPractice {
+            let btnBack: UIButton = UIButton()
+            btnBack.addTarget(self, action: #selector(self.backTapped), for: UIControl.Event.touchUpInside)
+            btnBack.setTitle("Close", for: .normal)
+            btnBack.setTitleColor(.white, for: .normal)
+            btnBack.sizeToFit()
+            let barBack = UIBarButtonItem(customView: btnBack)
+            self.navigationItem.leftBarButtonItem = barBack
+            
             alertInputScore()
-        }
-        
-        
-        totalArrowLabel.text = "of " + "\(totalArrow)" + " arrows"
-    }
-
-
-    func urlVideo() {
-//        let videoString:String? = Bundle.main.path(forResource:"videoarcher2", ofType: ".MOV")
-        
-        let defaults = UserDefaults.standard
-        let videoString:String? = defaults.object(forKey: "savedUrl") as? String
-        
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-        let videoURL = URL(fileURLWithPath: documentsPath.appendingPathComponent("videoFile")).appendingPathExtension("MOV")
-        
-        if let url = videoString {
-            let videoURL = NSURL(fileURLWithPath: url)
-            
-            self.player = AVPlayer(url: videoURL as URL)
-            self.playerController.player = self.player
-            
-            self.imgThumbnail.setupPreview(withPath: videoString!)
+        }else{
+            self.showData()
         }
     }
     
-    
-    func playVideo() {
-        self.present(self.playerController, animated: true, completion: {
-            self.playerController.player?.play()
-        })
+    @objc func backTapped() {
+        if let _ = self.navigationController?.popViewController(animated: true) {}else{
+            let home = HomeViewController()
+            let nav = UINavigationController(rootViewController: home)
+            self.present(nav, animated: true, completion: nil)
+        }
     }
-
+    
     func alertInputScore() {
         let alert = UIAlertController(title: "Input Your Total Score", message: "Your score will be seen in Preview", preferredStyle: .alert)
         
         alert.addTextField { (textField) in
             textField.placeholder = "Input your total score"
+            textField.keyboardType = .numberPad
         }
         
-       
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
             print("Text field: \(textField!.text)")
@@ -93,7 +87,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
             self.totalScoreLabel.text = "\(self.totalScore)"
             self.averageScoreCount()
         }))
-
+        
         
         let alertWindow = UIWindow(frame: UIScreen.main.bounds)
         alertWindow.rootViewController = UIViewController()
@@ -114,48 +108,107 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         
         let averageScoreRounded = String(describing: formatter.string(from: NSNumber(value: averageScore)))
         
-        averageScoreLabel.text  = averageScoreRounded
+        averageScoreLabel.text = averageScoreRounded
+        
+        self.showData()
     }
     
-    func setChartData(durationPractice: [String])
-    {
+    func showData() {
+//        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+//
+//        do {
+//            let fetchRequest = Library.fetchRequest()
+//            let predicate = NSPredicate(format: "id_video = %@", self.idVideo)
+//            let library = try managedContext.fetch()
+//
+//        } catch let err {
+//            print("Error :", err)
+//        }
+        print("Library", self.dataLirabry)
+        print("Graph", self.dataGraph)
+        
+        if let library = self.dataLirabry {            
+            self.totalArrow = Int(library.total_arrow)
+            self.totalArrowLabel.text = "of \(library.total_arrow) arrows"
+            
+            self.urlVideo(library.name_video)
+        }
+    }
+
+
+    func urlVideo(_ videoName: String?) {
+        print(videoName)
+        if let name = videoName {
+            let videoString: String? = Bundle.main.path(forResource: name, ofType: ".MOV")
+            print("str url", videoString)
+            
+            if let url = videoString {
+                print(url)
+                let videoURL = NSURL(fileURLWithPath: url)
+                
+                self.player = AVPlayer(url: videoURL as URL)
+                self.playerController.player = self.player
+                
+                self.imgThumbnail.setupPreview(withPath: url)
+            }
+        }
+    }
+    
+    
+    func playVideo() {
+        self.present(self.playerController, animated: true, completion: {
+            self.playerController.player?.play()
+        })
+    }
+    
+    func setChartData(durationPractice: [String], posturalSway: [Bool]) {
         var yVals1 : [ChartDataEntry] = [ChartDataEntry]()
+        var yVals2 : [ChartDataEntry] = [ChartDataEntry]()
+        
         for i in 0..<durationPractice.count
         {
             yVals1.append(ChartDataEntry(x: Double(i), y: Double(bpm[i])))
+            
+            if self.posturalSway[i] {
+                yVals2.append(ChartDataEntry(x: Double(i), y: Double(bpm[i])))
+            }
         }
         
         let set1: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Heart rate (bpm)")
         set1.axisDependency = .left
         set1.setColor(UIColor.red.withAlphaComponent(0.5))
-        set1.setCircleColor(UIColor.red)
+        set1.setCircleColor(UIColor.blue)
         set1.lineWidth = 2.0
         set1.circleRadius = 6.0
         set1.fillAlpha = 65 / 255.0
-        set1.fillColor = UIColor.red
+        set1.fillColor = UIColor.blue
         set1.highlightColor = UIColor.white
-        set1.drawCirclesEnabled = true
+        set1.drawCirclesEnabled = false
+        set1.valueTextColor = .clear
         
-        var dataSets : [LineChartDataSet] = [LineChartDataSet]()
-        dataSets.append(set1)
+        let set2: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Postural sway happened")
+        set2.axisDependency = .left
+        set2.setColor(UIColor.red.withAlphaComponent(0.5))
+        set2.setCircleColor(UIColor.red.withAlphaComponent(0.5))
+        set2.lineWidth = 0.0
+        set2.valueTextColor = .clear
         
-        let data : LineChartData = LineChartData(dataSets: dataSets)
+        let data : LineChartData = LineChartData(dataSets: [set1, set2])
         data.setValueTextColor(UIColor.black)
         
         self.heartLineChartView.data = data
     }
     
-    func setupChartView()
-    {
+    func setupChartView() {
         self.heartLineChartView.delegate = self
         self.heartLineChartView.gridBackgroundColor = UIColor.white
         self.heartLineChartView.noDataText = "No Data Provided"
         self.heartLineChartView.dragEnabled = true
         self.heartLineChartView.setScaleEnabled(true)
         self.heartLineChartView.pinchZoomEnabled = true
+        self.heartLineChartView.animate(xAxisDuration: 2.5)
         
-        setChartData(durationPractice: durationPractice)
-        
+        self.setChartData(durationPractice: self.durationPractice, posturalSway: self.posturalSway)
     }
     
 }

@@ -13,3 +13,9 @@ class Constants {
     static let colorRed = #colorLiteral(red: 0.9490196078, green: 0.4156862745, blue: 0.4588235294, alpha: 1)
     static let colorLightBlue = #colorLiteral(red: 0.01568627451, green: 0.7764705882, blue: 0.9490196078, alpha: 1)
 }
+
+enum userDefault: String {
+    case currentPathVideo = "current_path_video"
+    case currentIdVideo = "current_id_video"
+    case currentNameVideo = "current_name_video"
+}

@@ -144,8 +144,14 @@ public class VideoCapture: NSObject {
     }
     
     func videoFileLocation() -> URL {
+        let videoName = "videoPractice"
+        
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-        let videoOutputUrl = URL(fileURLWithPath: documentsPath.appendingPathComponent("videoFile")).appendingPathExtension("MOV")
+        let videoOutputUrl = URL(fileURLWithPath: documentsPath.appendingPathComponent(videoName)).appendingPathExtension("MOV")
+        let strVideoOutputUrl = videoOutputUrl.absoluteString
+        
+        UserDefaults.standard.set(videoName, forKey: userDefault.currentNameVideo.rawValue)
+        
         do {
             if FileManager.default.fileExists(atPath: videoOutputUrl.path) {
                 try FileManager.default.removeItem(at: videoOutputUrl)

@@ -37,6 +37,7 @@ class PoseMatchingViewController: UIViewController {
 //        "Step 4",
 //        "Step 5"
 //    ]
+    
     // MARK: - AV Property
     var videoCapture: VideoCapture!
     
@@ -65,7 +66,7 @@ class PoseMatchingViewController: UIViewController {
         setUpCamera()
         
         if !(UserDefaults.standard.bool(forKey: "debugMode")) {
-            showUI()
+            setUiOverlay()
         }
         
     }
@@ -310,16 +311,7 @@ class PoseMatchingViewController: UIViewController {
     @IBAction func tapNextButton(_ sender: Any) {
         captureButton.isHidden = true
         nextButton.isHidden = true
-        showUI()
-    }
-    
-    func showUI() {
-        let vc = CameraViewController(nibName: "CameraViewController", bundle: nil)
-        vc.modalPresentationStyle = .overCurrentContext
-        DispatchQueue.main.async {
-            self.present(vc, animated: false, completion: nil)
-        }
-        
+        setUiOverlay()
     }
     
     func setUIproperties(){

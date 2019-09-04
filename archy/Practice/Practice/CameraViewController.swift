@@ -108,11 +108,11 @@ class CameraViewController: UIViewController {
         var idVideo = 0
 
         //Increment Id Video
-        let currentIdVideo:Int? = UserDefaults.standard.object(forKey: "current_id_video") as? Int
+        let currentIdVideo:Int? = UserDefaults.standard.object(forKey: userDefault.currentIdVideo.rawValue) as? Int
         if let currentId = currentIdVideo {
             idVideo = currentId + 1
         }else{
-            UserDefaults.standard.set(currentIdVideo, forKey: "current_id_video")
+            UserDefaults.standard.set(currentIdVideo, forKey: userDefault.currentIdVideo.rawValue)
         }
 
         //Data Heart Rate
@@ -130,9 +130,17 @@ class CameraViewController: UIViewController {
 //        graph.postural_sway
 
         //Save Library
+        let currentPathVideo: String = UserDefaults.standard.object(forKey: userDefault.currentPathVideo.rawValue) as! String
+        
+        let currentNameVideo: String = UserDefaults.standard.object(forKey: userDefault.currentNameVideo.rawValue) as! String
+        
         let library = Library(context: managedContext)
         library.id_video = Int64(idVideo)
-        library.video_path = ""
+        library.video_path = currentPathVideo
+        library.name_video = currentNameVideo
+        library.total_arrow = 9 //dummy
+        library.created_at = Date()
+        library.distance = 10 //dummy
 
         do {
             try managedContext.save()
@@ -144,7 +152,12 @@ class CameraViewController: UIViewController {
         
         //Go to Preview
         let vc = PreviewVC()
-        self.present(vc, animated: true, completion: nil)
+        vc.isFromPractice = true
+        vc.idVideo = String(idVideo)
+        vc.dataLirabry = library
+        vc.dataGraph = graph
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(nav, animated: true, completion: nil)
     }
 
 }

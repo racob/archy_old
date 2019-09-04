@@ -52,6 +52,7 @@ class CameraViewController: UIViewController {
         print("testprintbismillah")
     }
     
+    
     @IBAction func tapStopButton(_ sender: Any) {
         let alert = UIAlertController(title: "Want to finish practice?", message: "Your practice will be saved in the Library",         preferredStyle: UIAlertController.Style.alert)
         
@@ -66,10 +67,10 @@ class CameraViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-
+    var timerPractice: Timer?
     func startTimer() {
         var seconds = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
+         timerPractice = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
             seconds += 1     //This will decrement(count down)the seconds.
             self.timerLabel.text = self.timeString(time: TimeInterval(seconds))
 
@@ -115,6 +116,8 @@ class CameraViewController: UIViewController {
     }
     
     func finishPractice() {
+        
+        self.timerPractice?.invalidate()
         self.heartRate.stopMockHeartData()
         
         self.delegate.stopRecording()

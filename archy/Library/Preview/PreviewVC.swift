@@ -5,7 +5,9 @@ import Charts
 
 
 class PreviewVC: UIViewController, ChartViewDelegate {
-
+    var connectivityHandler = WatchSessionManager.shared
+    
+    
     @IBAction func playVideoButton(_ sender: Any) {
         playVideo()
     }
@@ -43,7 +45,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        connectivityHandler.iOSDelegate = self
         setupChartView()
         
         self.navigationItem.title = "Preview"
@@ -86,6 +88,12 @@ class PreviewVC: UIViewController, ChartViewDelegate {
             self.totalScore = Int(textField?.text ?? "")!
             self.totalScoreLabel.text = "\(self.totalScore)"
             self.averageScoreCount()
+            
+            do{
+                try self.connectivityHandler.updateApplicationContext(applicationContext: ["resultwatch":"ok"])
+            }catch{
+                print("Error: \(String(describing: error))")
+            }
         }))
         
         
@@ -158,17 +166,16 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         
         let set1: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Heart rate (bpm)")
         set1.axisDependency = .left
-        set1.setColor(UIColor.red.withAlphaComponent(0.5))
+        set1.setColor(UIColor.blue.withAlphaComponent(0.5))
         set1.setCircleColor(UIColor.blue)
-        set1.lineWidth = 2.0
-        set1.circleRadius = 6.0
+        set1.lineWidth = 4.0
+        set1.circleRadius = 10.0
         set1.fillAlpha = 65 / 255.0
         set1.fillColor = UIColor.blue
         set1.highlightColor = UIColor.white
         set1.drawCirclesEnabled = false
-        set1.valueTextColor = .clear
         
-        let set2: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Postural sway happened")
+        let set2: LineChartDataSet = LineChartDataSet(entries: yVals2, label: "Postural sway happened")
         set2.axisDependency = .left
         set2.setColor(UIColor.red.withAlphaComponent(0.5))
         set2.setCircleColor(UIColor.red.withAlphaComponent(0.5))
@@ -176,7 +183,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         set2.valueTextColor = .clear
         
         let data : LineChartData = LineChartData(dataSets: [set1, set2])
-        data.setValueTextColor(UIColor.black)
+      
         
         self.heartLineChartView.data = data
     }
@@ -192,6 +199,17 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         
         self.setChartData(durationPractice: self.durationPractice, posturalSway: self.posturalSway)
     }
+    
+}
+extension PreviewVC: iOSDelegate{
+    func messageReceived(tuple: MessageReceived) {
+        
+    }
+    
+    func applicationContextReceived(tuple: ApplicationContextReceived) {
+        
+    }
+    
     
 }
 

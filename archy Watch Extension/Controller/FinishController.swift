@@ -24,6 +24,7 @@ class FinishController: WKInterfaceController {
         } catch {
             print("Error: \(error)")
         }
+        WKInterfaceController.reloadRootControllers(withNames: ["ResultController"], contexts: nil) 
     }
     override func willActivate() {
         super.willActivate()

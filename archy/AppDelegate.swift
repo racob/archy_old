@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        WatchSessionManager.shared.startSession()
+//        WatchSessionManager.shared.startSession()
         
         self.setNavigation()
         

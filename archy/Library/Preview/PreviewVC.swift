@@ -5,7 +5,7 @@ import Charts
 
 
 class PreviewVC: UIViewController, ChartViewDelegate {
-    var connectivityHandler = WatchSessionManager.shared
+//    var connectivityHandler = WatchSessionManager.shared
     
     
     @IBAction func playVideoButton(_ sender: Any) {
@@ -13,6 +13,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     }
     
     @IBOutlet weak var imgThumbnail: UIImageView!
+    
     @IBOutlet var totalScoreLabel: UILabel!
     
     @IBOutlet var averageScoreLabel: UILabel!
@@ -45,7 +46,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        connectivityHandler.iOSDelegate = self
+//        connectivityHandler.iOSDelegate = self
         setupChartView()
         
         self.navigationItem.title = "Preview"
@@ -69,6 +70,7 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         if let _ = self.navigationController?.popViewController(animated: true) {}else{
             let home = HomeViewController()
             let nav = UINavigationController(rootViewController: home)
+            nav.modalPresentationStyle = .fullScreen
             self.present(nav, animated: true, completion: nil)
         }
     }
@@ -89,21 +91,21 @@ class PreviewVC: UIViewController, ChartViewDelegate {
             self.totalScoreLabel.text = "\(self.totalScore)"
             self.averageScoreCount()
             
-            do{
-                try self.connectivityHandler.updateApplicationContext(applicationContext: ["resultwatch":"ok"])
-            }catch{
-                print("Error: \(String(describing: error))")
-            }
+//            do{
+//                try self.connectivityHandler.updateApplicationContext(applicationContext: ["resultwatch":"ok"])
+//            }catch{
+//                print("Error: \(String(describing: error))")
+//            }
         }))
         
         
-        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
-        alertWindow.rootViewController = UIViewController()
-        alertWindow.windowLevel = UIWindow.Level.alert + 1
+//        let alertWindow = UIWindow(frame: UIScreen.main.bounds)
+//        alertWindow.rootViewController = UIViewController()
+//        alertWindow.windowLevel = UIWindow.Level.alert + 1
+//
+//        alertWindow.makeKeyAndVisible()
         
-        alertWindow.makeKeyAndVisible()
-        
-        alertWindow.rootViewController?.present(alert, animated:true, completion: nil)
+        self.present(alert, animated:true, completion: nil)
     }
     
     func averageScoreCount() {
@@ -114,9 +116,9 @@ class PreviewVC: UIViewController, ChartViewDelegate {
         formatter.maximumFractionDigits = 2
         formatter.roundingMode = .up
         
-        let averageScoreRounded = String(describing: formatter.string(from: NSNumber(value: averageScore)))
+        let averageScoreRounded = String(format: "%.2f", averageScore)
         
-        averageScoreLabel.text = averageScoreRounded
+        averageScoreLabel.text = "\(averageScoreRounded)"
         
         self.showData()
     }
@@ -201,17 +203,16 @@ class PreviewVC: UIViewController, ChartViewDelegate {
     }
     
 }
-extension PreviewVC: iOSDelegate{
-    func messageReceived(tuple: MessageReceived) {
-        
-    }
-    
-    func applicationContextReceived(tuple: ApplicationContextReceived) {
-        
-    }
-    
-    
-}
+
+//extension PreviewVC: iOSDelegate{
+//    func messageReceived(tuple: MessageReceived) {
+//
+//    }
+//
+//    func applicationContextReceived(tuple: ApplicationContextReceived) {
+//
+//    }
+//}
 
 
 

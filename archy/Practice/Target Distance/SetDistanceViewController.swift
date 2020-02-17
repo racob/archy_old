@@ -13,7 +13,7 @@ class SetDistanceViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var distancePicker: UIPickerView!
-    var connectivityHandler = WatchSessionManager.shared
+//    var connectivityHandler = WatchSessionManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,8 +21,8 @@ class SetDistanceViewController: UIViewController {
         
         setUIcolor()
         
-        connectivityHandler.iOSDelegate = self
-        connectivityHandler.startSession()
+//        connectivityHandler.iOSDelegate = self
+//        connectivityHandler.startSession()
         
         
         distancePicker.delegate = self
@@ -49,11 +49,11 @@ class SetDistanceViewController: UIViewController {
         }else{
             counter = 10
         }
-        do {
-            try connectivityHandler.updateApplicationContext(applicationContext: ["row" : counter])
-        } catch {
-            print("Error: \(error)")
-        }
+//        do {
+//            try connectivityHandler.updateApplicationContext(applicationContext: ["row" : counter])
+//        } catch {
+//            print("Error: \(error)")
+//        }
         
         //Save distance to userdefault
         let selectedPicker = self.distancePicker.selectedRow(inComponent: 0)
@@ -65,37 +65,38 @@ class SetDistanceViewController: UIViewController {
     
 }
 
-extension SetDistanceViewController: iOSDelegate {
-    
-    func applicationContextReceived(tuple: ApplicationContextReceived) {
-        DispatchQueue.main.async() {
-            if let row = tuple.applicationContext["row"] as? Int {
-                self.nextButton.backgroundColor = Constant.itemList[row].2
-            }
-        }
-    }
-    
-    
-    func messageReceived(tuple: MessageReceived) {
-        // Handle receiving message
-        
-        guard let reply = tuple.replyHandler else {
-            return
-        }
-        
-        // Need reply to counterpart
-        switch tuple.message["request"] as! RequestType.RawValue {
-        case RequestType.date.rawValue:
-            reply(["date" : "\(Date())"])
-        case RequestType.version.rawValue:
-            let version = ["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"]
-            reply(["version" : version])
-        default:
-            break
-        }
-    }
-    
-}
+//extension SetDistanceViewController: iOSDelegate {
+//
+//    func applicationContextReceived(tuple: ApplicationContextReceived) {
+//        DispatchQueue.main.async() {
+//            if let row = tuple.applicationContext["row"] as? Int {
+//                self.nextButton.backgroundColor = Constant.itemList[row].2
+//            }
+//        }
+//    }
+//
+//
+//    func messageReceived(tuple: MessageReceived) {
+//        // Handle receiving message
+//
+//        guard let reply = tuple.replyHandler else {
+//            return
+//        }
+//
+//        // Need reply to counterpart
+//        switch tuple.message["request"] as! RequestType.RawValue {
+//        case RequestType.date.rawValue:
+//            reply(["date" : "\(Date())"])
+//        case RequestType.version.rawValue:
+//            let version = ["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"]
+//            reply(["version" : version])
+//        default:
+//            break
+//        }
+//    }
+//
+//}
+
 extension SetDistanceViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

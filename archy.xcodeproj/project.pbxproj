@@ -19,7 +19,6 @@
 		0E47C1CD2310D1C900BB2BC6 /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CC2310D1C900BB2BC6 /* PracticeController.swift */; };
 		0E47C1CF2310D23200BB2BC6 /* FinishController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1CE2310D23200BB2BC6 /* FinishController.swift */; };
 		0E47C1D12310D28C00BB2BC6 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E47C1D02310D28C00BB2BC6 /* ResultController.swift */; };
-		0EAF587623176935000AE6FB /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587523176935000AE6FB /* WatchSessionManager.swift */; };
 		0EAF58772317699D000AE6FB /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587523176935000AE6FB /* WatchSessionManager.swift */; };
 		0EAF587923176F06000AE6FB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587823176F06000AE6FB /* Request.swift */; };
 		0EAF587A23176F06000AE6FB /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAF587823176F06000AE6FB /* Request.swift */; };
@@ -89,13 +88,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0E3B4BC4230D34F3001A8CA3;
 			remoteInfo = "archy Watch Extension";
-		};
-		0E3B4BD4230D34F4001A8CA3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F782FA15230D025900E4C1B4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0E3B4BB8230D34F2001A8CA3;
-			remoteInfo = "archy Watch";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -617,7 +609,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0E3B4BD5230D34F4001A8CA3 /* PBXTargetDependency */,
 			);
 			name = archy;
 			productName = archeryTracking;
@@ -849,7 +840,6 @@
 				F782FA5B230D033000E4C1B4 /* JointViewController.swift in Sources */,
 				4E60F938230E69EA00198B2F /* UIImageView+Extension.swift in Sources */,
 				F782FA44230D031400E4C1B4 /* PredictedPoint.swift in Sources */,
-				0EAF587623176935000AE6FB /* WatchSessionManager.swift in Sources */,
 				F782FA59230D033000E4C1B4 /* PoseMatchingViewController.swift in Sources */,
 				F72DE708230E3D0A00EA0D2E /* AlbumsVC.swift in Sources */,
 				F782FA57230D033000E4C1B4 /* model_hourglass.mlmodel in Sources */,
@@ -888,11 +878,6 @@
 			isa = PBXTargetDependency;
 			target = 0E3B4BC4230D34F3001A8CA3 /* archy Watch Extension */;
 			targetProxy = 0E3B4BC7230D34F4001A8CA3 /* PBXContainerItemProxy */;
-		};
-		0E3B4BD5230D34F4001A8CA3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0E3B4BB8230D34F2001A8CA3 /* archy Watch */;
-			targetProxy = 0E3B4BD4230D34F4001A8CA3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

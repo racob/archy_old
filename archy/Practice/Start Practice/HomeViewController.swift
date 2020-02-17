@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     
     
 
-    var connectivityHandler = WatchSessionManager.shared
+//    var connectivityHandler = WatchSessionManager.shared
     
     @IBOutlet weak var startPracticeButton: UIButton!
     @IBOutlet weak var textview: UITextView!
@@ -23,12 +23,14 @@ class HomeViewController: UIViewController {
         
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        connectivityHandler.iOSDelegate = self
+//        connectivityHandler.iOSDelegate = self
         
         setCustomUI()
 
@@ -67,27 +69,26 @@ class HomeViewController: UIViewController {
     }
     
 }
-extension HomeViewController: iOSDelegate{
-    func applicationContextReceived(tuple: ApplicationContextReceived) {
-        print("YEY")
-        DispatchQueue.main.async() {
-            if let row = tuple.applicationContext["go"] as? String {
-//                self.changeTheme(row)
-                print(row)
-            }
-        }
-    }
-    
-    
-    func messageReceived(tuple: MessageReceived) {
-        DispatchQueue.main.async() {
-//            WKInterfaceDevice.current().play(.notification)
-            if let msg = tuple.message["go"] {
-//                self.messages.append("\(msg)")
-                print(msg)
-            }
-        }
-    }
-    
-    
-}
+
+//extension HomeViewController: iOSDelegate{
+//    func applicationContextReceived(tuple: ApplicationContextReceived) {
+//        print("YEY")
+//        DispatchQueue.main.async() {
+//            if let row = tuple.applicationContext["go"] as? String {
+////                self.changeTheme(row)
+//                print(row)
+//            }
+//        }
+//    }
+//
+//
+//    func messageReceived(tuple: MessageReceived) {
+//        DispatchQueue.main.async() {
+////            WKInterfaceDevice.current().play(.notification)
+//            if let msg = tuple.message["go"] {
+////                self.messages.append("\(msg)")
+//                print(msg)
+//            }
+//        }
+//    }
+//}

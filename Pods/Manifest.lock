@@ -1,7 +1,7 @@
 PODS:
-  - Charts (3.3.0):
-    - Charts/Core (= 3.3.0)
-  - Charts/Core (3.3.0)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
 
 DEPENDENCIES:
   - Charts
@@ -11,8 +11,8 @@ SPEC REPOS:
     - Charts
 
 SPEC CHECKSUMS:
-  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
 
 PODFILE CHECKSUM: ddcd3d42b5bb5b294e3e89ad7a3234f61386771e
 
-COCOAPODS: 1.8.0.beta.2
+COCOAPODS: 1.9.0.beta.3

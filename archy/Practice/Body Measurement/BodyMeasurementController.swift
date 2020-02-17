@@ -18,7 +18,7 @@ class BodyMeasurementController: UIViewController {
     @IBOutlet weak var imgBody: UIImageView!
     @IBOutlet weak var lblDesc: UILabel!
     
-    var connectivityHandler = WatchSessionManager.shared
+//    var connectivityHandler = WatchSessionManager.shared
     
     var videoCapture: VideoCapture!
     
@@ -50,7 +50,7 @@ class BodyMeasurementController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        connectivityHandler.iOSDelegate = self
+//        connectivityHandler.iOSDelegate = self
         
         self.setUpModel()
         self.setUpCamera()
@@ -58,21 +58,20 @@ class BodyMeasurementController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        self.videoCapture.stop()
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        self.videoCapture.stop()
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        self.videoCapture.stop()
+//    }
     
     // MARK: - Setup Core ML
     func setUpModel() {
@@ -123,11 +122,11 @@ class BodyMeasurementController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        do {
-            try connectivityHandler.updateApplicationContext(applicationContext: ["state" : 7])
-        } catch {
-            print("Error: \(error)")
-        }
+//        do {
+////            try connectivityHandler.updateApplicationContext(applicationContext: ["state" : 7])
+//        } catch {
+//            print("Error: \(error)")
+//        }
     }
 
 }
@@ -135,38 +134,36 @@ class BodyMeasurementController: UIViewController {
 
 // MARK: extension connectivity watchkit
 
-extension BodyMeasurementController: iOSDelegate {
-    
-    func applicationContextReceived(tuple: ApplicationContextReceived) {
-        DispatchQueue.main.async() {
-            if let row = tuple.applicationContext["row"] as? Int {
-//                self.nextButton.backgroundColor = Constant.itemList[row].2
-            }
-        }
-    }
-    
-    
-    func messageReceived(tuple: MessageReceived) {
-        // Handle receiving message
-        
-        guard let reply = tuple.replyHandler else {
-            return
-        }
-        
-        // Need reply to counterpart
-        switch tuple.message["request"] as! RequestType.RawValue {
-        case RequestType.date.rawValue:
-            reply(["date" : "\(Date())"])
-        case RequestType.version.rawValue:
-            let version = ["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"]
-            reply(["version" : version])
-        default:
-            break
-        }
-    }
-    
-    
-}
+//extension BodyMeasurementController: iOSDelegate {
+//    
+//    func applicationContextReceived(tuple: ApplicationContextReceived) {
+//        DispatchQueue.main.async() {
+//            if let row = tuple.applicationContext["row"] as? Int {
+////                self.nextButton.backgroundColor = Constant.itemList[row].2
+//            }
+//        }
+//    }
+//    
+//    
+//    func messageReceived(tuple: MessageReceived) {
+//        // Handle receiving message
+//        
+//        guard let reply = tuple.replyHandler else {
+//            return
+//        }
+//        
+//        // Need reply to counterpart
+//        switch tuple.message["request"] as! RequestType.RawValue {
+//        case RequestType.date.rawValue:
+//            reply(["date" : "\(Date())"])
+//        case RequestType.version.rawValue:
+//            let version = ["version" : "\(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") ?? "No version")"]
+//            reply(["version" : version])
+//        default:
+//            break
+//        }
+//    }
+//}
 
 // MARK: - VideoCaptureDelegate
 extension BodyMeasurementController: VideoCaptureDelegate {
@@ -242,13 +239,15 @@ extension BodyMeasurementController {
                 self.lblDesc.text = descBody.success.rawValue
                 self.lblDesc.textColor = Constants.colorLightBlue
                 let  i = 10
-                do {
-                    try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
-                } catch {
-                    print("Error: \(error)")
-                }
+//                do {
+//                    try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
+//                } catch {
+//                    print("Error: \(error)")
+//                }
                 self.videoCapture.stop()
-                self.present(PoseMatchingViewController(), animated: true, completion: nil)
+                let vc = PoseMatchingViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false, completion: nil)
             }else{ // Salah
                 self.imgBody.image = UIImage(named: bgBody.failed.rawValue)
                 self.lblDesc.text = descBody.begin.rawValue
@@ -256,11 +255,11 @@ extension BodyMeasurementController {
                 
                 let i = Int.random(in: 1..<3)
                 
-                do {
-                    try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
-                } catch {
-                    print("Error: \(error)")
-                }
+//                do {
+//                    try connectivityHandler.updateApplicationContext(applicationContext: ["state" : i])
+//                } catch {
+//                    print("Error: \(error)")
+//                }
             }
             
             // draw line
